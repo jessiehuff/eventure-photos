@@ -46,17 +46,20 @@ class EventsNew extends Component {
             placeholder="Name" 
             name="name" 
             onChange={this.handleOnChange} /> 
+          <br></br>
           <input 
             type="text"
             placeholder="Description"
             name="description" 
             onChange={this.handleOnChange} /> 
+          <br></br> <br></br> 
           <input 
             type="file"
             placeholder="Cover Image"
             name="cover"
             onChange={this.fileChangedHandler} />
             <button onClick={this.uploadHandler}>Upload!</button>  
+            <br></br><br></br>             
           <input 
             type="submit"
             value="Add Event" /> 
