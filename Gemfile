@@ -25,7 +25,9 @@ gem 'puma', '~> 3.11'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise' 
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 0.11.2'
+gem 'carrierwave_backgrounder', git: 'https://github.com/lardawge/carrierwave_backgrounder'
+gem 'mini_magick', '~> 4.3' 
 
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
