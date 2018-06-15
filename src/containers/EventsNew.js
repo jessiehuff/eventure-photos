@@ -8,6 +8,7 @@ class EventsNew extends Component {
     this.state = {
       name: '', 
       description: '', 
+      cover: {selectedFile: null}
     }; 
   }
 
@@ -23,6 +24,17 @@ class EventsNew extends Component {
       [event.target.name]: event.target.value 
     }); 
   }
+
+  fileChangedHandler = (event) => {
+    this.setState({selectedFile: event.target.files[0]}) 
+  }
+
+  uploadHandler = () => { 
+    const formData = new FormData() 
+    formData.append('myFile', this.state.selectedFile, this.state.selectedFile.name)
+    axios.post('my-domain.com/file-upload', this.state.selectedFile)
+    console.log(this.state.selectedFile)
+  } 
 
   render() {
     return (
@@ -43,7 +55,8 @@ class EventsNew extends Component {
             type="file"
             placeholder="Cover Image"
             name="cover"
-            onChange={this.handleOnChange} /> 
+            onChange={this.fileChangedHandler} />
+            <button onClick={this.uploadHandler}>Upload!</button>  
           <input 
             type="submit"
             value="Add Event" /> 
