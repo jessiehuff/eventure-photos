@@ -8,7 +8,7 @@ class EventsNew extends Component {
     this.state = {
       name: '', 
       description: '', 
-      cover: {selectedFile: null}
+      cover: null
     }; 
   }
 
@@ -30,10 +30,9 @@ class EventsNew extends Component {
   }
 
   uploadHandler = () => { 
-    const formData = new FormData() 
-    formData.append('myFile', this.state.selectedFile, this.state.selectedFile.name)
-   //axios post? 
-    console.log(this.state.selectedFile)
+    this.setState({ event: {...this.state.event, cover: e.target.files }});
+    console.log(e.target.files);
+    console.log(this.state);
   } 
 
   render() {
