@@ -32,7 +32,7 @@ class EventsNew extends Component {
   uploadHandler = () => { 
     const formData = new FormData() 
     formData.append('myFile', this.state.selectedFile, this.state.selectedFile.name)
-    axios.post('my-domain.com/file-upload', this.state.selectedFile)
+   
     console.log(this.state.selectedFile)
   } 
 
