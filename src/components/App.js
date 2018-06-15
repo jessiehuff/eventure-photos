@@ -3,6 +3,10 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  <Router> 
+    <div> 
+      <Route path="/" render={() => <h1> Welcome to Eventure </h1>} /> 
+      <Route path="/events" component={EventsPage} /> 
   render() {
     return (
       <div className="App">
