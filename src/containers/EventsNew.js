@@ -11,6 +11,19 @@ class EventsNew extends Component {
     }; 
   }
 
+  handleOnSubmit = event => {
+    event.preventDefault(); 
+    const { addEvent, history } = this.props 
+    addEvent(this.state); 
+    history.push('/events'); 
+  }
+
+  handleOnChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value 
+    }); 
+  }
+
   render() {
     return (
       <div> 
