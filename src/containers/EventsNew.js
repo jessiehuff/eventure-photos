@@ -29,11 +29,26 @@ class EventsNew extends Component {
     this.setState({selectedFile: event.target.files[0]}) 
   }
 
-  uploadHandler = () => { 
-    this.setState({ event: {...this.state.event, cover: e.target.files }});
-    console.log(e.target.files);
-    console.log(this.state);
+  uploadHandler(files) {
+    if (files && files[0]){
+      let formPayLoad = new FormData(); 
+      formPayLoad.append('uploaded_image', files[0]); 
+      this.sendImageToController(formPayLoad) 
+    }
   } 
+
+  sendImageToController(formPayLoad){
+    fetch(`/events/1`, {    // need to make it dynamic 
+      credentials: 'same-origin', 
+      headers: {}, 
+      method: 'POST', 
+      body: formPayLoad
+    })
+    .then(response => response.json())
+    .then(imageFromController => {
+      this.setState({events: this.state.events.concat(imageFromController)})
+    })
+  }
 
   render() {
     return (
