@@ -1,4 +1,5 @@
 import React from 'react'; 
+import { BrowserRouter as Router, Link, Route} from 'react-router-dom'; 
 
 const Homepage = props => {
   return(
@@ -11,6 +12,11 @@ const Homepage = props => {
       </h3> 
       <br></br><br></br>
       <h2>Enjoy every moment with Eventure</h2> 
+      <br></br>
+      <h3>Ready to join?</h3>
+      <Link to={'/signup'} activeClassName="active">Sign Up</Link> 
+      <h3>Already a user?</h3> 
+      <Link to={'/login'} activeClassName="active">Login</Link> 
     </div> 
   )
 }
