@@ -1,5 +1,6 @@
 import React from 'react' 
 import { BrowserRouter as Router, NavLink, Route} from 'react-router-dom'; 
+import Homepage from '../components/Homepage';
 import EventsPage from '../containers/EventsPage'; 
 import EventsNew from '../containers/EventsNew';
 import Signup from '../containers/Signup';
@@ -13,8 +14,8 @@ const App = (props) =>
         <NavLink style={{ marginRight: '10px' }} to="/events/new">Add an Event
         </NavLink> 
       </div> 
-      <Route exact path="/" render={() => <h1> Welcome to Eventure </h1>} /> 
-      <Route path="/events" component={EventsPage} /> 
+      <Route exact path="/" component={Homepage} /> 
+      <Route exact path="/events" component={EventsPage} /> 
       <Route exact path="/signup" component={Signup} /> 
       <Route exact path="/login" component={Login} /> 
     </div> 
