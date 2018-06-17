@@ -32,7 +32,7 @@ class EventsNew extends Component {
   uploadHandler(files) {
     if (files && files[0]){
       let formPayLoad = new FormData(); 
-      formPayLoad.append('uploaded_image', files[0]); 
+      formPayLoad.append('cover', files[0]); 
       this.sendImageToController(formPayLoad) 
     }
   } 
