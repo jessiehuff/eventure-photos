@@ -5,6 +5,7 @@ import {fetchEvents} from '../actions';
 import EventsNew from './EventsNew'; 
 import EventsShow from './EventsShow'; 
 import EventsList from '../components/EventsList'; 
+import { bindActionCreators } from 'redux';
 
 class EventsPage extends Component {
 
@@ -33,4 +34,8 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {fetchEvents})(EventsPage); 
+function mapDispatchToProps(dispatch) {
+  return {actions: bindActionCreators(index, dispatch)}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(EventsPage); 
