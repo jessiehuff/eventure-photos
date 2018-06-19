@@ -9,6 +9,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App';
 
+const createStoreWithMiddleware = applyMiddleware(thunk)(createStore); 
+const store = createStoreWithMiddleware(reducers); 
+
 render(
   <Provider store={store}> 
     <App /> 
