@@ -9,7 +9,9 @@ import EventsList from '../components/EventsList';
 class EventsPage extends Component {
 
   componentDidMount() {
-    this.props.fetchEvents(); 
+    if (this.props.events.length == 0) { 
+      this.props.fetchEvents(); 
+    }
   }
 
   render() {
