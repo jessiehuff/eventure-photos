@@ -25,28 +25,28 @@ class EventsNew extends Component {
     }); 
   }
 
-  uploadHandler(files) {
-    debugger
-    if (files && files[0]){
-      let formPayLoad = new FormData(); 
-      formPayLoad.append('cover', files[0]); 
-      this.sendImageToController(formPayLoad) 
-    }
-  } 
+  // uploadHandler(files) {
+  //   debugger
+  //   if (files && files[0]){
+  //     let formPayLoad = new FormData(); 
+  //     formPayLoad.append('cover', files[0]); 
+  //     this.sendImageToController(formPayLoad) 
+  //   }
+  // } 
 
-  sendImageToController(formPayLoad){
-    debugger
-    fetch(`/events/1`, {    // need to make it dynami
-      credentials: 'same-origin', 
-      headers: {}, 
-      method: 'POST', 
-      body: formPayLoad
-    })
-    .then(response => response.json())
-    .then(imageFromController => {
-      this.setState({events: this.state.events.concat(imageFromController)})
-    })
-  }
+  // sendImageToController(formPayLoad){
+  //   debugger
+  //   fetch(`/events/1`, {    // need to make it dynami
+  //     credentials: 'same-origin', 
+  //     headers: {}, 
+  //     method: 'POST', 
+  //     body: formPayLoad
+  //   })
+  //   .then(response => response.json())
+  //   .then(imageFromController => {
+  //     this.setState({events: this.state.events.concat(imageFromController)})
+  //   })
+  // }
 
   render() {
     return (
