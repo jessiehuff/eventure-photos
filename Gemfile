@@ -27,7 +27,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise' 
 gem 'carrierwave', '~> 0.11.2'
 gem 'carrierwave_backgrounder', git: 'https://github.com/lardawge/carrierwave_backgrounder'
-gem 'mini_magick', '~> 4.3' 
+gem 'mini_magick', '~> 4.3'
+gem 'foreman', '~> 0.82.0' 
 
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible

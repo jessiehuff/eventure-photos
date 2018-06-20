@@ -25,11 +25,8 @@ class EventsNew extends Component {
     }); 
   }
 
-  fileChangedHandler = (event) => {
-    this.setState({selectedFile: event.target.files[0]}) 
-  }
-
   uploadHandler(files) {
+    debugger
     if (files && files[0]){
       let formPayLoad = new FormData(); 
       formPayLoad.append('cover', files[0]); 
@@ -38,7 +35,8 @@ class EventsNew extends Component {
   } 
 
   sendImageToController(formPayLoad){
-    fetch(`/events/1`, {    // need to make it dynamic 
+    debugger
+    fetch(`/events/1`, {    // need to make it dynami
       credentials: 'same-origin', 
       headers: {}, 
       method: 'POST', 
@@ -71,8 +69,7 @@ class EventsNew extends Component {
             type="file"
             placeholder="Cover Image"
             name="cover"
-            onChange={this.fileChangedHandler} />
-            <button onClick={this.uploadHandler}>Upload!</button>  
+            onChange={this.handleOnChange} />
             <br></br><br></br>             
           <input 
             type="submit"

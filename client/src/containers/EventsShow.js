@@ -11,7 +11,8 @@ const EventsShow = ({ event }) =>
 const mapStateToProps = (state, ownProps) => {
   const event = state.events.find(event => event.id === ownProps.match.params.eventId)
 
-  if (event) {
+  if (event) { 
+    console.log(event)
     return { event } 
   }
   else {
