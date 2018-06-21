@@ -3,8 +3,7 @@ export default (state = [], action) => {
     case 'FETCH_EVENTS': 
       return action.events; 
     case 'ADD_EVENT': 
-      const event = Object.assign({}, action.event, { id: state.length + 1 }); 
-      return [...state, event]; 
+      return state.concat(action.event) 
     default: 
       return state; 
   }

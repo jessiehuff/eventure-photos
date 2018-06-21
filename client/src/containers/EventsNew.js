@@ -14,9 +14,9 @@ class EventsNew extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault(); 
-    const { addEvent, history } = this.props 
-    addEvent(this.state); 
-    history.push('/events'); 
+    if (this.state.id === "") {
+      this.props.addEvent(this.state)
+    }
   }
 
   handleOnChange = event => {
@@ -30,7 +30,7 @@ class EventsNew extends Component {
   //   if (files && files[0]){
   //     let formPayLoad = new FormData(); 
   //     formPayLoad.append('cover', files[0]); 
-  //     this.sendImageToController(formPayLoad) 
+  //     this.sendImageToCostatentroller(formPayLoad) 
   //   }
   // } 
 
