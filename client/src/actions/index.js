@@ -16,7 +16,9 @@ export function addEvent(event) {
       body: JSON.stringify(event)
     })
       .then(response => response.json())
-      .then(events => dispatch({
-        type: 'ADD_EVENTS', events })); 
+      .then(responseJSON => {
+        let events = responseJSON.map(n => n.name).sort(); 
+        dispatch({type: 'ADD_EVENT', payload: events})
+      });
   }; 
 }; 

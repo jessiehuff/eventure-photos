@@ -29,6 +29,7 @@ gem 'carrierwave', '~> 0.11.2'
 gem 'carrierwave_backgrounder', git: 'https://github.com/lardawge/carrierwave_backgrounder'
 gem 'mini_magick', '~> 4.3'
 gem 'foreman', '~> 0.82.0' 
+gem "active_model_serializers", github: "rails-api/active_model_serializers"
 
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
