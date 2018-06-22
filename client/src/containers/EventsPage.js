@@ -1,7 +1,8 @@
 import React, { Component } from 'react'; 
+import { bindActionCreators } from 'redux'; 
 import { connect } from 'react-redux'; 
 import {Route, Switch} from 'react-router-dom'; 
-import {fetchEvents} from '../actions'; 
+import {fetchEvents, addEvent} from '../actions/index'; 
 import EventsNew from './EventsNew'; 
 import EventsShow from './EventsShow'; 
 import EventsList from '../components/EventsList'; 
@@ -31,6 +32,13 @@ const mapStateToProps = state => {
   return {
     events: state.events 
   }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    fetchEvents, 
+    addEvent
+  }, dispatch);
 }
 
 export default connect(mapStateToProps, {fetchEvents})(EventsPage); 

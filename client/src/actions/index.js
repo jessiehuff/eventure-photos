@@ -7,18 +7,19 @@ export function fetchEvents() {
 }
 
 export function addEvent(event) {
-  return (dispatch) => { 
-    dispatch({ type: 'START_ADDING_EVENTS_REQUEST'}); 
-    return 
-    fetch('http://localhost:3000/api/v1/events', {
+  return (dispatch) => {  
+    return fetch('http://localhost:3000/api/v1/events', {
       method: 'POST', 
-      headers: {}, 
-      body: JSON.stringify(event)
+      headers: {
+        'Content-Type': 'application/json'
+      }, 
+      body: JSON.stringify({event: event})
     })
       .then(response => response.json())
       .then(responseJSON => {
         let events = responseJSON.map(n => n.name).sort(); 
         dispatch({type: 'ADD_EVENT', payload: events})
-      });
+      })
+      .catch(error => console.log(error))
   }; 
 }; 
