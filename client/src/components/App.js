@@ -2,7 +2,8 @@ import React from 'react'
 import { BrowserRouter as Router, NavLink, Route} from 'react-router-dom'; 
 import Homepage from '../components/Homepage';
 import EventsPage from '../containers/EventsPage'; 
-import EventsNew from '../containers/EventsNew';
+import EventsNew from '../containers/EventsNew'; 
+//import EventsShow from '../containers/EventsShow'; 
 import Signup from '../containers/Signup';
 import Login from '../containers/Login'; 
 
@@ -26,3 +27,5 @@ const App = (props) =>
 
 
 export default App;
+
+//<Route path="/events/:id" component={EventsShow} />
