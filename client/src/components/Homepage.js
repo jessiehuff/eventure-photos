@@ -20,5 +20,6 @@ const Homepage = props => {
     </div> 
   )
 }
+// Need to get rid of activeclassname later
 
 export default Homepage;

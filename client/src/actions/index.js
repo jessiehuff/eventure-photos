@@ -7,6 +7,7 @@ export function fetchEvents() {
 }
 
 export function addEvent(event) {
+  debugger
   return (dispatch) => {  
     return fetch('http://localhost:3000/api/v1/events', {
       method: 'POST', 
@@ -27,7 +28,7 @@ export function addEvent(event) {
 
 // export function addPhoto(photo) {
 //   return(dispath) => {
-//     return fetch('http://localhost:3000/api/v1/events/:id/photos'), {
+//     return fetch('/api/v1/events/:id/photos'), {
 //       method: 'POST', 
 //       headers: {
 //         'Content-Type': 'application/json' 
