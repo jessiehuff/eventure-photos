@@ -43,6 +43,18 @@ export const updateEvent = (eventId, event) => {
   }; 
 }
 
+const setSelectedEvent = event => {
+  return {
+    type: 'UPDATE_EVENT', 
+    event
+  }
+}
+
+export const resetEventForm = () => {
+  return {
+    type: 'RESET_FORM'
+  }
+}
 
 
 // export function addPhoto(photo) {
