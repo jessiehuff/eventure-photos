@@ -11,6 +11,9 @@ export default (state = [], action) => {
           action.event, 
           ...state.slice(index + 1)
         ]
+    case 'DELETE_EVENT': 
+      const events = state.filter(event => event.id !== action.id)
+      return events 
     case 'RESET_FORM': 
       return state; 
     default: 

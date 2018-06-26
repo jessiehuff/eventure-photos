@@ -25,35 +25,52 @@ export function addEvent(event) {
   }; 
 }; 
 
-export const updateEvent = (eventId, event) => {
+// export const updateEvent = (eventId, event) => {
+//   return dispatch => {
+//     return fetch(`http://localhost:3000/api/v1/events/${eventId}`, {
+//       method: "PATCH", 
+//       headers: {
+//         'Content-Ty[e': 'application/json'
+//       },
+//       body: JSON.stringify({event: event})
+//     })
+//     .then(response => response.json())
+//     .then(event => {
+//       dispatch(setSelectedEvent(event))
+//       dispatch(resetEventForm())
+//     })
+//     .catch(error => console.log(error))
+//   }; 
+// }
+
+// const setSelectedEvent = event => {
+//   return {
+//     type: 'UPDATE_EVENT', 
+//     event
+//   }
+// }
+
+// export const resetEventForm = () => {
+//   return {
+//     type: 'RESET_FORM'
+//   }
+// }
+
+export const deleteEvent = eventId => {
   return dispatch => {
-    return fetch(`http://localhost:3000/api/v1/events/${eventId}`, {
-      method: "PATCH", 
+    return fetch(`/events/${eventId}`, {
+      method: "DELETE", 
       headers: {
-        'Content-Ty[e': 'application/json'
-      },
-      body: JSON.stringify({event: event})
+        'Content-Type': 'application/json'
+      }, 
+      body: JSON.stringify({event: eventId})
     })
-    .then(response => response.json())
-    .then(event => {
-      dispatch(setSelectedEvent(event))
-      dispatch(resetEventForm())
-    })
-    .catch(error => console.log(error))
-  }; 
-}
-
-const setSelectedEvent = event => {
-  return {
-    type: 'UPDATE_EVENT', 
-    event
-  }
-}
-
-export const resetEventForm = () => {
-  return {
-    type: 'RESET_FORM'
-  }
+      .then(response => response.json())
+      .then(event => {
+        dispatch(destroyEvent(event))
+      })
+      .catch(error => console.log(error))
+  };
 }
 
 
