@@ -9,7 +9,7 @@ export function fetchEvents() {
 export function addEvent(event) {
   debugger
   return (dispatch) => {  
-    return fetch('http://localhost:3000/api/v1/events', {
+    return fetch(`http://localhost:3000/api/v1/events`, {
       method: 'POST', 
       headers: {
         'Content-Type': 'application/json'
@@ -24,6 +24,25 @@ export function addEvent(event) {
       .catch(error => console.log(error))
   }; 
 }; 
+
+export const updateEvent = (eventId, event) => {
+  return dispatch => {
+    return fetch(`http://localhost:3000/api/v1/events/${eventId}`, {
+      method: "PATCH", 
+      headers: {
+        'Content-Ty[e': 'application/json'
+      },
+      body: JSON.stringify({event: event})
+    })
+    .then(response => response.json())
+    .then(event => {
+      dispatch(setSelectedEvent(event))
+      dispatch(resetEventForm())
+    })
+    .catch(error => console.log(error))
+  }; 
+}
+
 
 
 // export function addPhoto(photo) {
