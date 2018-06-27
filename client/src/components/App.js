@@ -18,8 +18,8 @@ const App = (props) =>
         </NavLink> 
       </div> 
       <Route exact path="/" component={Homepage} /> 
-      <Route exact path="/api/v1/events" component={EventsPage} /> 
-      <Route exact path="/api/v1/events/new" component={EventsNew} /> 
+      <Route exact path="/events" component={EventsPage} /> 
+      <Route exact path="/events/new" component={EventsNew} /> 
       <Route exact path="/signup" component={Signup} /> 
       <Route exact path="/login" component={Login} /> 
     </div> 

@@ -9,7 +9,7 @@ export function fetchEvents() {
 export function addEvent(event) {
   debugger
   return (dispatch) => {  
-    return fetch(`http://localhost:3000/api/v1/events`, {
+    return fetch(`/api/v1/events`, {
       method: 'POST', 
       headers: {
         'Content-Type': 'application/json'
@@ -27,7 +27,7 @@ export function addEvent(event) {
 
 // export const updateEvent = (eventId, event) => {
 //   return dispatch => {
-//     return fetch(`http://localhost:3000/api/v1/events/${eventId}`, {
+//     return fetch(`/api/v1/events/${eventId}`, {
 //       method: "PATCH", 
 //       headers: {
 //         'Content-Ty[e': 'application/json'
@@ -56,22 +56,22 @@ export function addEvent(event) {
 //   }
 // }
 
-export const deleteEvent = eventId => {
-  return dispatch => {
-    return fetch(`/events/${eventId}`, {
-      method: "DELETE", 
-      headers: {
-        'Content-Type': 'application/json'
-      }, 
-      body: JSON.stringify({event: eventId})
-    })
-      .then(response => response.json())
-      .then(event => {
-        dispatch(destroyEvent(event))
-      })
-      .catch(error => console.log(error))
-  };
-}
+// export const deleteEvent = eventId => {
+//   return dispatch => {
+//     return fetch(`/events/${eventId}`, {
+//       method: "DELETE", 
+//       headers: {
+//         'Content-Type': 'application/json'
+//       }, 
+//       body: JSON.stringify({event: eventId})
+//     })
+//       .then(response => response.json())
+//       .then(event => {
+//         dispatch(destroyEvent(event))
+//       })
+//       .catch(error => console.log(error))
+//   };
+// }
 
 
 // export function addPhoto(photo) {
