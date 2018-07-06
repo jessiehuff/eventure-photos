@@ -51,13 +51,3 @@ class Api::V1::EventsController < ApplicationController
     #   params.require(:event).permit(:name, :description, :cover)
     # end
 end
-
-
-# json 
-# body
-#  { event: {
-#   name:
-#   description:
-#   cover:
-#   }
-# }
