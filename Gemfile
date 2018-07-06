@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.3.6'
+ruby '2.5.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
@@ -30,7 +30,10 @@ gem 'carrierwave_backgrounder', git: 'https://github.com/lardawge/carrierwave_ba
 gem 'mini_magick', '~> 4.3'
 gem 'foreman', '~> 0.82.0' 
 gem "active_model_serializers", github: "rails-api/active_model_serializers"
-
+gem 'bootstrap', '~> 4.1', '>= 4.1.1'
+gem 'sass-rails'
+gem 'uglifier'
+gem 'jquery-rails'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'

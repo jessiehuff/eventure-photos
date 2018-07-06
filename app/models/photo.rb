@@ -1,4 +1,4 @@
-class Photo < ApplicationRecord::Base
+class Photo < ActiveRecord::Base
   belongs_to :event 
   belongs_to :user
 

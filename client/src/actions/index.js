@@ -9,7 +9,7 @@ export function fetchEvents() {
 export function addEvent(event) {
   debugger
   return (dispatch) => {  
-    return fetch(`/api/v1/events`, {
+    return fetch(`api/v1/events`, {
       method: 'POST', 
       headers: {
         'Content-Type': 'application/json'
@@ -18,6 +18,7 @@ export function addEvent(event) {
     })
       .then(response => response.json())
       .then(responseJSON => {
+        console.log(responseJSON)
         let events = responseJSON.map(n => n.name).sort(); 
         dispatch({type: 'ADD_EVENT', payload: events})
       })

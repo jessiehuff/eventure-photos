@@ -1,4 +1,4 @@
-class API::V1::EventsController < ApplicationController
+class Api::V1::EventsController < ApplicationController
   before_action :set_event, only: [:show, :update, :destroy]
 
   # GET /events
@@ -15,12 +15,12 @@ class API::V1::EventsController < ApplicationController
 
   # POST /events
   def create
+    raise params.inspect
     @event = Event.new(event_params)
-    newCover.file = params["cover"]
-    newCover.user = current_user 
+    
 
     if @event.save
-      render json: @event, status: :created, location: @event
+      render json: @event, status: :created, location: @event 
     else
       render json: @event.errors, status: :unprocessable_entity
     end
@@ -47,7 +47,17 @@ class API::V1::EventsController < ApplicationController
     end
 
     # Only allow a trusted parameter "white list" through.
-    def event_params
-      api/v1/events' params.require(:event).permit(:name, :description, :cover)
-    end
+    # def event_params
+    #   params.require(:event).permit(:name, :description, :cover)
+    # end
 end
+
+
+# json 
+# body
+#  { event: {
+#   name:
+#   description:
+#   cover:
+#   }
+# }
