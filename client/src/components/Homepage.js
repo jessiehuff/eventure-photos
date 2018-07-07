@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Homepage = props => {
   return(
-    <div> 
+    <div> <br></br> 
       <h1>Welcome to Eventure Photos!</h1> 
       <br></br><br></br>
       <h3>Eventure Photos allows everyone at your event to share their photos in real time. </h3>
@@ -13,10 +13,12 @@ const Homepage = props => {
       <br></br><br></br>
       <h2>Enjoy every moment with Eventure</h2> 
       <br></br>
+      <br></br>
       <h3>Ready to join?</h3>
-      <Link to={'/signup'} activeClassName="active">Sign Up</Link> 
-      <h3>Already a user?</h3> 
-      <Link to={'/login'} activeClassName="active">Login</Link> 
+      <a class="btn btn-primary" href="/signup" role="button">Sign Up</a>
+      <br></br><br></br>
+      <h3>Already a user?</h3>
+      <a class="btn btn-primary" href="/login" role="button">Login</a> 
     </div> 
   )
 }

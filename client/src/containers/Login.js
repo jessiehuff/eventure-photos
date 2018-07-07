@@ -26,7 +26,7 @@ class Login extends Component {
       <div> 
         <Col md={4}></Col> 
         <Col md={4}> 
-          <div className="loginForm"> 
+          <div className="loginForm"> <br></br> 
             <h1>Log In</h1> 
             <Form onSubmit={this.handleSubmit}> 
               <input 
@@ -48,7 +48,7 @@ class Login extends Component {
               /> 
               <br></br><br></br>
               <div className="submission"> 
-                <Button type="submit" value="Sign Up">Sign Up</Button> 
+                <Button type="submit" value="Sign Up">Sign Up</Button> <br></br><br></br>
                 <Button type="link">Forgot Password?</Button> 
               </div> 
               <div className="newAccount"> 

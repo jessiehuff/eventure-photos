@@ -49,14 +49,14 @@ class EventsNew extends Component {
   render() {
     return (
       <div> 
-        <h1>Add an Event</h1> 
+        <h1>Add an Event</h1> <br></br>
         <form onSubmit={this.handleOnSubmit} > 
           <input 
             type="text"
             placeholder="Name" 
             name="name" 
             onChange={this.handleOnChange} /> 
-          <br></br>
+          <br></br><br></br>
           <input 
             type="text"
             placeholder="Description"

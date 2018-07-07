@@ -11,12 +11,20 @@ import "react-bootstrap"
 const App = (props) => 
   <Router> 
     <div> 
-      <div style={{ borderBottom: '2px solid black', paddingBottom: '10px', marginBottom: '12px' }}> 
-        <NavLink style={{ marginRight: '10px' }} to="/">Home
-        </NavLink> 
-        <NavLink style={{ marginRight: '10px' }} to="/events">See All Events </NavLink> 
-        <NavLink style={{ marginRight: '10px' }} to="/events/new">Add an Event
-        </NavLink> 
+      <div> 
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/events">All Events</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/events/new">Add an Event</a>
+        </li>
+        </ul> 
+        </nav>
       </div> 
       <Route exact path="/" component={Homepage} /> 
       <Route exact path="/events" component={EventsPage} /> 
