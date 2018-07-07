@@ -49,6 +49,7 @@ class EventsNew extends Component {
   render() {
     return (
       <div> 
+        <br></br>
         <h1>Add an Event</h1> <br></br>
         <form onSubmit={this.handleOnSubmit} > 
           <input 

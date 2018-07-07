@@ -18,6 +18,8 @@ class EventsPage extends Component {
   render() {
     return(
       <div> 
+        <br></br>
+        <h1>Events:</h1> 
         <EventsList events={this.props.events} /> 
         <Switch> 
           <Route path={`${this.props.match.url}/new`} component={EventsNew} /> 
