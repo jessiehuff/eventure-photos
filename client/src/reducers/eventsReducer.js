@@ -1,9 +1,9 @@
 export default (state = [], action) => {
-  console.log(action)
   switch (action.type) {
     case 'FETCH_EVENTS': 
       return action.events; 
     case 'ADD_EVENT': 
+      debugger
       return state.concat(action.event) 
     case 'UPDATE_EVENT':
       const index = state.findIndex(event => event.id === action.event.id)

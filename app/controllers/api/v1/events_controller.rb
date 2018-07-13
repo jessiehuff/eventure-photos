@@ -15,12 +15,10 @@ class Api::V1::EventsController < ApplicationController
 
   # POST /events
   def create
-    raise params.inspect
     @event = Event.new(event_params)
-    
 
     if @event.save
-      render json: @event, status: :created, location: @event 
+      render json: @event
     else
       render json: @event.errors, status: :unprocessable_entity
     end
@@ -47,7 +45,10 @@ class Api::V1::EventsController < ApplicationController
     end
 
     # Only allow a trusted parameter "white list" through.
-    # def event_params
-    #   params.require(:event).permit(:name, :description, :cover)
-    # end
+    def event_params
+      params.require(:event).permit(:name, :description, :cover)
+      # {:event => params.fetch(:event, {}).permit(
+      #   :name, :description, :cover
+      # )}
+    end
 end

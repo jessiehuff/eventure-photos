@@ -23,35 +23,12 @@ class EventsNew extends Component {
     }); 
   }
 
-  // uploadHandler(files) {
-  //   debugger
-  //   if (files && files[0]){
-  //     let formPayLoad = new FormData(); 
-  //     formPayLoad.append('cover', files[0]); 
-  //     this.sendImageToCostatentroller(formPayLoad) 
-  //   }
-  // } 
-
-  // sendImageToController(formPayLoad){
-  //   debugger
-  //   fetch(`/events/1`, {    // need to make it dynami
-  //     credentials: 'same-origin', 
-  //     headers: {}, 
-  //     method: 'POST', 
-  //     body: formPayLoad
-  //   })
-  //   .then(response => response.json())
-  //   .then(imageFromController => {
-  //     this.setState({events: this.state.events.concat(imageFromController)})
-  //   })
-  // }
-
   render() {
     return (
       <div> 
         <br></br>
         <h1>Add an Event</h1> <br></br>
-        <form onSubmit={this.handleOnSubmit} > 
+        <form class="eventForm" onSubmit={this.handleOnSubmit} > 
           <input 
             type="text"
             placeholder="Name" 
