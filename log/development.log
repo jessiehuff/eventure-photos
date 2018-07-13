@@ -4017,3 +4017,79 @@ Processing by Api::V1::EventsController#create as */*
 Completed 200 OK in 21ms (Views: 0.9ms | ActiveRecord: 14.8ms)
 
 
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-07-13 15:36:18 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"The Royal Wedding", "description"=>"Prince Harry and Meghan Markle", "cover"=>"C:\\fakepath\\Prince-Harry-Meghan-Markle.jpg"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:20
+  [1m[36mEvent Create (1.4ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "cover", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "The Royal Wedding"], ["description", "Prince Harry and Meghan Markle"], ["cover", "C:\\fakepath\\Prince-Harry-Meghan-Markle.jpg"], ["created_at", "2018-07-13 19:36:18.412710"], ["updated_at", "2018-07-13 19:36:18.412710"]]
+  ↳ app/controllers/api/v1/events_controller.rb:20
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:20
+Completed 200 OK in 32ms (Views: 0.6ms | ActiveRecord: 8.9ms)
+
+
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-07-13 15:38:46 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"The Royal Wedding", "description"=>"Prince Harry and Meghan Markle", "cover"=>"C:\\fakepath\\Prince-Harry-Meghan-Markle.jpg"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:20
+  [1m[36mEvent Create (9.1ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "cover", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "The Royal Wedding"], ["description", "Prince Harry and Meghan Markle"], ["cover", "C:\\fakepath\\Prince-Harry-Meghan-Markle.jpg"], ["created_at", "2018-07-13 19:38:46.378874"], ["updated_at", "2018-07-13 19:38:46.378874"]]
+  ↳ app/controllers/api/v1/events_controller.rb:20
+  [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:20
+Completed 200 OK in 23ms (Views: 2.6ms | ActiveRecord: 15.9ms)
+
+
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-07-13 15:39:30 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"The Royal Wedding", "description"=>"Prince Harry and Meghan Markle", "cover"=>"C:\\fakepath\\Prince-Harry-Meghan-Markle.jpg"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:20
+  [1m[36mEvent Create (8.5ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "cover", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "The Royal Wedding"], ["description", "Prince Harry and Meghan Markle"], ["cover", "C:\\fakepath\\Prince-Harry-Meghan-Markle.jpg"], ["created_at", "2018-07-13 19:39:30.718995"], ["updated_at", "2018-07-13 19:39:30.718995"]]
+  ↳ app/controllers/api/v1/events_controller.rb:20
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:20
+Completed 200 OK in 20ms (Views: 2.1ms | ActiveRecord: 14.3ms)
+
+
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-07-13 15:50:06 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"The Royal Wedding", "description"=>"Prince Harry and Meghan Markle", "cover"=>"C:\\fakepath\\Prince-Harry-Meghan-Markle.jpg"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:20
+  [1m[36mEvent Create (2.3ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "cover", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "The Royal Wedding"], ["description", "Prince Harry and Meghan Markle"], ["cover", "C:\\fakepath\\Prince-Harry-Meghan-Markle.jpg"], ["created_at", "2018-07-13 19:50:06.780449"], ["updated_at", "2018-07-13 19:50:06.780449"]]
+  ↳ app/controllers/api/v1/events_controller.rb:20
+  [1m[35m (8.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:20
+Completed 200 OK in 17ms (Views: 1.8ms | ActiveRecord: 10.7ms)
+
+
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-07-13 15:51:31 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"The Royal Wedding", "description"=>"Prince Harry and Meghan Markle", "cover"=>"C:\\fakepath\\Prince-Harry-Meghan-Markle.jpg"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:20
+  [1m[36mEvent Create (7.9ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "cover", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "The Royal Wedding"], ["description", "Prince Harry and Meghan Markle"], ["cover", "C:\\fakepath\\Prince-Harry-Meghan-Markle.jpg"], ["created_at", "2018-07-13 19:51:31.008277"], ["updated_at", "2018-07-13 19:51:31.008277"]]
+  ↳ app/controllers/api/v1/events_controller.rb:20
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:20
+Completed 200 OK in 21ms (Views: 3.7ms | ActiveRecord: 13.8ms)
+
+
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-07-13 16:00:34 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"The Royal Wedding", "description"=>"Prince Harry and Meghan Markle", "cover"=>"C:\\fakepath\\Prince-Harry-Meghan-Markle.jpg"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:20
+  [1m[36mEvent Create (1.4ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "cover", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "The Royal Wedding"], ["description", "Prince Harry and Meghan Markle"], ["cover", "C:\\fakepath\\Prince-Harry-Meghan-Markle.jpg"], ["created_at", "2018-07-13 20:00:34.366765"], ["updated_at", "2018-07-13 20:00:34.366765"]]
+  ↳ app/controllers/api/v1/events_controller.rb:20
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:20
+Completed 200 OK in 41ms (Views: 2.1ms | ActiveRecord: 8.4ms)
+
+

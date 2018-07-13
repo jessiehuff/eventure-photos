@@ -14,7 +14,8 @@ class EventsNew extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault(); 
-    this.props.addEvent(this.state)
+    this.props.addEvent(this.state);
+    this.props.history.push('/events')
   }
 
   handleOnChange = event => {

@@ -3,8 +3,7 @@ export default (state = [], action) => {
     case 'FETCH_EVENTS': 
       return action.events; 
     case 'ADD_EVENT': 
-      debugger
-      return state.concat(action.event) 
+      return state.concat(action.payload) 
     case 'UPDATE_EVENT':
       const index = state.findIndex(event => event.id === action.event.id)
         return [
