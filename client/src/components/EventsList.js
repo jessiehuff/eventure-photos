@@ -1,14 +1,16 @@
 import React from 'react'; 
 import { Link } from 'react-router-dom'; 
 
-const EventsList = ({ events }) => {
-  const renderEvents = events.map(event => 
-    <Link style={{ marginRight: '12px' }} key={event.id} to={`/events/${event.id}`}>{event.name}</Link> 
+const EventsList = props => {
+  const renderEvents = props.events.map((event) => 
+    <li key={event.id}><Link to={`/events/${event.id}`}>{event.name}<img src={props.event.cover} alt="cover-pic"/></Link></li>
   ); 
 
   return (
     <div> 
-      {renderEvents} 
+      <ul>
+        {renderEvents} 
+      </ul>
     </div> 
   ); 
 }; 

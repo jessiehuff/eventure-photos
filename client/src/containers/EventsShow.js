@@ -1,5 +1,6 @@
 import React from 'react'; 
 import { connect } from 'react-redux'; 
+import { fetchEvents } from '../actions'; 
 
 const EventsShow = ({ event }) => 
   <div className="col-md-8"> 
@@ -20,4 +21,4 @@ const mapStateToProps = (state, ownProps) => {
   }; 
 }; 
 
-export default connect(mapStateToProps)(EventsShow); 
+export default connect(mapStateToProps, { fetchEvents })(EventsShow); 

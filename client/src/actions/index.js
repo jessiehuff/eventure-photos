@@ -20,25 +20,13 @@ export function addEvent(values) {
     })
     .then(res => { 
       // if (res.status === 201 ) {
-        return res.json()
+      return res.json()
       })
         .then(event => {
           dispatch({
             type: 'ADD_EVENT', 
             payload: event
           })
-        //  history.push(`/events/${event.event_id}`)
-      //  })
-      // } else {
-      //   res.json()
-      //   .then(response => {
-      //     const creationAttempt = {message: response}
-      //     dispatch({
-      //       type: 'ADD_EVENT', 
-      //       payload: creationAttempt
-      //     })
-      //   })
-      // }
     })
   }
 }
