@@ -5,7 +5,7 @@ import ImageDisplay from '../components/ImageDisplay';
 class EventsShow extends Component { 
   render() {
     return(
-      <ImageDisplay event={this.props.event} /> 
+      <EventDisplay event={this.props.event} /> 
     )
   }
 }
