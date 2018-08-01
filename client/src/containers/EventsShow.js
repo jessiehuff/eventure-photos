@@ -1,19 +1,21 @@
-import React from 'react'; 
+import React, {Component} from 'react'; 
 import { connect } from 'react-redux'; 
-import { fetchEvents } from '../actions'; 
+import ImageDisplay from '../components/ImageDisplay'; 
 
-const EventsShow = ({ event }) => 
-  <div className="col-md-8"> 
-    <h2>{event.name}</h2> 
-    <p>{event.description}</p> 
-  </div>; 
+class EventsShow extends Component { 
+  render() {
+    return(
+      <ImageDisplay event={this.props.event} /> 
+    )
+  }
+}
+
 
 
 const mapStateToProps = (state, ownProps) => {
   const event = state.events.find(event => event.id === ownProps.match.params.eventId)
 
   if (event) { 
-    console.log(event)
     return { event } 
   }
   else {
@@ -21,4 +23,4 @@ const mapStateToProps = (state, ownProps) => {
   }; 
 }; 
 
-export default connect(mapStateToProps, { fetchEvents })(EventsShow); 
+export default connect(mapStateToProps)(EventsShow); 

@@ -24,7 +24,6 @@ export function addEvent(values) {
       body: eventData 
     })
     .then(res => { 
-      // if (res.status === 201 ) {
       return res.json()
       })
         .then(event => {
