@@ -1,9 +1,14 @@
 export function fetchEvents() {
-  const events = [] 
-  return {
-    type: 'FETCH_EVENTS', 
-    events 
-  }; 
+  return (dispatch) => {
+    return fetch('http://localhost:3000/api/v1/events', {
+      headers: {
+        'Content-Type': 'application/json', 
+        'Accept': 'application/json'
+      }
+    }) 
+    .then(response => response.json()) 
+    .then(events => dispatch({type: 'FETCH_EVENTS', events}))
+  }
 }
 
 export function addEvent(values) {
