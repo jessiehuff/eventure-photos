@@ -7,8 +7,9 @@ class EventsShow extends Component {
     return(
       <React.Fragment>
         <EventDisplay 
-          name={}
-          description={}
+          name={this.props.event.name}
+          description={this.props.event.description}
+          cover={this.props.event.cover}
         /> 
       </React.Fragment> 
     )

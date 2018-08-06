@@ -4479,3 +4479,45 @@ Processing by Api::V1::EventsController#index as JSON
 Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-08-06 11:15:23 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::EventsController#index as JSON
+  Parameters: {"event"=>{}}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:8
+Completed 200 OK in 23ms (Views: 21.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-08-06 11:15:30 -0400
+Processing by Api::V1::EventsController#index as JSON
+  Parameters: {"event"=>{}}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:8
+Completed 200 OK in 31ms (Views: 30.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-08-06 11:15:33 -0400
+Processing by Api::V1::EventsController#index as JSON
+  Parameters: {"event"=>{}}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:8
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-08-06 11:17:30 -0400
+Processing by Api::V1::EventsController#index as JSON
+  Parameters: {"event"=>{}}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:8
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-08-06 11:17:47 -0400
+Processing by Api::V1::EventsController#index as JSON
+  Parameters: {"event"=>{}}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:8
+Completed 200 OK in 27ms (Views: 26.3ms | ActiveRecord: 0.5ms)
+
+
