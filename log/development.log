@@ -4237,3 +4237,245 @@ Processing by Api::V1::EventsController#index as JSON
 Completed 200 OK in 135ms (Views: 134.4ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-08-01 12:50:15 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::EventsController#index as JSON
+  Parameters: {"event"=>{}}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:8
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-08-01 12:50:21 -0400
+Processing by Api::V1::EventsController#index as JSON
+  Parameters: {"event"=>{}}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:8
+Completed 200 OK in 87ms (Views: 86.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-08-01 12:50:30 -0400
+Processing by Api::V1::EventsController#index as JSON
+  Parameters: {"event"=>{}}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:8
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-08-01 12:50:35 -0400
+Processing by Api::V1::EventsController#index as JSON
+  Parameters: {"event"=>{}}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:8
+Completed 200 OK in 121ms (Views: 120.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-08-01 12:52:43 -0400
+Processing by Api::V1::EventsController#index as JSON
+  Parameters: {"event"=>{}}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:8
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-08-01 14:42:12 -0400
+Processing by Api::V1::EventsController#index as JSON
+  Parameters: {"event"=>{}}
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:8
+Completed 200 OK in 33ms (Views: 30.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-08-01 15:14:05 -0400
+Processing by Api::V1::EventsController#index as JSON
+  Parameters: {"event"=>{}}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:8
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-08-02 16:48:20 -0400
+Processing by Api::V1::EventsController#index as JSON
+  Parameters: {"event"=>{}}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:8
+Completed 200 OK in 26ms (Views: 22.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-08-02 20:56:25 -0400
+Processing by Api::V1::EventsController#index as JSON
+  Parameters: {"event"=>{}}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:8
+Completed 200 OK in 52ms (Views: 49.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-08-05 13:13:22 -0400
+Processing by Api::V1::EventsController#index as JSON
+  Parameters: {"event"=>{}}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:8
+Completed 200 OK in 25ms (Views: 21.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-08-05 13:22:57 -0400
+Processing by Api::V1::EventsController#index as JSON
+  Parameters: {"event"=>{}}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:8
+Completed 200 OK in 412ms (Views: 410.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-08-05 13:23:21 -0400
+Processing by Api::V1::EventsController#index as JSON
+  Parameters: {"event"=>{}}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:8
+Completed 200 OK in 227ms (Views: 226.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-08-05 13:28:37 -0400
+Processing by Api::V1::EventsController#index as JSON
+  Parameters: {"event"=>{}}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:8
+Completed 200 OK in 374ms (Views: 373.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-08-05 13:30:55 -0400
+Processing by Api::V1::EventsController#index as JSON
+  Parameters: {"event"=>{}}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:8
+Completed 200 OK in 18ms (Views: 17.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-08-05 13:49:49 -0400
+Processing by Api::V1::EventsController#index as JSON
+  Parameters: {"event"=>{}}
+  [1m[36mEvent Load (2.8ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:8
+Completed 200 OK in 38ms (Views: 35.2ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-08-05 13:50:30 -0400
+Processing by Api::V1::EventsController#index as JSON
+  Parameters: {"event"=>{}}
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:8
+Completed 200 OK in 362ms (Views: 361.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-08-05 13:50:39 -0400
+Processing by Api::V1::EventsController#index as JSON
+  Parameters: {"event"=>{}}
+  [1m[36mEvent Load (8.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:8
+Completed 200 OK in 935ms (Views: 926.2ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-08-05 13:51:44 -0400
+Processing by Api::V1::EventsController#index as JSON
+  Parameters: {"event"=>{}}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:8
+Completed 200 OK in 214ms (Views: 212.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-08-05 13:52:17 -0400
+Processing by Api::V1::EventsController#index as JSON
+  Parameters: {"event"=>{}}
+  [1m[36mEvent Load (7.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:8
+Completed 200 OK in 390ms (Views: 382.2ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-08-05 13:53:09 -0400
+Processing by Api::V1::EventsController#index as JSON
+  Parameters: {"event"=>{}}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:8
+Completed 200 OK in 87ms (Views: 86.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-08-05 13:53:17 -0400
+Processing by Api::V1::EventsController#index as JSON
+  Parameters: {"event"=>{}}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:8
+Completed 200 OK in 52ms (Views: 51.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-08-05 14:27:33 -0400
+Processing by Api::V1::EventsController#index as JSON
+  Parameters: {"event"=>{}}
+  [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:8
+Completed 200 OK in 41ms (Views: 36.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-08-06 10:04:43 -0400
+Processing by Api::V1::EventsController#index as JSON
+  Parameters: {"event"=>{}}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:8
+Completed 200 OK in 104ms (Views: 101.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-08-06 10:05:54 -0400
+Processing by Api::V1::EventsController#index as JSON
+  Parameters: {"event"=>{}}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:8
+Completed 200 OK in 278ms (Views: 277.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-08-06 10:07:15 -0400
+Processing by Api::V1::EventsController#index as JSON
+  Parameters: {"event"=>{}}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:8
+Completed 200 OK in 85ms (Views: 84.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-08-06 10:16:27 -0400
+Processing by Api::V1::EventsController#index as JSON
+  Parameters: {"event"=>{}}
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:8
+Completed 200 OK in 28ms (Views: 23.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-08-06 10:22:18 -0400
+Processing by Api::V1::EventsController#index as JSON
+  Parameters: {"event"=>{}}
+  [1m[36mEvent Load (2.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:8
+Completed 200 OK in 102ms (Views: 98.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-08-06 10:26:25 -0400
+Processing by Api::V1::EventsController#index as JSON
+  Parameters: {"event"=>{}}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:8
+Completed 200 OK in 173ms (Views: 171.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-08-06 10:27:24 -0400
+Processing by Api::V1::EventsController#index as JSON
+  Parameters: {"event"=>{}}
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:8
+Completed 200 OK in 55ms (Views: 52.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-08-06 10:28:25 -0400
+Processing by Api::V1::EventsController#index as JSON
+  Parameters: {"event"=>{}}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:8
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.6ms)
+
+

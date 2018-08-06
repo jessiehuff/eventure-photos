@@ -1,12 +1,13 @@
 import React from 'react' 
-import { BrowserRouter as Router, NavLink, Route} from 'react-router-dom'; 
+import { BrowserRouter as Router, NavLink, Route, Switch} from 'react-router-dom'; 
 import Homepage from '../components/Homepage';
 import EventsPage from '../containers/EventsPage'; 
 import EventsNew from '../containers/EventsNew'; 
-//import EventsShow from '../containers/EventsShow'; 
+import EventsShow from '../containers/EventsShow'; 
 import Signup from '../containers/Signup';
 import Login from '../containers/Login'; 
 import "react-bootstrap"
+
 
 const App = (props) => 
   <Router> 
@@ -26,11 +27,14 @@ const App = (props) =>
         </ul> 
         </nav>
       </div> 
-      <Route exact path="/" component={Homepage} /> 
-      <Route exact path="/events" component={EventsPage} /> 
-      <Route exact path="/events/new" component={EventsNew} /> 
-      <Route exact path="/signup" component={Signup} /> 
-      <Route exact path="/login" component={Login} /> 
+      <Switch>
+        <Route exact path="/" component={Homepage} /> 
+        <Route exact path="/events" component={EventsPage} /> 
+        <Route exact path="/events/new" component={EventsNew} /> 
+        <Route exact path="/events/:eventId" component={EventsShow} /> 
+        <Route exact path="/signup" component={Signup} /> 
+        <Route exact path="/login" component={Login} />
+      </Switch> 
     </div> 
   </Router> 
 

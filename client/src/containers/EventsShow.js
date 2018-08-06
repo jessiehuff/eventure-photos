@@ -1,20 +1,25 @@
 import React, {Component} from 'react'; 
 import { connect } from 'react-redux'; 
-import ImageDisplay from '../components/ImageDisplay'; 
+import EventDisplay from '../components/EventDisplay'; 
 
 class EventsShow extends Component { 
   render() {
     return(
-      <EventDisplay event={this.props.event} /> 
+      <React.Fragment>
+        <EventDisplay 
+          name={}
+          description={}
+        /> 
+      </React.Fragment> 
     )
   }
 }
 
-
+console.log(this)
 
 const mapStateToProps = (state, ownProps) => {
-  const event = state.events.find(event => event.id === ownProps.match.params.eventId)
-
+  const event = state.events.find(event => event.id === parseInt(ownProps.match.params.eventId, 10))
+  
   if (event) { 
     return { event } 
   }

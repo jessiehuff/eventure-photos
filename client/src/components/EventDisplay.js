@@ -1,9 +1,10 @@
 import React from 'react'; 
 
-const EventDisplay = props => 
-    <div> 
-        <h3>{props.event.name}</h3> 
-        <p>Description: {props.event.description}</p> 
-    </div> 
-
+const EventDisplay = ({name, description}) => (
+        <React.Fragment> 
+            <h4>{name}</h4>
+            <p>Description: {description}</p>
+        </React.Fragment> 
+)
+    
 export default EventDisplay; 

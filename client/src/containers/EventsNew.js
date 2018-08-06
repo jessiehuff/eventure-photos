@@ -9,7 +9,7 @@ class EventsNew extends Component {
       name: '', 
       description: '', 
       cover: null
-    }; 
+    };
   }
 
   handleOnSubmit = event => {
