@@ -1,3 +1,5 @@
+import {v4} from 'node-uuid'; 
+
 export function fetchEvents() {
   return (dispatch) => {
     return fetch('http://localhost:3000/api/v1/events', {
@@ -29,7 +31,8 @@ export function addEvent(values) {
         .then(event => {
           dispatch({
             type: 'ADD_EVENT', 
-            payload: event
+            payload: event,
+            id: v4()
           })
     })
   }

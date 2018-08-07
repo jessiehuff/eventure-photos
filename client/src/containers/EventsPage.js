@@ -1,19 +1,9 @@
 import React, { Component } from 'react'; 
-import { bindActionCreators } from 'redux'; 
-import { connect } from 'react-redux'; 
-import {Route, Switch} from 'react-router-dom'; 
-import {fetchEvents} from '../actions/index'; 
-import EventsNew from './EventsNew'; 
-import EventsShow from './EventsShow'; 
 import EventsList from '../components/EventsList'; 
+import {connect} from 'react-redux';
+import {fetchEvents} from '../actions/index'; 
 
 class EventsPage extends Component {
-
-  componentDidMount() {
-    if (this.props.events.length === 0) { 
-      this.props.fetchEvents(); 
-    }
-  }
 
   render() {
     return(
@@ -29,7 +19,7 @@ class EventsPage extends Component {
 
 const mapStateToProps = state => {
   return {
-    events: state.events 
+   events: state.events 
   }
 }
 
