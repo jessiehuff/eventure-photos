@@ -40,5 +40,3 @@ const App = (props) =>
 
 
 export default App;
-
-//<Route path="/events/:id" component={EventsShow} />

@@ -16,8 +16,6 @@ class EventsShow extends Component {
   }
 }
 
-console.log(this)
-
 const mapStateToProps = (state, ownProps) => {
   const event = state.events.find(event => event.id === parseInt(ownProps.match.params.eventId, 10))
   
