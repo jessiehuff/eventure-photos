@@ -11,7 +11,7 @@ import { loadState, saveState } from './localStorage';
 import throttle from 'lodash/throttle'; 
 
 const persistedState = loadState(); 
-const store = createStore(reducers, compose(
+const store = createStore(reducers, persistedState, compose(
   applyMiddleware(thunk), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 )
 

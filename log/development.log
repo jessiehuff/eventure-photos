@@ -4743,3 +4743,21 @@ Processing by Api::V1::EventsController#index as JSON
 Completed 200 OK in 72ms (Views: 71.4ms | ActiveRecord: 0.7ms)
 
 
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-08-07 15:17:38 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::EventsController#index as JSON
+  Parameters: {"event"=>{}}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:8
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-08-09 10:58:25 -0400
+Processing by Api::V1::EventsController#index as JSON
+  Parameters: {"event"=>{}}
+  [1m[36mEvent Load (4.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:8
+Completed 200 OK in 81ms (Views: 71.2ms | ActiveRecord: 4.6ms)
+
+
