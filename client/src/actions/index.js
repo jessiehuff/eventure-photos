@@ -37,3 +37,17 @@ export function addEvent(values) {
     })
   }
 }
+
+export function deleteEvent(id) {
+  return (dispatch) => {
+    return fetch(`http://localhost:3000/api/v1/events/${id}`, {
+      method: 'delete'
+    }) 
+    .then(event => {
+      dispatch({
+        type: 'DELETE_EVENT',
+        payload: event
+      })
+    })
+    }
+  }
