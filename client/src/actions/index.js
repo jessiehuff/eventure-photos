@@ -38,9 +38,9 @@ export function addEvent(values) {
   }
 }
 
-export function deleteEvent(id) {
+export function deleteEvent(event) {
   return (dispatch) => {
-    return fetch(`http://localhost:3000/api/v1/events/${id}`, {
+    return fetch(`http://localhost:3000/api/v1/events/${event.id}`, {
       method: 'delete'
     }) 
     .then(event => {
