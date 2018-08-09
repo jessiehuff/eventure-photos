@@ -7,7 +7,6 @@ class EventsShow extends Component {
 
   handleDelete = (event) => {
     event.preventDefault(event); 
-    console.log(this)
     this.props.deleteEvent(this); 
     this.props.history.push('/events')
   }

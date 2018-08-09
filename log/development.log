@@ -4787,3 +4787,247 @@ Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
 ActiveRecord::RecordNotFound (Couldn't find Event with 'id'=undefined):
   
 app/controllers/api/v1/events_controller.rb:44:in `set_event'
+Started DELETE "/api/v1/events/undefined" for 127.0.0.1 at 2018-08-09 16:04:01 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::EventsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:44
+Completed 404 Not Found in 21ms (ActiveRecord: 1.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Event with 'id'=undefined):
+  
+app/controllers/api/v1/events_controller.rb:44:in `set_event'
+Started DELETE "/api/v1/events/undefined" for 127.0.0.1 at 2018-08-09 16:04:16 -0400
+Processing by Api::V1::EventsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:44
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Event with 'id'=undefined):
+  
+app/controllers/api/v1/events_controller.rb:44:in `set_event'
+Started DELETE "/api/v1/events/undefined" for 127.0.0.1 at 2018-08-09 16:05:20 -0400
+Processing by Api::V1::EventsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:44
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Event with 'id'=undefined):
+  
+app/controllers/api/v1/events_controller.rb:44:in `set_event'
+Started DELETE "/api/v1/events/undefined" for 127.0.0.1 at 2018-08-09 16:14:53 -0400
+Processing by Api::V1::EventsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:44
+Completed 404 Not Found in 2ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Event with 'id'=undefined):
+  
+app/controllers/api/v1/events_controller.rb:44:in `set_event'
+Started DELETE "/api/v1/events/undefined" for 127.0.0.1 at 2018-08-09 16:15:08 -0400
+Processing by Api::V1::EventsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:44
+Completed 404 Not Found in 3ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Event with 'id'=undefined):
+  
+app/controllers/api/v1/events_controller.rb:44:in `set_event'
+Started DELETE "/api/v1/events/20" for 127.0.0.1 at 2018-08-09 16:15:28 -0400
+Processing by Api::V1::EventsController#destroy as */*
+  Parameters: {"id"=>"20"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:44
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:38
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:38
+Completed 500 Internal Server Error in 420ms (ActiveRecord: 1.3ms)
+
+
+  
+ActiveRecord::StatementInvalid (Could not find table 'events_users'):
+  
+app/controllers/api/v1/events_controller.rb:38:in `destroy'
+Started DELETE "/api/v1/events/:id" for 127.0.0.1 at 2018-08-09 16:23:52 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::EventsController#destroy as */*
+  Parameters: {"id"=>":id"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:44
+Completed 404 Not Found in 24ms (ActiveRecord: 1.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Event with 'id'=:id):
+  
+app/controllers/api/v1/events_controller.rb:44:in `set_event'
+Started DELETE "/api/v1/events/%7Bid%7D" for 127.0.0.1 at 2018-08-09 16:25:30 -0400
+Processing by Api::V1::EventsController#destroy as */*
+  Parameters: {"id"=>"{id}"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:44
+Completed 404 Not Found in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Event with 'id'={id}):
+  
+app/controllers/api/v1/events_controller.rb:44:in `set_event'
+Started DELETE "/api/v1/events/20" for 127.0.0.1 at 2018-08-09 16:25:53 -0400
+Processing by Api::V1::EventsController#destroy as */*
+  Parameters: {"id"=>"20"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:44
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:38
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:38
+Completed 500 Internal Server Error in 416ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::StatementInvalid (Could not find table 'events_users'):
+  
+app/controllers/api/v1/events_controller.rb:38:in `destroy'
+Started DELETE "/api/v1/events/20" for 127.0.0.1 at 2018-08-09 16:28:36 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::EventsController#destroy as */*
+  Parameters: {"id"=>"20"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:44
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:38
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:38
+Completed 500 Internal Server Error in 57ms (ActiveRecord: 1.5ms)
+
+
+  
+ActiveRecord::StatementInvalid (Could not find table 'events_users'):
+  
+app/controllers/api/v1/events_controller.rb:38:in `destroy'
+Started DELETE "/api/v1/events/20" for 127.0.0.1 at 2018-08-09 16:30:38 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::EventsController#destroy as */*
+  Parameters: {"id"=>"20"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:44
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:38
+  [1m[36mEvent Destroy (2.8ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 20]]
+  ↳ app/controllers/api/v1/events_controller.rb:38
+  [1m[35m (10.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:38
+Completed 204 No Content in 32ms (ActiveRecord: 14.9ms)
+
+
+Started DELETE "/api/v1/events/20" for 127.0.0.1 at 2018-08-09 16:30:47 -0400
+Processing by Api::V1::EventsController#destroy as */*
+  Parameters: {"id"=>"20"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:44
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Event with 'id'=20):
+  
+app/controllers/api/v1/events_controller.rb:44:in `set_event'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+Started DELETE "/api/v1/events/20" for 127.0.0.1 at 2018-08-09 16:34:51 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::EventsController#destroy as */*
+  Parameters: {"id"=>"20"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:44
+Completed 404 Not Found in 15ms (ActiveRecord: 1.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Event with 'id'=20):
+  
+app/controllers/api/v1/events_controller.rb:44:in `set_event'
+Started DELETE "/api/v1/events/20" for 127.0.0.1 at 2018-08-09 16:37:44 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::EventsController#destroy as */*
+  Parameters: {"id"=>"20"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:44
+Completed 404 Not Found in 12ms (ActiveRecord: 1.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Event with 'id'=20):
+  
+app/controllers/api/v1/events_controller.rb:44:in `set_event'
+Started DELETE "/api/v1/events/20" for 127.0.0.1 at 2018-08-09 16:47:42 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::EventsController#destroy as */*
+  Parameters: {"id"=>"20"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:44
+Completed 404 Not Found in 16ms (ActiveRecord: 2.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Event with 'id'=20):
+  
+app/controllers/api/v1/events_controller.rb:44:in `set_event'
+Started DELETE "/api/v1/events/20" for 127.0.0.1 at 2018-08-09 16:48:12 -0400
+Processing by Api::V1::EventsController#destroy as */*
+  Parameters: {"id"=>"20"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:44
+Completed 404 Not Found in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Event with 'id'=20):
+  
+app/controllers/api/v1/events_controller.rb:44:in `set_event'
+Started DELETE "/api/v1/events/20" for 127.0.0.1 at 2018-08-09 16:56:07 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::EventsController#destroy as */*
+  Parameters: {"id"=>"20"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:44
+Completed 404 Not Found in 16ms (ActiveRecord: 1.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Event with 'id'=20):
+  
+app/controllers/api/v1/events_controller.rb:44:in `set_event'

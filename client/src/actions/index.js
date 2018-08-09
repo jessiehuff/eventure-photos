@@ -40,7 +40,7 @@ export function addEvent(values) {
 
 export function deleteEvent(event) {
   return (dispatch) => {
-    return fetch(`http://localhost:3000/api/v1/events/${event.id}`, {
+    return fetch(`http://localhost:3000/api/v1/events/${event.props.event.id}`, {
       method: 'delete'
     }) 
     .then(event => {
