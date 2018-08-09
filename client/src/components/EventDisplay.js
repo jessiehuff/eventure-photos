@@ -7,9 +7,6 @@ const EventDisplay = ({name, description, cover}) => (
             <img src={cover}></img> 
             <br></br><br></br>
             <br></br><br></br>
-            <button 
-                onClick={this.deleteEvent}>Delete Event
-            </button> 
         </React.Fragment> 
 )
     

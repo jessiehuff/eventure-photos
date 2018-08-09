@@ -1,8 +1,17 @@
 import React, {Component} from 'react'; 
 import { connect } from 'react-redux'; 
-import EventDisplay from '../components/EventDisplay'; 
+import EventDisplay from '../components/EventDisplay';
+import { deleteEvent } from '../actions';  
 
 class EventsShow extends Component { 
+
+  handleDelete = (event) => {
+    event.preventDefault(event); 
+    console.log(this)
+    this.props.deleteEvent(this); 
+    this.props.history.push('/events')
+  }
+
   render() {
     return(
       <React.Fragment>
@@ -11,6 +20,11 @@ class EventsShow extends Component {
           description={this.props.event.description}
           cover={this.props.event.cover}
         /> 
+
+        <button 
+            onClick={this.handleDelete}>
+            Delete Event
+        </button> 
       </React.Fragment> 
     )
   }
@@ -27,4 +41,4 @@ const mapStateToProps = (state, ownProps) => {
   }; 
 }; 
 
-export default connect(mapStateToProps)(EventsShow); 
+export default connect(mapStateToProps, {deleteEvent})(EventsShow); 
