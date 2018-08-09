@@ -6,7 +6,7 @@ import reducers from './reducers';
 import {Provider} from 'react-redux'; 
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './components/App';
+import App from './containers/App';
 import { loadState, saveState } from './localStorage';
 import throttle from 'lodash/throttle'; 
 
