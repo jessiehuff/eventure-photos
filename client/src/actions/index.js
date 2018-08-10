@@ -48,6 +48,7 @@ export function deleteEvent(event) {
         type: 'DELETE_EVENT',
         payload: event
       })
+      localStorage.clear(); 
     })
-    }
   }
+}

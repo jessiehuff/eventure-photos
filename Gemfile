@@ -34,6 +34,7 @@ gem 'bootstrap', '~> 4.1', '>= 4.1.1'
 gem 'sass-rails'
 gem 'uglifier'
 gem 'jquery-rails'
+gem 'wdm', '>= 0.1.0'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
