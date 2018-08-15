@@ -1,7 +1,6 @@
 import React, { Component } from 'react'; 
 import EventsList from '../components/EventsList'; 
-import {connect} from 'react-redux';
-import {fetchEvents} from '../actions/index'; 
+import {connect} from 'react-redux'; 
 
 class EventsPage extends Component {
 
@@ -23,4 +22,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {fetchEvents})(EventsPage); 
+export default connect(mapStateToProps)(EventsPage); 
