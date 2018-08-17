@@ -13,12 +13,12 @@ class PhotosNew extends Component {
     };
   }
 
-  handleOnSubmit = event => { 
-    event.preventDefault(); 
-    if (this.state.id === "") {
-      this.props.addPhoto(this.state) 
-    }
-  }
+  // handleOnSubmit = event => { 
+  //   event.preventDefault(); 
+  //   if (this.state.id === "") {
+  //     this.props.addPhoto(this.state) 
+  //   }
+  // }
 
   handleOnChange = event => {
     this.setState({
@@ -29,7 +29,7 @@ class PhotosNew extends Component {
   render() {
     return (
       <div> 
-        <h1>Add a New Photo</h1> 
+        <h4>Add a New Photo</h4> 
         <form onSubmit={this.handleOnSubmit} > 
           <input
             type="file"
@@ -46,4 +46,4 @@ class PhotosNew extends Component {
   }
 }; 
 
-export default connect(null, { addPhoto })(PhotosNew); 
+export default connect(null)(PhotosNew); 

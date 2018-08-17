@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux'; 
 import EventDisplay from '../components/EventDisplay';
 import { deleteEvent } from '../actions';  
+import PhotosNew from '../containers/PhotosNew';
 
 class EventsShow extends Component { 
 
@@ -19,21 +20,11 @@ class EventsShow extends Component {
           description={this.props.event.description}
           cover={this.props.event.cover}
         /> 
-      <h4>Add a Photo</h4> 
-      <form className="photoForm" onSubmit={this.handleOnSubmit}> 
-        <input 
-          type="file"
-          placeholder="photo"
-          name="photo"
-          onChange={this.handleOnChange} /> 
-        <br></br>
-        <input 
-          type= "submit"
-          value="Add Photo" />
-      </form> 
+
+      <PhotosNew event={this.props.event} />
 
 
-
+        <br></br><br></br>
         <br></br><br></br>
 
         <button 
