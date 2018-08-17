@@ -25,16 +25,16 @@ class App extends Component {
     <Router> 
       <div> 
        <div> 
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-          <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="/">Home</a>
+        <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
+          <ul className="navbar-nav">
+          <li className="nav-item">
+            <a className="nav-link" href="/">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/events">All Events</a>
+          <li className="nav-item">
+            <a className="nav-link" href="/events">All Events</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/events/new">Add an Event</a>
+          <li className="nav-item">
+            <a className="nav-link" href="/events/new">Add an Event</a>
           </li>
           </ul> 
           </nav>

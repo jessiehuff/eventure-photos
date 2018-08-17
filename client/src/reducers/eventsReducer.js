@@ -1,4 +1,5 @@
 export default (state = [], action) => {
+  debugger
   switch (action.type) {
     case 'FETCH_EVENTS': 
       return action.events; 
@@ -12,6 +13,7 @@ export default (state = [], action) => {
           ...state.slice(index + 1)
         ]
     case 'DELETE_EVENT': 
+      debugger
       const events = state.filter(event => event.id !== action.id)
       return events 
     case 'RESET_FORM': 

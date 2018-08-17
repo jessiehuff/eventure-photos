@@ -29,7 +29,7 @@ class EventsNew extends Component {
       <div> 
         <br></br>
         <h1>Add an Event</h1> <br></br>
-        <form class="eventForm" onSubmit={this.handleOnSubmit} > 
+        <form className="eventForm" onSubmit={this.handleOnSubmit} > 
           <input 
             type="text"
             placeholder="Name" 
