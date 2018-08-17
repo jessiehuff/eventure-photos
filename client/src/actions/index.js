@@ -40,13 +40,14 @@ export function addEvent(values) {
 
 export function deleteEvent(event) {
   return (dispatch) => {
+    let id = event.props.event.id
     return fetch(`http://localhost:3000/api/v1/events/${event.props.event.id}`, {
       method: 'delete'
     }) 
     .then(event => {
       dispatch({
         type: 'DELETE_EVENT',
-        payload: event
+        payload: id
       })
       localStorage.clear(); 
     })
