@@ -9,16 +9,17 @@ class PhotosNew extends Component {
       filename: '', 
       content_type: '', 
       file_size: '', 
-      created_at: '' //user_id?
+      created_at: '' 
     };
   }
 
-  // handleOnSubmit = event => { 
-  //   event.preventDefault(); 
-  //   if (this.state.id === "") {
-  //     this.props.addPhoto(this.state) 
-  //   }
-  // }
+  handleOnSubmit = event => { 
+    event.preventDefault(); 
+    if (this.state.id === "") {
+      console.log(this.state)
+      this.props.addPhoto(this.state) 
+    }
+  }
 
   handleOnChange = event => {
     this.setState({
@@ -46,4 +47,4 @@ class PhotosNew extends Component {
   }
 }; 
 
-export default connect(null)(PhotosNew); 
+export default connect(null, {addPhoto})(PhotosNew); 

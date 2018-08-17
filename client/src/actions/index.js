@@ -53,3 +53,28 @@ export function deleteEvent(event) {
     })
   }
 }
+
+export function addPhoto(values){
+  return (dispatch) => {
+  
+    const photoData = new FormData() 
+    photoData.append("photo[filename]", values.filename)
+
+
+    return fetch(`http://localhost:3000/api/v1/events`, {
+      method: 'post', 
+      body: photoData 
+    })
+    .then(res => { 
+      return res.json()
+      })
+        .then(photo => {
+          dispatch({
+            type: 'ADD_PHOTO', 
+            payload: photo,
+            id: v4()
+          })
+    })
+  }
+}
+
