@@ -19,6 +19,22 @@ class EventsShow extends Component {
           description={this.props.event.description}
           cover={this.props.event.cover}
         /> 
+      <h4>Add a Photo</h4> 
+      <form className="photoForm" onSubmit={this.handleOnSubmit}> 
+        <input 
+          type="file"
+          placeholder="photo"
+          name="photo"
+          onChange={this.handleOnChange} /> 
+        <br></br>
+        <input 
+          type= "submit"
+          value="Add Photo" />
+      </form> 
+
+
+
+        <br></br><br></br>
 
         <button 
             onClick={this.handleDelete}>
