@@ -3,6 +3,7 @@ import EventsList from '../components/EventsList';
 import {connect} from 'react-redux'; 
 
 class EventsPage extends Component {
+  
 
   render() {
     return(

@@ -56,11 +56,12 @@ export function deleteEvent(event) {
 
 export function addPhoto(values){
   return (dispatch) => {
-  
+    
     const photoData = new FormData() 
     photoData.append("photo[filename]", values.filename)
-
+    
     let eventId = values.event.id
+
     return fetch(`http://localhost:3000/api/v1/events/${eventId}/photos`, {
       method: 'post', 
       body: photoData 

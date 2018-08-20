@@ -7,7 +7,8 @@ const EventsList = props => {
   const renderEvents = props.events.map((event) => 
      <li key={event.id}><Link to={`/events/${event.id}`}>{event.name}</Link></li>
    ); 
-
+   debugger
+ 
   return (
     <div> 
       <ul>

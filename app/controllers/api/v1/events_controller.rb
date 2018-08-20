@@ -3,8 +3,8 @@ class Api::V1::EventsController < ApplicationController
 
   # GET /events
   def index
-    binding.pry
     @events = Event.all
+    @photos = @event.photos
 
     render json: @events
   end

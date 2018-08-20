@@ -5,7 +5,9 @@ export default (state = [], action) => {
     case 'ADD_EVENT': 
       return state.concat(action.payload) 
     case 'ADD_PHOTO': 
-      return state.concat(action.payload)   //trying to add a new photo
+      console.log(state)
+      return state.concat(action.payload)   //trying to add a new photo, breaks down here
+      console.log("got here")
     case 'UPDATE_EVENT':
       const index = state.findIndex(event => event.id === action.event.id)
         return [
