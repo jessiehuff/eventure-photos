@@ -1,5 +1,3 @@
-require 'pry';
-
 class Api::V1::EventsController < ApplicationController
   before_action :set_event, only: [:show, :update, :destroy]
 
@@ -49,7 +47,7 @@ class Api::V1::EventsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def event_params
-      params.require(:event).permit(:name, :description, :cover)
+      params.require(:event).permit(:name, :description, :cover, photos: [])
       # {:event => params.fetch(:event, {}).permit(
       #   :name, :description, :cover
       # )}

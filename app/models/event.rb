@@ -3,6 +3,7 @@ class Event < ActiveRecord::Base
 
   validates :name, presence: true 
 
- # mount_uploader :cover, CoverUploader
+  has_one_attached :cover
+  has_many_attached :photos
 
 end

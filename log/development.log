@@ -7177,3 +7177,101 @@ Migrating to DeviseCreateUsers (20180615163555)
   [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT ?[0m  [["LIMIT", 11]]
   [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT ?[0m  [["LIMIT", 11]]
   [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/learn/.rvm/gems/ruby-2.3.6/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /home/learn/.rvm/gems/ruby-2.3.6/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/learn/.rvm/gems/ruby-2.3.6/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /home/learn/.rvm/gems/ruby-2.3.6/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/learn/.rvm/gems/ruby-2.3.6/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /home/learn/.rvm/gems/ruby-2.3.6/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /home/learn/.rvm/gems/ruby-2.3.6/bin/rake:23
+  [1m[35m (31.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /home/learn/.rvm/gems/ruby-2.3.6/bin/rake:23
+  [1m[35m (28.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /home/learn/.rvm/gems/ruby-2.3.6/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/learn/.rvm/gems/ruby-2.3.6/bin/rake:23
+Migrating to CreateEvents (20180615163129)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/learn/.rvm/gems/ruby-2.3.6/bin/rake:23
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "events" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "cover" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180615163129_create_events.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (3.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180615163129"]]
+  ↳ /home/learn/.rvm/gems/ruby-2.3.6/bin/rake:23
+  [1m[35m (29.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/learn/.rvm/gems/ruby-2.3.6/bin/rake:23
+Migrating to CreatePhotos (20180615163410)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/learn/.rvm/gems/ruby-2.3.6/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "photos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "filename" varchar, "content_type" varchar, "file_size" integer, "created_at" datetime NOT NULL, "user_id" integer, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180615163410_create_photos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180615163410"]]
+  ↳ /home/learn/.rvm/gems/ruby-2.3.6/bin/rake:23
+  [1m[35m (32.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/learn/.rvm/gems/ruby-2.3.6/bin/rake:23
+Migrating to DeviseCreateUsers (20180615163555)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/learn/.rvm/gems/ruby-2.3.6/bin/rake:23
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180615163555_devise_create_users.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/migrate/20180615163555_devise_create_users.rb:39
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/migrate/20180615163555_devise_create_users.rb:40
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180615163555"]]
+  ↳ /home/learn/.rvm/gems/ruby-2.3.6/bin/rake:23
+  [1m[35m (21.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/learn/.rvm/gems/ruby-2.3.6/bin/rake:23
+Migrating to CreateActiveStorageTables (20180820035908)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/learn/.rvm/gems/ruby-2.3.6/bin/rake:23
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "byte_size" bigint NOT NULL, "checksum" varchar NOT NULL, "created_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180820035908_create_active_storage_tables.active_storage.rb:4
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  ↳ db/migrate/20180820035908_create_active_storage_tables.active_storage.rb:4
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" integer NOT NULL, "blob_id" integer NOT NULL, "created_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180820035908_create_active_storage_tables.active_storage.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  ↳ db/migrate/20180820035908_create_active_storage_tables.active_storage.rb:16
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  ↳ db/migrate/20180820035908_create_active_storage_tables.active_storage.rb:16
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180820035908"]]
+  ↳ /home/learn/.rvm/gems/ruby-2.3.6/bin/rake:23
+  [1m[35m (58.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/learn/.rvm/gems/ruby-2.3.6/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/learn/.rvm/gems/ruby-2.3.6/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/learn/.rvm/gems/ruby-2.3.6/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (4.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-08-20 04:05:18.101557"], ["updated_at", "2018-08-20 04:05:18.101557"]]
+  ↳ /home/learn/.rvm/gems/ruby-2.3.6/bin/rake:23
+  [1m[35m (19.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/learn/.rvm/gems/ruby-2.3.6/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/learn/.rvm/gems/ruby-2.3.6/bin/rake:23
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-08-20 00:06:23 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/learn/.rvm/gems/ruby-2.3.6/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  
+SyntaxError (/home/learn/code/labs/eventure-photos/app/controllers/api/v1/events_controller.rb:52: syntax error, unexpected ':', expecting ')'
+... :description, :cover, :photos: [])
+...                               ^):
+  
+app/controllers/api/v1/events_controller.rb:52: syntax error, unexpected ':', expecting ')'
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-08-20 00:07:18 -0400
+  
+LoadError (cannot load such file -- pry):
+  
+app/controllers/api/v1/events_controller.rb:1:in `<main>'
+Started POST "/api/v1/events/" for 127.0.0.1 at 2018-08-20 00:07:50 -0400
+  
+LoadError (cannot load such file -- pry):
+  
+app/controllers/api/v1/events_controller.rb:1:in `<main>'
+  [1m[36mEvent Destroy (23.1ms)[0m  [1m[31mDELETE FROM "events"[0m

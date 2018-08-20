@@ -4,5 +4,5 @@ class Photo < ActiveRecord::Base
 
   validates :filename, presence: true 
 
-  mount_uploader :filename, PhotoUploader
+  #mount_uploader :filename, PhotoUploader
 end
