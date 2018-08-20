@@ -15,17 +15,16 @@ class PhotosNew extends Component {
 
   handleOnSubmit = event => { 
     event.preventDefault(); 
-    if (this.state.id === "") {
-      console.log(this.state)
-      this.props.addPhoto(this.state) 
-    }
+    console.log(this.props.event)
+    this.props.addPhoto(this.state);//this.props.history.push(`/events/{this.props.event.id}`);
   }
 
   handleOnChange = event => {
     this.setState({
       [event.target.name]: event.target.value 
-    }); 
+    });
   }
+
 
   render() {
     return (
@@ -35,7 +34,7 @@ class PhotosNew extends Component {
           <input
             type="file"
             placeholder="New Photo"
-            name="photo"
+            name="filename"
             onChange={this.handleOnChange} /> 
             <br></br><br></br> 
           <input 

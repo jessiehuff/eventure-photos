@@ -1,8 +1,11 @@
+require 'pry';
+
 class Api::V1::EventsController < ApplicationController
   before_action :set_event, only: [:show, :update, :destroy]
 
   # GET /events
   def index
+    binding.pry
     @events = Event.all
 
     render json: @events
@@ -16,7 +19,7 @@ class Api::V1::EventsController < ApplicationController
   # POST /events
   def create
     @event = Event.new(event_params)
-
+    
     if @event.save
       render json: @event
     else

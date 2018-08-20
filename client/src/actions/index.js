@@ -40,8 +40,8 @@ export function addEvent(values) {
 
 export function deleteEvent(event) {
   return (dispatch) => {
-    let id = event.props.event.id
-    return fetch(`http://localhost:3000/api/v1/events/${event.props.event.id}`, {
+    let id = event.id
+    return fetch(`http://localhost:3000/api/v1/events/${event.id}`, {
       method: 'delete'
     }) 
     .then(event => {
@@ -57,11 +57,11 @@ export function deleteEvent(event) {
 export function addPhoto(values){
   return (dispatch) => {
   
+    console.log(values)
     const photoData = new FormData() 
     photoData.append("photo[filename]", values.filename)
 
-
-    return fetch(`http://localhost:3000/api/v1/events`, {
+    return fetch(`http://localhost:3000/api/v1/events/`, {
       method: 'post', 
       body: photoData 
     })
