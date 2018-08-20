@@ -9,14 +9,15 @@ class PhotosNew extends Component {
       filename: '', 
       content_type: '', 
       file_size: '', 
-      created_at: '' 
+      created_at: '', 
+      event: this.props.event
     };
   }
 
   handleOnSubmit = event => { 
     event.preventDefault(); 
-    console.log(this.props.event)
-    this.props.addPhoto(this.state);//this.props.history.push(`/events/{this.props.event.id}`);
+    this.props.addPhoto(this.state);
+    //this.props.history.push(`/events/{this.props.event.id}`);
   }
 
   handleOnChange = event => {
