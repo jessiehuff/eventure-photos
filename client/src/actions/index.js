@@ -19,11 +19,12 @@ export function addEvent(values) {
     const eventData = new FormData() 
     eventData.append("event[name]", values.name)
     eventData.append("event[description]", values.description) 
-    eventData.append("event[cover]", values.cover)
+    eventData.append("event[cover]", values.cover) //need to specify the files[0] instead of just the value
 
     return fetch(`http://localhost:3000/api/v1/events`, {
       method: 'post', 
-      body: eventData 
+      body: eventData, 
+      contentType: false   
     })
     .then(res => { 
       return res.json()

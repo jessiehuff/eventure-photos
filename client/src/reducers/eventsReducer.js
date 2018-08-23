@@ -1,13 +1,19 @@
-export default (state = [], action) => {
+export default (state = {
+  events: [], 
+  photos: []
+}, action) => {
   switch (action.type) {
     case 'FETCH_EVENTS': 
       return action.events; 
     case 'ADD_EVENT': 
       return state.concat(action.payload) 
-    case 'ADD_PHOTO': 
-      console.log(state)
-      return state.concat(action.payload)   //trying to add a new photo, breaks down here
-      console.log("got here")
+    // case 'ADD_PHOTO':  
+    //   return [
+    //     ...state, 
+    //     photos: {
+    //       ...state.photos
+    //     }
+    //   ]  //trying to add a new photo, breaks down here
     case 'UPDATE_EVENT':
       const index = state.findIndex(event => event.id === action.event.id)
         return [

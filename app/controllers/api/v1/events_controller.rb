@@ -4,7 +4,6 @@ class Api::V1::EventsController < ApplicationController
   # GET /events
   def index
     @events = Event.all
-    @photos = @event.photos
 
     render json: @events
   end
@@ -47,7 +46,7 @@ class Api::V1::EventsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def event_params
-      params.require(:event).permit(:name, :description, :cover, photos: [])
+      params.require(:event).permit(:name, :description, :cover)
       # {:event => params.fetch(:event, {}).permit(
       #   :name, :description, :cover
       # )}

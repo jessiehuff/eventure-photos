@@ -216,6 +216,7 @@ GEM
       execjs (>= 0.3.0, < 3)
     warden (1.2.7)
       rack (>= 1.0)
+    wdm (0.1.1)
     websocket-driver (0.7.0)
       websocket-extensions (>= 0.1.0)
     websocket-driver (0.7.0-java)
@@ -250,9 +251,10 @@ DEPENDENCIES
   sqlite3
   tzinfo-data
   uglifier
+  wdm (>= 0.1.0)
 
 RUBY VERSION
-   ruby 2.3.6p384
+   ruby 2.5.1p57
 
 BUNDLED WITH
    1.16.3
