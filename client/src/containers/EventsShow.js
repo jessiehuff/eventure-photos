@@ -44,7 +44,7 @@ const mapStateToProps = (state, ownProps) => {
     return { event } 
   }
   else {
-    return { events: {} }
+    return { events: [] }
   }; 
 }; 
 
