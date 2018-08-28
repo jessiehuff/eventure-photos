@@ -8,13 +8,13 @@ export default (state ={
         ...state, 
         events: action.events
       }; 
-    // case 'ADD_EVENT': 
-    //   return {
-    //     ...state, 
-    //     events: [
-    //       ...state.events.concat(action.payload),
-    //     ], 
-    //   }
+    case 'ADD_EVENT': 
+      return {
+        ...state, 
+        events: [
+          ...state.events.concat(action.payload),
+        ], 
+      }
     // case 'ADD_PHOTO':  
     //   return [
     //     ...state, 
