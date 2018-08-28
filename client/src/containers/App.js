@@ -54,7 +54,7 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-   events: state.events 
+   events: state.events.events
   }
 }
 

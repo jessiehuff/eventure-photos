@@ -6,18 +6,15 @@ export default (state ={
     case 'FETCH_EVENTS': 
       return {
         ...state, 
-        events: [
-        ...state.events,
-        ...action.payload,
-        ],
-      }
-    case 'ADD_EVENT': 
-      return {
-        ...state, 
-        events: [
-          ...state.events.concat(action.payload),
-        ], 
-      }
+        events: action.events
+      }; 
+    // case 'ADD_EVENT': 
+    //   return {
+    //     ...state, 
+    //     events: [
+    //       ...state.events.concat(action.payload),
+    //     ], 
+    //   }
     // case 'ADD_PHOTO':  
     //   return [
     //     ...state, 

@@ -37,7 +37,8 @@ class EventsShow extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  const eventShow = Object.keys(state.events).map(i => state.events[i])
+  const allEvents = state.events.events
+  const eventShow = Object.keys(allEvents).map(i => state.events.events[i])
   const event = eventShow.find(event => event.id === parseInt(ownProps.match.params.eventId, 10))
   
   if (event) { 
