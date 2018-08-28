@@ -29,11 +29,9 @@ export default (state ={
     //       action.event, 
     //       ...state.slice(index + 1)
     //     ]
-    // case 'DELETE_EVENT': 
-    //   const events = state.filter(event => event.id !== action.payload)
-    //   return events 
-    // case 'RESET_FORM': 
-    //   return state; 
+    case 'DELETE_EVENT': 
+      const events = state.filter(event => event.id !== action.payload)
+      return events 
     default: 
       return state; 
   }
