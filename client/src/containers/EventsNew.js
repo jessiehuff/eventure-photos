@@ -20,8 +20,14 @@ class EventsNew extends Component {
 
   handleOnChange = event => {
     this.setState({
-      [event.target.name]: event.target.value 
+      [event.target.name]: event.target.value  
     }); 
+  }
+
+  handleFile = event => {
+    this.setState({
+      cover: event.target.files[0]
+    })
   }
 
   render() {
@@ -44,9 +50,10 @@ class EventsNew extends Component {
           <br></br> <br></br> 
           <input 
             type="file"
+            id="file"
             placeholder="Cover Image"
             name="cover"
-            onChange={this.handleOnChange} />
+            onChange={this.handleFile} />
             <br></br><br></br>             
           <input 
             type="submit"
