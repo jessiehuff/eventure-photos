@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.0'
+gem 'rails', '~> 5.2.1'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
@@ -25,11 +25,11 @@ gem 'puma', '~> 3.11'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise', '~> 4.5.0'
-gem 'carrierwave', '~> 0.11.2'
-gem 'carrierwave_backgrounder', git: 'https://github.com/lardawge/carrierwave_backgrounder'
-gem 'mini_magick', '~> 4.3'
+#gem 'carrierwave', '~> 0.11.2'
+#gem 'carrierwave_backgrounder', git: 'https://github.com/lardawge/carrierwave_backgrounder'
+gem 'mini_magick', '~> 4.8.0'
 gem 'foreman', '~> 0.82.0' 
-gem "active_model_serializers", github: "rails-api/active_model_serializers"
+#gem "active_model_serializers", github: "rails-api/active_model_serializers"
 gem 'bootstrap', '~> 4.1', '>= 4.1.1'
 gem 'sass-rails'
 gem 'uglifier'

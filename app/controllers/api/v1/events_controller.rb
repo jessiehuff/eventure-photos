@@ -15,8 +15,9 @@ class Api::V1::EventsController < ApplicationController
 
   # POST /events
   def create
-    @event = Event.new(event_params)
-    
+    @event = Event.create! params.require(:event).permit(:name, :description)
+    @event.cover.attach(params[:event][:cover])
+
     if @event.save
       render json: @event
     else

@@ -9,6 +9,7 @@ export default (state ={
         events: action.events
       }; 
     case 'ADD_EVENT': 
+    debugger 
       return {
         ...state, 
         events: [

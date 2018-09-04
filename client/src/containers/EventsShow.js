@@ -36,6 +36,7 @@ class EventsShow extends Component {
   }
 }
 
+
 const mapStateToProps = (state, ownProps) => {
   const allEvents = state.events.events
   const eventShow = Object.keys(allEvents).map(i => state.events.events[i])

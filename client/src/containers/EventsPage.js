@@ -4,7 +4,6 @@ import {connect} from 'react-redux';
 
 class EventsPage extends Component {
   
-
   render() {
     return(
       <div> 

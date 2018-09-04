@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lastModified: 
+  lastModifiedDate: MyString
+  date,: MyString
+  name: 
+  size: 
+  type: 
+
+two:
+  lastModified: 
+  lastModifiedDate: MyString
+  date,: MyString
+  name: 
+  size: 
+  type: 

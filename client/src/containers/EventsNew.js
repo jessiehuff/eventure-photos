@@ -48,8 +48,8 @@ class EventsNew extends Component {
             name="description" 
             onChange={this.handleOnChange} /> 
           <br></br> <br></br> 
-          <input 
-            type="file"
+          <input
+            type="file" 
             id="file"
             placeholder="Cover Image"
             name="cover"
