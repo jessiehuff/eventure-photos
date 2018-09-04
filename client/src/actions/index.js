@@ -19,7 +19,7 @@ export function addEvent(values) {
     const eventData = new FormData() 
     eventData.append("event[name]", values.name)
     eventData.append("event[description]", values.description)
-    debugger
+    // debugger
     eventData.append("event[cover]", values.cover, values.cover.name)
 
     return fetch(`http://localhost:3000/api/v1/events`, {
@@ -41,6 +41,7 @@ export function addEvent(values) {
 }
 
 export function deleteEvent(event) {
+  debugger 
   return (dispatch) => {
     let id = event.id
     return fetch(`http://localhost:3000/api/v1/events/${event.id}`, {

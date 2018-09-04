@@ -1,5 +1,6 @@
 export default (state ={
   events: [],
+  covers: [],
   photos: []
 }, action) => {
   switch (action.type) {
@@ -15,7 +16,10 @@ export default (state ={
         events: [
           ...state.events.concat(action.payload),
         ], 
-      }
+      //   covers: [
+      //     ...state.covers.concat(action.payload.cover)
+      //   ]
+       }
     // case 'ADD_PHOTO':  
     //   return [
     //     ...state, 

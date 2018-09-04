@@ -4,7 +4,6 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk'; 
 import reducers from './reducers'; 
 import {Provider} from 'react-redux'; 
-import ReactDOM from 'react-dom';
 import './index.css';
 import App from './containers/App';
 import { loadState, saveState } from './localStorage';

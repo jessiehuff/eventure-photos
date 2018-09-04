@@ -1,5 +1,5 @@
 import React, {Component} from 'react' 
-import { BrowserRouter as Router, NavLink, Route, Switch} from 'react-router-dom'; 
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'; 
 import Homepage from '../components/Homepage';
 import EventsPage from '../containers/EventsPage'; 
 import EventsNew from '../containers/EventsNew'; 
@@ -15,7 +15,7 @@ import {fetchEvents} from '../actions/index';
 class App extends Component {  
 
   componentDidMount() {
-    if (this.props.events.length === 0) { 
+    if (this.props.length === 0) { 
      this.props.fetchEvents(); 
     }
   }
@@ -52,9 +52,11 @@ class App extends Component {
   )} 
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = state => { 
   return {
-   events: state.events.events
+   events: state.events.events,
+   covers: state.events.covers, 
+   photos: state.events.photos
   }
 }
 
