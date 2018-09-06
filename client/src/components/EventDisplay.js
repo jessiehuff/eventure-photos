@@ -1,6 +1,7 @@
 import React from 'react'; 
 
 var myCover = new Image(100, 200); 
+// myCover.src = {this.props.event.cover} //something like this or need mapStateToProps?
 // myCover.src = image_url //need to set source path somehow 
 
 export const EventDisplay = ({name, description, cover, photos}) => (

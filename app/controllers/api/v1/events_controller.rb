@@ -1,5 +1,6 @@
 class Api::V1::EventsController < ApplicationController
   before_action :set_event, only: [:show, :update, :destroy]
+  include Rails.application.routes.url_helpers
 
   # GET /events
   def index
@@ -19,7 +20,7 @@ class Api::V1::EventsController < ApplicationController
     @event.cover.attach(params[:event][:cover])
 
     if @event.save
-      render json: @event
+      render json: @event, :include => rails_blob_path(@event.cover)
     else
       render json: @event.errors, status: :unprocessable_entity
     end

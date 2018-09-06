@@ -1,4 +1,5 @@
 import {v4} from 'node-uuid'; 
+import { EventEmitter } from 'events';
 
 export function fetchEvents() {
   return (dispatch) => {
@@ -19,19 +20,18 @@ export function addEvent(values) {
     const eventData = new FormData() 
     eventData.append("event[name]", values.name)
     eventData.append("event[description]", values.description)
-    debugger
     eventData.append("event[cover]", values.cover)
 
     return fetch(`http://localhost:3000/api/v1/events`, {
       method: 'post', 
       body: eventData, 
-      contentType: false   
+      contentType: false  
     })
-    .then(res => { 
-      debugger 
+    .then(res => {  
       return res.json()
       })
         .then(event => {
+          debugger
           dispatch({
             type: 'ADD_EVENT', 
             payload: event,
