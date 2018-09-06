@@ -12407,3 +12407,1089 @@ Migrating to CreateCovers (20180901151707)
   ↳ C:/Ruby25-x64/bin/rake:23
   [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ C:/Ruby25-x64/bin/rake:23
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-09-04 15:14:56 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"The Royal Wedding", "description"=>"Prince Harry and Meghan Markle", "cover"=>#<ActionDispatch::Http::UploadedFile:0x0000000007f6f340 @tempfile=#<Tempfile:C:/Users/JESSIE~1/AppData/Local/Temp/RackMultipart20180904-13940-egykbk.jpg>, @original_filename="Prince-Harry-Meghan-Markle.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"event[cover]\"; filename=\"Prince-Harry-Meghan-Markle.jpg\"\r\nContent-Type: image/jpeg\r\n">}}
+Unpermitted parameter: :cover
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:18
+  [1m[36mEvent Create (2.8ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "The Royal Wedding"], ["description", "Prince Harry and Meghan Markle"], ["created_at", "2018-09-04 19:14:56.276170"], ["updated_at", "2018-09-04 19:14:56.276170"]]
+  ↳ app/controllers/api/v1/events_controller.rb:18
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:18
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Event"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:19
+[36m  Disk Storage (3.7ms) [0m[32mUploaded file to key: jNvCh78D8AmzSSBU4CEfydXW (checksum: RuEmM5Zn1ZtjMFtU4PGIUQ==)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[36mActiveStorage::Blob Create (1.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["key", "jNvCh78D8AmzSSBU4CEfydXW"], ["filename", "Prince-Harry-Meghan-Markle.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 79445], ["checksum", "RuEmM5Zn1ZtjMFtU4PGIUQ=="], ["created_at", "2018-09-04 19:14:56.401445"]]
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[35m (6.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[36mActiveStorage::Attachment Create (2.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "cover"], ["record_type", "Event"], ["record_id", 1], ["blob_id", 1], ["created_at", "2018-09-04 19:14:56.425326"]]
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[36mEvent Update (0.9ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = ? WHERE "events"."id" = ?[0m  [["updated_at", "2018-09-04 19:14:56.429384"], ["id", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:19
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 1e84c8c1-98f7-4dc9-b5b5-8329a8f00008) to Async(default) with arguments: #<GlobalID:0x00000000069f4df8 @uri=#<URI::GID gid://eventure-photos/ActiveStorage::Blob/1>>
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:21
+Completed 200 OK in 270ms (Views: 0.6ms | ActiveRecord: 28.6ms)
+
+
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1e84c8c1-98f7-4dc9-b5b5-8329a8f00008] Performing ActiveStorage::AnalyzeJob (Job ID: 1e84c8c1-98f7-4dc9-b5b5-8329a8f00008) from Async(default) with arguments: #<GlobalID:0x000000000bfecbe8 @uri=#<URI::GID gid://eventure-photos/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1e84c8c1-98f7-4dc9-b5b5-8329a8f00008] [36m  Disk Storage (4.5ms) [0m[34mDownloaded file from key: jNvCh78D8AmzSSBU4CEfydXW[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1e84c8c1-98f7-4dc9-b5b5-8329a8f00008] Error performing ActiveStorage::AnalyzeJob (Job ID: 1e84c8c1-98f7-4dc9-b5b5-8329a8f00008) from Async(default) in 79.21ms: MiniMagick::Error (ImageMagick/GraphicsMagick is not installed):
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/configuration.rb:127:in `cli'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick.rb:38:in `graphicsmagick?'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/tool.rb:126:in `executable'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/tool.rb:110:in `command'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/tool.rb:92:in `call'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/tool.rb:40:in `new'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/image/info.rb:170:in `identify'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/image/info.rb:114:in `raw'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/image/info.rb:35:in `[]'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/image.rb:300:in `[]'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:42:in `rotated_image?'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:22:in `block in metadata'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:37:in `block in read_image'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/downloading.rb:12:in `block in download_blob_to_tempfile'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/downloading.rb:20:in `open_tempfile_for_blob'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/downloading.rb:10:in `download_blob_to_tempfile'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:35:in `read_image'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:21:in `metadata'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/app/models/active_storage/blob/analyzable.rb:47:in `extract_metadata_via_analyzer'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/app/models/active_storage/blob/analyzable.rb:29:in `analyze'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/app/jobs/active_storage/analyze_job.rb:6:in `perform'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/execution.rb:39:in `block in perform_now'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/i18n-1.1.0/lib/i18n.rb:284:in `with_locale'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `instance_exec'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:26:in `block (4 levels) in <module:Logging>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/notifications.rb:168:in `block in instrument'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/notifications.rb:168:in `instrument'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:25:in `block (3 levels) in <module:Logging>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:46:in `block in tag_logger'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/tagged_logging.rb:71:in `block in tagged'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/tagged_logging.rb:28:in `tagged'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/tagged_logging.rb:71:in `tagged'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:46:in `tag_logger'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:22:in `block (2 levels) in <module:Logging>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `instance_exec'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:136:in `run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/execution.rb:35:in `perform_now'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/execution.rb:24:in `block in execute'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/railtie.rb:28:in `block (4 levels) in <class:Railtie>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/execution_wrapper.rb:87:in `wrap'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/reloader.rb:73:in `block in wrap'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/execution_wrapper.rb:87:in `wrap'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/reloader.rb:72:in `wrap'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/railtie.rb:27:in `block (3 levels) in <class:Railtie>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `instance_exec'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:136:in `run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/execution.rb:22:in `execute'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/queue_adapters/async_adapter.rb:70:in `perform'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-09-04 15:18:04 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"The Royal Wedding", "description"=>"Prince Harry and Meghan Markle", "cover"=>#<ActionDispatch::Http::UploadedFile:0x00000000074fd3d0 @tempfile=#<Tempfile:C:/Users/JESSIE~1/AppData/Local/Temp/RackMultipart20180904-13940-1edifys.jpg>, @original_filename="Prince-Harry-Meghan-Markle.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"event[cover]\"; filename=\"Prince-Harry-Meghan-Markle.jpg\"\r\nContent-Type: image/jpeg\r\n">}}
+Unpermitted parameter: :cover
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:18
+  [1m[36mEvent Create (8.1ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "The Royal Wedding"], ["description", "Prince Harry and Meghan Markle"], ["created_at", "2018-09-04 19:18:04.510512"], ["updated_at", "2018-09-04 19:18:04.510512"]]
+  ↳ app/controllers/api/v1/events_controller.rb:18
+  [1m[35m (7.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:18
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Event"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:19
+[36m  Disk Storage (4.8ms) [0m[32mUploaded file to key: 3PyTq5EdhbMdkteqaH5rwD7m (checksum: RuEmM5Zn1ZtjMFtU4PGIUQ==)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[36mActiveStorage::Blob Create (3.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["key", "3PyTq5EdhbMdkteqaH5rwD7m"], ["filename", "Prince-Harry-Meghan-Markle.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 79445], ["checksum", "RuEmM5Zn1ZtjMFtU4PGIUQ=="], ["created_at", "2018-09-04 19:18:04.544591"]]
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[36mActiveStorage::Attachment Create (1.9ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "cover"], ["record_type", "Event"], ["record_id", 2], ["blob_id", 2], ["created_at", "2018-09-04 19:18:04.560555"]]
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[36mEvent Update (0.4ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = ? WHERE "events"."id" = ?[0m  [["updated_at", "2018-09-04 19:18:04.564848"], ["id", 2]]
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:19
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 9ca183cd-dd6e-42ab-8f36-64aa8926f46f) to Async(default) with arguments: #<GlobalID:0x000000000c51cd70 @uri=#<URI::GID gid://eventure-photos/ActiveStorage::Blob/2>>
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:21
+Completed 200 OK in 71ms (Views: 1.0ms | ActiveRecord: 34.8ms)
+
+
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9ca183cd-dd6e-42ab-8f36-64aa8926f46f] Performing ActiveStorage::AnalyzeJob (Job ID: 9ca183cd-dd6e-42ab-8f36-64aa8926f46f) from Async(default) with arguments: #<GlobalID:0x000000000c561df8 @uri=#<URI::GID gid://eventure-photos/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9ca183cd-dd6e-42ab-8f36-64aa8926f46f] [36m  Disk Storage (9.2ms) [0m[34mDownloaded file from key: 3PyTq5EdhbMdkteqaH5rwD7m[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9ca183cd-dd6e-42ab-8f36-64aa8926f46f] Error performing ActiveStorage::AnalyzeJob (Job ID: 9ca183cd-dd6e-42ab-8f36-64aa8926f46f) from Async(default) in 55.01ms: MiniMagick::Error (ImageMagick/GraphicsMagick is not installed):
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/configuration.rb:127:in `cli'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick.rb:38:in `graphicsmagick?'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/tool.rb:126:in `executable'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/tool.rb:110:in `command'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/tool.rb:92:in `call'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/tool.rb:40:in `new'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/image/info.rb:170:in `identify'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/image/info.rb:114:in `raw'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/image/info.rb:35:in `[]'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/image.rb:300:in `[]'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:42:in `rotated_image?'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:22:in `block in metadata'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:37:in `block in read_image'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/downloading.rb:12:in `block in download_blob_to_tempfile'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/downloading.rb:20:in `open_tempfile_for_blob'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/downloading.rb:10:in `download_blob_to_tempfile'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:35:in `read_image'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:21:in `metadata'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/app/models/active_storage/blob/analyzable.rb:47:in `extract_metadata_via_analyzer'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/app/models/active_storage/blob/analyzable.rb:29:in `analyze'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/app/jobs/active_storage/analyze_job.rb:6:in `perform'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/execution.rb:39:in `block in perform_now'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/i18n-1.1.0/lib/i18n.rb:284:in `with_locale'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `instance_exec'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:26:in `block (4 levels) in <module:Logging>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/notifications.rb:168:in `block in instrument'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/notifications.rb:168:in `instrument'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:25:in `block (3 levels) in <module:Logging>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:46:in `block in tag_logger'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/tagged_logging.rb:71:in `block in tagged'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/tagged_logging.rb:28:in `tagged'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/tagged_logging.rb:71:in `tagged'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:46:in `tag_logger'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:22:in `block (2 levels) in <module:Logging>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `instance_exec'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:136:in `run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/execution.rb:35:in `perform_now'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/execution.rb:24:in `block in execute'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/railtie.rb:28:in `block (4 levels) in <class:Railtie>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/execution_wrapper.rb:87:in `wrap'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/reloader.rb:73:in `block in wrap'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/execution_wrapper.rb:87:in `wrap'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/reloader.rb:72:in `wrap'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/railtie.rb:27:in `block (3 levels) in <class:Railtie>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `instance_exec'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:136:in `run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/execution.rb:22:in `execute'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/queue_adapters/async_adapter.rb:70:in `perform'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
+Started DELETE "/api/v1/events/2" for 127.0.0.1 at 2018-09-04 20:17:06 -0400
+Processing by Api::V1::EventsController#destroy as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:45
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:39
+  [1m[36mEvent Destroy (2.1ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/api/v1/events_controller.rb:39
+  [1m[35m (7.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:39
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Event"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:39
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:39
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 5fd1dfc0-ee0d-40c4-83a4-a028176985e3) to Async(default) with arguments: #<GlobalID:0x0000000004152008 @uri=#<URI::GID gid://eventure-photos/ActiveStorage::Blob/2>>
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:39
+  [1m[36mActiveStorage::Attachment Destroy (1.3ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/api/v1/events_controller.rb:39
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (7.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  ↳ app/controllers/api/v1/events_controller.rb:39
+[ActiveJob] [ActiveStorage::PurgeJob] [5fd1dfc0-ee0d-40c4-83a4-a028176985e3] Performing ActiveStorage::PurgeJob (Job ID: 5fd1dfc0-ee0d-40c4-83a4-a028176985e3) from Async(default) with arguments: #<GlobalID:0x0000000003a19200 @uri=#<URI::GID gid://eventure-photos/ActiveStorage::Blob/2>>
+Completed 204 No Content in 422ms (ActiveRecord: 20.8ms)
+
+
+[ActiveJob] [ActiveStorage::PurgeJob] [5fd1dfc0-ee0d-40c4-83a4-a028176985e3] [36m  Disk Storage (1.3ms) [0m[31mDeleted file from key: 3PyTq5EdhbMdkteqaH5rwD7m[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [5fd1dfc0-ee0d-40c4-83a4-a028176985e3] [36m  Disk Storage (1.0ms) [0m[31mDeleted files by key prefix: variants/3PyTq5EdhbMdkteqaH5rwD7m/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [5fd1dfc0-ee0d-40c4-83a4-a028176985e3]   [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [5fd1dfc0-ee0d-40c4-83a4-a028176985e3]   ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [5fd1dfc0-ee0d-40c4-83a4-a028176985e3]   [1m[36mActiveStorage::Blob Destroy (2.6ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 2]]
+[ActiveJob] [ActiveStorage::PurgeJob] [5fd1dfc0-ee0d-40c4-83a4-a028176985e3]   ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [5fd1dfc0-ee0d-40c4-83a4-a028176985e3]   [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [5fd1dfc0-ee0d-40c4-83a4-a028176985e3]   ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [5fd1dfc0-ee0d-40c4-83a4-a028176985e3]   [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [5fd1dfc0-ee0d-40c4-83a4-a028176985e3]   ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [5fd1dfc0-ee0d-40c4-83a4-a028176985e3] Performed ActiveStorage::PurgeJob (Job ID: 5fd1dfc0-ee0d-40c4-83a4-a028176985e3) from Async(default) in 24.87ms
+Started GET "/%3Canonymous%3E" for 127.0.0.1 at 2018-09-04 20:17:08 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/%3Canonymous%3E"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/%3Canonymous%3E" for 127.0.0.1 at 2018-09-04 20:17:08 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/%3Canonymous%3E"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-09-04 20:17:55 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"The Royal Wedding", "description"=>"Prince Harry and Meghan Markle", "cover"=>#<ActionDispatch::Http::UploadedFile:0x000000000c1af6b0 @tempfile=#<Tempfile:C:/Users/JESSIE~1/AppData/Local/Temp/RackMultipart20180904-13940-icxtxf.jpg>, @original_filename="Prince-Harry-Meghan-Markle.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"event[cover]\"; filename=\"Prince-Harry-Meghan-Markle.jpg\"\r\nContent-Type: image/jpeg\r\n">}}
+Unpermitted parameter: :cover
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:18
+  [1m[36mEvent Create (1.6ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "The Royal Wedding"], ["description", "Prince Harry and Meghan Markle"], ["created_at", "2018-09-05 00:17:55.804323"], ["updated_at", "2018-09-05 00:17:55.804323"]]
+  ↳ app/controllers/api/v1/events_controller.rb:18
+  [1m[35m (7.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:18
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Event"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:19
+[36m  Disk Storage (8.3ms) [0m[32mUploaded file to key: hQSiPNGQAdGH9V483uspTBhT (checksum: RuEmM5Zn1ZtjMFtU4PGIUQ==)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[36mActiveStorage::Blob Create (1.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["key", "hQSiPNGQAdGH9V483uspTBhT"], ["filename", "Prince-Harry-Meghan-Markle.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 79445], ["checksum", "RuEmM5Zn1ZtjMFtU4PGIUQ=="], ["created_at", "2018-09-05 00:17:55.842044"]]
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[35m (6.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[36mActiveStorage::Attachment Create (1.6ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "cover"], ["record_type", "Event"], ["record_id", 3], ["blob_id", 3], ["created_at", "2018-09-05 00:17:55.857886"]]
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[36mEvent Update (0.4ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = ? WHERE "events"."id" = ?[0m  [["updated_at", "2018-09-05 00:17:55.861811"], ["id", 3]]
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:19
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 8bda95c0-8e7b-41ee-af42-7542fb0a63bc) to Async(default) with arguments: #<GlobalID:0x00000000082b1cd8 @uri=#<URI::GID gid://eventure-photos/ActiveStorage::Blob/3>>
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:21
+Completed 200 OK in 86ms (Views: 5.0ms | ActiveRecord: 26.3ms)
+
+
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [8bda95c0-8e7b-41ee-af42-7542fb0a63bc] Performing ActiveStorage::AnalyzeJob (Job ID: 8bda95c0-8e7b-41ee-af42-7542fb0a63bc) from Async(default) with arguments: #<GlobalID:0x00000000082813d0 @uri=#<URI::GID gid://eventure-photos/ActiveStorage::Blob/3>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [8bda95c0-8e7b-41ee-af42-7542fb0a63bc] [36m  Disk Storage (25.1ms) [0m[34mDownloaded file from key: hQSiPNGQAdGH9V483uspTBhT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [8bda95c0-8e7b-41ee-af42-7542fb0a63bc] Error performing ActiveStorage::AnalyzeJob (Job ID: 8bda95c0-8e7b-41ee-af42-7542fb0a63bc) from Async(default) in 78.36ms: MiniMagick::Error (ImageMagick/GraphicsMagick is not installed):
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/configuration.rb:127:in `cli'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick.rb:38:in `graphicsmagick?'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/tool.rb:126:in `executable'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/tool.rb:110:in `command'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/tool.rb:92:in `call'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/tool.rb:40:in `new'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/image/info.rb:170:in `identify'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/image/info.rb:114:in `raw'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/image/info.rb:35:in `[]'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/image.rb:300:in `[]'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:42:in `rotated_image?'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:22:in `block in metadata'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:37:in `block in read_image'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/downloading.rb:12:in `block in download_blob_to_tempfile'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/downloading.rb:20:in `open_tempfile_for_blob'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/downloading.rb:10:in `download_blob_to_tempfile'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:35:in `read_image'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:21:in `metadata'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/app/models/active_storage/blob/analyzable.rb:47:in `extract_metadata_via_analyzer'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/app/models/active_storage/blob/analyzable.rb:29:in `analyze'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/app/jobs/active_storage/analyze_job.rb:6:in `perform'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/execution.rb:39:in `block in perform_now'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/i18n-1.1.0/lib/i18n.rb:284:in `with_locale'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `instance_exec'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:26:in `block (4 levels) in <module:Logging>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/notifications.rb:168:in `block in instrument'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/notifications.rb:168:in `instrument'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:25:in `block (3 levels) in <module:Logging>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:46:in `block in tag_logger'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/tagged_logging.rb:71:in `block in tagged'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/tagged_logging.rb:28:in `tagged'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/tagged_logging.rb:71:in `tagged'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:46:in `tag_logger'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:22:in `block (2 levels) in <module:Logging>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `instance_exec'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:136:in `run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/execution.rb:35:in `perform_now'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/execution.rb:24:in `block in execute'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/railtie.rb:28:in `block (4 levels) in <class:Railtie>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/execution_wrapper.rb:87:in `wrap'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/reloader.rb:73:in `block in wrap'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/execution_wrapper.rb:87:in `wrap'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/reloader.rb:72:in `wrap'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/railtie.rb:27:in `block (3 levels) in <class:Railtie>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `instance_exec'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:136:in `run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/execution.rb:22:in `execute'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/queue_adapters/async_adapter.rb:70:in `perform'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-09-04 20:55:41 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"The Royal Wedding", "description"=>"Prince Harry and Meghan Markle", "cover"=>#<ActionDispatch::Http::UploadedFile:0x000000000bf42260 @tempfile=#<Tempfile:C:/Users/JESSIE~1/AppData/Local/Temp/RackMultipart20180904-13940-567mya.jpg>, @original_filename="Prince-Harry-Meghan-Markle.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"event[cover]\"; filename=\"Prince-Harry-Meghan-Markle.jpg\"\r\nContent-Type: image/jpeg\r\n">}}
+Unpermitted parameter: :cover
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:18
+  [1m[36mEvent Create (1.8ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "The Royal Wedding"], ["description", "Prince Harry and Meghan Markle"], ["created_at", "2018-09-05 00:55:42.077183"], ["updated_at", "2018-09-05 00:55:42.077183"]]
+  ↳ app/controllers/api/v1/events_controller.rb:18
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:18
+  [1m[36mActiveStorage::Attachment Load (1.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "Event"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:19
+[36m  Disk Storage (8.9ms) [0m[32mUploaded file to key: HE1ZtHpkW4K3A294fH9rNNUM (checksum: RuEmM5Zn1ZtjMFtU4PGIUQ==)[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[36mActiveStorage::Blob Create (1.6ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["key", "HE1ZtHpkW4K3A294fH9rNNUM"], ["filename", "Prince-Harry-Meghan-Markle.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 79445], ["checksum", "RuEmM5Zn1ZtjMFtU4PGIUQ=="], ["created_at", "2018-09-05 00:55:42.167678"]]
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[35m (8.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[36mActiveStorage::Attachment Create (2.3ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "cover"], ["record_type", "Event"], ["record_id", 4], ["blob_id", 4], ["created_at", "2018-09-05 00:55:42.192901"]]
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[36mEvent Update (0.4ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = ? WHERE "events"."id" = ?[0m  [["updated_at", "2018-09-05 00:55:42.200977"], ["id", 4]]
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[35m (8.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:19
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: fff95dcc-a7de-4623-af5a-e614b9fa25e3) to Async(default) with arguments: #<GlobalID:0x0000000008165de8 @uri=#<URI::GID gid://eventure-photos/ActiveStorage::Blob/4>>
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:21
+  [1m[35m (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:21
+Completed 200 OK in 201ms (Views: 9.2ms | ActiveRecord: 32.7ms)
+
+
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [fff95dcc-a7de-4623-af5a-e614b9fa25e3] Performing ActiveStorage::AnalyzeJob (Job ID: fff95dcc-a7de-4623-af5a-e614b9fa25e3) from Async(default) with arguments: #<GlobalID:0x000000000813f9b8 @uri=#<URI::GID gid://eventure-photos/ActiveStorage::Blob/4>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [fff95dcc-a7de-4623-af5a-e614b9fa25e3] [36m  Disk Storage (22.2ms) [0m[34mDownloaded file from key: HE1ZtHpkW4K3A294fH9rNNUM[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [fff95dcc-a7de-4623-af5a-e614b9fa25e3] Error performing ActiveStorage::AnalyzeJob (Job ID: fff95dcc-a7de-4623-af5a-e614b9fa25e3) from Async(default) in 153.16ms: MiniMagick::Error (ImageMagick/GraphicsMagick is not installed):
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/configuration.rb:127:in `cli'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick.rb:38:in `graphicsmagick?'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/tool.rb:126:in `executable'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/tool.rb:110:in `command'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/tool.rb:92:in `call'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/tool.rb:40:in `new'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/image/info.rb:170:in `identify'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/image/info.rb:114:in `raw'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/image/info.rb:35:in `[]'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/image.rb:300:in `[]'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:42:in `rotated_image?'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:22:in `block in metadata'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:37:in `block in read_image'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/downloading.rb:12:in `block in download_blob_to_tempfile'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/downloading.rb:20:in `open_tempfile_for_blob'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/downloading.rb:10:in `download_blob_to_tempfile'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:35:in `read_image'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:21:in `metadata'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/app/models/active_storage/blob/analyzable.rb:47:in `extract_metadata_via_analyzer'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/app/models/active_storage/blob/analyzable.rb:29:in `analyze'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/app/jobs/active_storage/analyze_job.rb:6:in `perform'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/execution.rb:39:in `block in perform_now'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/i18n-1.1.0/lib/i18n.rb:284:in `with_locale'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `instance_exec'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:26:in `block (4 levels) in <module:Logging>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/notifications.rb:168:in `block in instrument'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/notifications.rb:168:in `instrument'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:25:in `block (3 levels) in <module:Logging>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:46:in `block in tag_logger'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/tagged_logging.rb:71:in `block in tagged'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/tagged_logging.rb:28:in `tagged'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/tagged_logging.rb:71:in `tagged'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:46:in `tag_logger'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:22:in `block (2 levels) in <module:Logging>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `instance_exec'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:136:in `run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/execution.rb:35:in `perform_now'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/execution.rb:24:in `block in execute'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/railtie.rb:28:in `block (4 levels) in <class:Railtie>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/execution_wrapper.rb:87:in `wrap'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/reloader.rb:73:in `block in wrap'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/execution_wrapper.rb:87:in `wrap'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/reloader.rb:72:in `wrap'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/railtie.rb:27:in `block (3 levels) in <class:Railtie>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `instance_exec'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:136:in `run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/execution.rb:22:in `execute'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/queue_adapters/async_adapter.rb:70:in `perform'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-09-04 20:57:06 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"The Royal Wedding", "description"=>"Prince Harry and Meghan Markle", "cover"=>#<ActionDispatch::Http::UploadedFile:0x0000000007f772e8 @tempfile=#<Tempfile:C:/Users/JESSIE~1/AppData/Local/Temp/RackMultipart20180904-13940-1605ppk.jpg>, @original_filename="Prince-Harry-Meghan-Markle.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"event[cover]\"; filename=\"Prince-Harry-Meghan-Markle.jpg\"\r\nContent-Type: image/jpeg\r\n">}}
+Unpermitted parameter: :cover
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:18
+  [1m[36mEvent Create (7.4ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "The Royal Wedding"], ["description", "Prince Harry and Meghan Markle"], ["created_at", "2018-09-05 00:57:06.565540"], ["updated_at", "2018-09-05 00:57:06.565540"]]
+  ↳ app/controllers/api/v1/events_controller.rb:18
+  [1m[35m (18.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:18
+  [1m[36mActiveStorage::Attachment Load (3.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Event"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:19
+[36m  Disk Storage (9.1ms) [0m[32mUploaded file to key: gMhpEo2X1w5LkMwVvqJc9WdF (checksum: RuEmM5Zn1ZtjMFtU4PGIUQ==)[0m
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[36mActiveStorage::Blob Create (2.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["key", "gMhpEo2X1w5LkMwVvqJc9WdF"], ["filename", "Prince-Harry-Meghan-Markle.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 79445], ["checksum", "RuEmM5Zn1ZtjMFtU4PGIUQ=="], ["created_at", "2018-09-05 00:57:06.650899"]]
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[36mActiveStorage::Attachment Create (7.8ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "cover"], ["record_type", "Event"], ["record_id", 5], ["blob_id", 5], ["created_at", "2018-09-05 00:57:06.709839"]]
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[36mEvent Update (1.1ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = ? WHERE "events"."id" = ?[0m  [["updated_at", "2018-09-05 00:57:06.721367"], ["id", 5]]
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:19
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: b8e4169c-1845-4326-bb83-ffdffb2f7710) to Async(default) with arguments: #<GlobalID:0x0000000007f1d6a8 @uri=#<URI::GID gid://eventure-photos/ActiveStorage::Blob/5>>
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:21
+  [1m[35m (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:21
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Completed 200 OK in 185ms (Views: 3.3ms | ActiveRecord: 53.0ms)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b8e4169c-1845-4326-bb83-ffdffb2f7710] Performing ActiveStorage::AnalyzeJob (Job ID: b8e4169c-1845-4326-bb83-ffdffb2f7710) from Async(default) with arguments: #<GlobalID:0x0000000007d5b1d0 @uri=#<URI::GID gid://eventure-photos/ActiveStorage::Blob/5>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b8e4169c-1845-4326-bb83-ffdffb2f7710] [36m  Disk Storage (49.1ms) [0m[34mDownloaded file from key: gMhpEo2X1w5LkMwVvqJc9WdF[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b8e4169c-1845-4326-bb83-ffdffb2f7710] Error performing ActiveStorage::AnalyzeJob (Job ID: b8e4169c-1845-4326-bb83-ffdffb2f7710) from Async(default) in 157.09ms: MiniMagick::Error (ImageMagick/GraphicsMagick is not installed):
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/configuration.rb:127:in `cli'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick.rb:38:in `graphicsmagick?'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/tool.rb:126:in `executable'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/tool.rb:110:in `command'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/tool.rb:92:in `call'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/tool.rb:40:in `new'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/image/info.rb:170:in `identify'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/image/info.rb:114:in `raw'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/image/info.rb:35:in `[]'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/image.rb:300:in `[]'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:42:in `rotated_image?'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:22:in `block in metadata'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:37:in `block in read_image'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/downloading.rb:12:in `block in download_blob_to_tempfile'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/downloading.rb:20:in `open_tempfile_for_blob'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/downloading.rb:10:in `download_blob_to_tempfile'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:35:in `read_image'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:21:in `metadata'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/app/models/active_storage/blob/analyzable.rb:47:in `extract_metadata_via_analyzer'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/app/models/active_storage/blob/analyzable.rb:29:in `analyze'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/app/jobs/active_storage/analyze_job.rb:6:in `perform'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/execution.rb:39:in `block in perform_now'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/i18n-1.1.0/lib/i18n.rb:284:in `with_locale'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `instance_exec'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:26:in `block (4 levels) in <module:Logging>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/notifications.rb:168:in `block in instrument'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/notifications.rb:168:in `instrument'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:25:in `block (3 levels) in <module:Logging>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:46:in `block in tag_logger'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/tagged_logging.rb:71:in `block in tagged'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/tagged_logging.rb:28:in `tagged'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/tagged_logging.rb:71:in `tagged'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:46:in `tag_logger'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:22:in `block (2 levels) in <module:Logging>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `instance_exec'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:136:in `run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/execution.rb:35:in `perform_now'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/execution.rb:24:in `block in execute'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/railtie.rb:28:in `block (4 levels) in <class:Railtie>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/execution_wrapper.rb:87:in `wrap'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/reloader.rb:73:in `block in wrap'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/execution_wrapper.rb:87:in `wrap'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/reloader.rb:72:in `wrap'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/railtie.rb:27:in `block (3 levels) in <class:Railtie>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `instance_exec'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:136:in `run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/execution.rb:22:in `execute'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/queue_adapters/async_adapter.rb:70:in `perform'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
+  [1m[36mEvent Load (2.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCover Load (0.3ms)[0m  [1m[34mSELECT  "covers".* FROM "covers" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-09-05 15:06:21 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"The Royal Wedding", "description"=>"Prince Harry and Meghan Markle", "cover"=>#<ActionDispatch::Http::UploadedFile:0x0000000007d16f80 @tempfile=#<Tempfile:C:/Users/JESSIE~1/AppData/Local/Temp/RackMultipart20180905-10888-5tlhyn.jpg>, @original_filename="Prince-Harry-Meghan-Markle.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"event[cover]\"; filename=\"Prince-Harry-Meghan-Markle.jpg\"\r\nContent-Type: image/jpeg\r\n">}}
+Unpermitted parameter: :cover
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:18
+  [1m[36mEvent Create (1.5ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "The Royal Wedding"], ["description", "Prince Harry and Meghan Markle"], ["created_at", "2018-09-05 19:06:21.923284"], ["updated_at", "2018-09-05 19:06:21.923284"]]
+  ↳ app/controllers/api/v1/events_controller.rb:18
+  [1m[35m (7.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:18
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "Event"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:19
+[36m  Disk Storage (18.2ms) [0m[32mUploaded file to key: 22F8QMJn3ptr69UYRXVywdby (checksum: RuEmM5Zn1ZtjMFtU4PGIUQ==)[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[36mActiveStorage::Blob Create (4.5ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["key", "22F8QMJn3ptr69UYRXVywdby"], ["filename", "Prince-Harry-Meghan-Markle.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 79445], ["checksum", "RuEmM5Zn1ZtjMFtU4PGIUQ=="], ["created_at", "2018-09-05 19:06:22.154715"]]
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[35m (7.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[36mActiveStorage::Attachment Create (3.8ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "cover"], ["record_type", "Event"], ["record_id", 6], ["blob_id", 6], ["created_at", "2018-09-05 19:06:22.190489"]]
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[36mEvent Update (0.7ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = ? WHERE "events"."id" = ?[0m  [["updated_at", "2018-09-05 19:06:22.196485"], ["id", 6]]
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:19
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: c98d03bc-6e89-4c93-bb44-386566c0223b) to Async(default) with arguments: #<GlobalID:0x00000000080ae648 @uri=#<URI::GID gid://eventure-photos/ActiveStorage::Blob/6>>
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:21
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:21
+Completed 200 OK in 511ms (Views: 0.9ms | ActiveRecord: 36.8ms)
+
+
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c98d03bc-6e89-4c93-bb44-386566c0223b] Performing ActiveStorage::AnalyzeJob (Job ID: c98d03bc-6e89-4c93-bb44-386566c0223b) from Async(default) with arguments: #<GlobalID:0x00000000080dd4e8 @uri=#<URI::GID gid://eventure-photos/ActiveStorage::Blob/6>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c98d03bc-6e89-4c93-bb44-386566c0223b] [36m  Disk Storage (5.4ms) [0m[34mDownloaded file from key: 22F8QMJn3ptr69UYRXVywdby[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c98d03bc-6e89-4c93-bb44-386566c0223b] Error performing ActiveStorage::AnalyzeJob (Job ID: c98d03bc-6e89-4c93-bb44-386566c0223b) from Async(default) in 92.05ms: MiniMagick::Error (ImageMagick/GraphicsMagick is not installed):
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/configuration.rb:127:in `cli'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick.rb:38:in `graphicsmagick?'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/tool.rb:126:in `executable'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/tool.rb:110:in `command'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/tool.rb:92:in `call'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/tool.rb:40:in `new'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/image/info.rb:170:in `identify'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/image/info.rb:114:in `raw'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/image/info.rb:35:in `[]'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/image.rb:300:in `[]'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:42:in `rotated_image?'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:22:in `block in metadata'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:37:in `block in read_image'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/downloading.rb:12:in `block in download_blob_to_tempfile'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/downloading.rb:20:in `open_tempfile_for_blob'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/downloading.rb:10:in `download_blob_to_tempfile'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:35:in `read_image'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:21:in `metadata'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/app/models/active_storage/blob/analyzable.rb:47:in `extract_metadata_via_analyzer'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/app/models/active_storage/blob/analyzable.rb:29:in `analyze'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/app/jobs/active_storage/analyze_job.rb:6:in `perform'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/execution.rb:39:in `block in perform_now'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/i18n-1.1.0/lib/i18n.rb:284:in `with_locale'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `instance_exec'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:26:in `block (4 levels) in <module:Logging>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/notifications.rb:168:in `block in instrument'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/notifications.rb:168:in `instrument'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:25:in `block (3 levels) in <module:Logging>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:46:in `block in tag_logger'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/tagged_logging.rb:71:in `block in tagged'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/tagged_logging.rb:28:in `tagged'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/tagged_logging.rb:71:in `tagged'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:46:in `tag_logger'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:22:in `block (2 levels) in <module:Logging>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `instance_exec'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:136:in `run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/execution.rb:35:in `perform_now'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/execution.rb:24:in `block in execute'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/railtie.rb:28:in `block (4 levels) in <class:Railtie>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/execution_wrapper.rb:87:in `wrap'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/reloader.rb:73:in `block in wrap'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/execution_wrapper.rb:87:in `wrap'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/reloader.rb:72:in `wrap'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/railtie.rb:27:in `block (3 levels) in <class:Railtie>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `instance_exec'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:136:in `run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/execution.rb:22:in `execute'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/queue_adapters/async_adapter.rb:70:in `perform'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-09-05 18:45:14 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"The Royal Wedding", "description"=>"Prince Harry and Meghan Markle", "cover"=>#<ActionDispatch::Http::UploadedFile:0x000000000c087828 @tempfile=#<Tempfile:C:/Users/JESSIE~1/AppData/Local/Temp/RackMultipart20180905-10888-17jduj6.jpg>, @original_filename="Prince-Harry-Meghan-Markle.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"event[cover]\"; filename=\"Prince-Harry-Meghan-Markle.jpg\"\r\nContent-Type: image/jpeg\r\n">}}
+Unpermitted parameter: :cover
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:18
+  [1m[36mEvent Create (1.3ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "The Royal Wedding"], ["description", "Prince Harry and Meghan Markle"], ["created_at", "2018-09-05 22:45:14.554538"], ["updated_at", "2018-09-05 22:45:14.554538"]]
+  ↳ app/controllers/api/v1/events_controller.rb:18
+  [1m[35m (7.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:18
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 7], ["record_type", "Event"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:19
+[36m  Disk Storage (6.4ms) [0m[32mUploaded file to key: 9QQZpxmog9ZGujXj4KD5gMjG (checksum: RuEmM5Zn1ZtjMFtU4PGIUQ==)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[36mActiveStorage::Blob Create (1.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["key", "9QQZpxmog9ZGujXj4KD5gMjG"], ["filename", "Prince-Harry-Meghan-Markle.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 79445], ["checksum", "RuEmM5Zn1ZtjMFtU4PGIUQ=="], ["created_at", "2018-09-05 22:45:14.609870"]]
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[36mActiveStorage::Attachment Create (2.2ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "cover"], ["record_type", "Event"], ["record_id", 7], ["blob_id", 7], ["created_at", "2018-09-05 22:45:14.626963"]]
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[36mEvent Update (0.2ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = ? WHERE "events"."id" = ?[0m  [["updated_at", "2018-09-05 22:45:14.631572"], ["id", 7]]
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:19
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 7c573617-0a5f-4459-9b96-fc8ac2716187) to Async(default) with arguments: #<GlobalID:0x000000000c16cc98 @uri=#<URI::GID gid://eventure-photos/ActiveStorage::Blob/7>>
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:21
+Completed 200 OK in 122ms (Views: 2.4ms | ActiveRecord: 27.8ms)
+
+
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7c573617-0a5f-4459-9b96-fc8ac2716187] Performing ActiveStorage::AnalyzeJob (Job ID: 7c573617-0a5f-4459-9b96-fc8ac2716187) from Async(default) with arguments: #<GlobalID:0x000000000c1ba268 @uri=#<URI::GID gid://eventure-photos/ActiveStorage::Blob/7>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7c573617-0a5f-4459-9b96-fc8ac2716187] [36m  Disk Storage (5.4ms) [0m[34mDownloaded file from key: 9QQZpxmog9ZGujXj4KD5gMjG[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7c573617-0a5f-4459-9b96-fc8ac2716187] Error performing ActiveStorage::AnalyzeJob (Job ID: 7c573617-0a5f-4459-9b96-fc8ac2716187) from Async(default) in 41.54ms: MiniMagick::Error (ImageMagick/GraphicsMagick is not installed):
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/configuration.rb:127:in `cli'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick.rb:38:in `graphicsmagick?'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/tool.rb:126:in `executable'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/tool.rb:110:in `command'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/tool.rb:92:in `call'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/tool.rb:40:in `new'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/image/info.rb:170:in `identify'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/image/info.rb:114:in `raw'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/image/info.rb:35:in `[]'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/image.rb:300:in `[]'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:42:in `rotated_image?'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:22:in `block in metadata'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:37:in `block in read_image'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/downloading.rb:12:in `block in download_blob_to_tempfile'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/downloading.rb:20:in `open_tempfile_for_blob'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/downloading.rb:10:in `download_blob_to_tempfile'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:35:in `read_image'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:21:in `metadata'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/app/models/active_storage/blob/analyzable.rb:47:in `extract_metadata_via_analyzer'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/app/models/active_storage/blob/analyzable.rb:29:in `analyze'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/app/jobs/active_storage/analyze_job.rb:6:in `perform'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/execution.rb:39:in `block in perform_now'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/i18n-1.1.0/lib/i18n.rb:284:in `with_locale'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `instance_exec'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:26:in `block (4 levels) in <module:Logging>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/notifications.rb:168:in `block in instrument'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/notifications.rb:168:in `instrument'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:25:in `block (3 levels) in <module:Logging>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:46:in `block in tag_logger'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/tagged_logging.rb:71:in `block in tagged'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/tagged_logging.rb:28:in `tagged'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/tagged_logging.rb:71:in `tagged'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:46:in `tag_logger'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:22:in `block (2 levels) in <module:Logging>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `instance_exec'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:136:in `run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/execution.rb:35:in `perform_now'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/execution.rb:24:in `block in execute'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/railtie.rb:28:in `block (4 levels) in <class:Railtie>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/execution_wrapper.rb:87:in `wrap'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/reloader.rb:73:in `block in wrap'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/execution_wrapper.rb:87:in `wrap'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/reloader.rb:72:in `wrap'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/railtie.rb:27:in `block (3 levels) in <class:Railtie>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `instance_exec'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:136:in `run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/execution.rb:22:in `execute'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/queue_adapters/async_adapter.rb:70:in `perform'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
+Started GET "/events/%3Canonymous%3E" for 127.0.0.1 at 2018-09-05 18:46:32 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/events/%3Canonymous%3E"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/events/%3Canonymous%3E" for 127.0.0.1 at 2018-09-05 18:46:33 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/events/%3Canonymous%3E"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/events/%3Canonymous%3E" for 127.0.0.1 at 2018-09-05 18:46:33 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/events/%3Canonymous%3E"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-09-05 18:46:43 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"The Royal Wedding", "description"=>"Prince Harry and Meghan Markle", "cover"=>#<ActionDispatch::Http::UploadedFile:0x000000000c3e25e0 @tempfile=#<Tempfile:C:/Users/JESSIE~1/AppData/Local/Temp/RackMultipart20180905-10888-1s6k66.jpg>, @original_filename="Prince-Harry-Meghan-Markle.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"event[cover]\"; filename=\"Prince-Harry-Meghan-Markle.jpg\"\r\nContent-Type: image/jpeg\r\n">}}
+Unpermitted parameter: :cover
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:18
+  [1m[36mEvent Create (9.1ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "The Royal Wedding"], ["description", "Prince Harry and Meghan Markle"], ["created_at", "2018-09-05 22:46:43.980351"], ["updated_at", "2018-09-05 22:46:43.980351"]]
+  ↳ app/controllers/api/v1/events_controller.rb:18
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:18
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 8], ["record_type", "Event"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:19
+[36m  Disk Storage (5.1ms) [0m[32mUploaded file to key: KnqHpJJcuhJW4phBhfm3SYz8 (checksum: RuEmM5Zn1ZtjMFtU4PGIUQ==)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[36mActiveStorage::Blob Create (1.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["key", "KnqHpJJcuhJW4phBhfm3SYz8"], ["filename", "Prince-Harry-Meghan-Markle.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 79445], ["checksum", "RuEmM5Zn1ZtjMFtU4PGIUQ=="], ["created_at", "2018-09-05 22:46:44.012166"]]
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[36mActiveStorage::Attachment Create (1.3ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "cover"], ["record_type", "Event"], ["record_id", 8], ["blob_id", 8], ["created_at", "2018-09-05 22:46:44.023736"]]
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[36mEvent Update (0.1ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = ? WHERE "events"."id" = ?[0m  [["updated_at", "2018-09-05 22:46:44.026362"], ["id", 8]]
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[35m (6.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:19
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 70e12f07-6c7d-45e3-b2df-d9cdba3c122a) to Async(default) with arguments: #<GlobalID:0x000000000c6360d0 @uri=#<URI::GID gid://eventure-photos/ActiveStorage::Blob/8>>
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:21
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Completed 200 OK in 64ms (Views: 0.8ms | ActiveRecord: 32.2ms)
+
+
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [70e12f07-6c7d-45e3-b2df-d9cdba3c122a] Performing ActiveStorage::AnalyzeJob (Job ID: 70e12f07-6c7d-45e3-b2df-d9cdba3c122a) from Async(default) with arguments: #<GlobalID:0x000000000c6673b0 @uri=#<URI::GID gid://eventure-photos/ActiveStorage::Blob/8>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [70e12f07-6c7d-45e3-b2df-d9cdba3c122a] [36m  Disk Storage (4.6ms) [0m[34mDownloaded file from key: KnqHpJJcuhJW4phBhfm3SYz8[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [70e12f07-6c7d-45e3-b2df-d9cdba3c122a] Error performing ActiveStorage::AnalyzeJob (Job ID: 70e12f07-6c7d-45e3-b2df-d9cdba3c122a) from Async(default) in 35.83ms: MiniMagick::Error (ImageMagick/GraphicsMagick is not installed):
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/configuration.rb:127:in `cli'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick.rb:38:in `graphicsmagick?'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/tool.rb:126:in `executable'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/tool.rb:110:in `command'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/tool.rb:92:in `call'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/tool.rb:40:in `new'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/image/info.rb:170:in `identify'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/image/info.rb:114:in `raw'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/image/info.rb:35:in `[]'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/image.rb:300:in `[]'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:42:in `rotated_image?'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:22:in `block in metadata'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:37:in `block in read_image'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/downloading.rb:12:in `block in download_blob_to_tempfile'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/downloading.rb:20:in `open_tempfile_for_blob'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/downloading.rb:10:in `download_blob_to_tempfile'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:35:in `read_image'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:21:in `metadata'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/app/models/active_storage/blob/analyzable.rb:47:in `extract_metadata_via_analyzer'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/app/models/active_storage/blob/analyzable.rb:29:in `analyze'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/app/jobs/active_storage/analyze_job.rb:6:in `perform'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/execution.rb:39:in `block in perform_now'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/i18n-1.1.0/lib/i18n.rb:284:in `with_locale'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `instance_exec'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:26:in `block (4 levels) in <module:Logging>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/notifications.rb:168:in `block in instrument'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/notifications.rb:168:in `instrument'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:25:in `block (3 levels) in <module:Logging>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:46:in `block in tag_logger'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/tagged_logging.rb:71:in `block in tagged'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/tagged_logging.rb:28:in `tagged'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/tagged_logging.rb:71:in `tagged'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:46:in `tag_logger'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:22:in `block (2 levels) in <module:Logging>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `instance_exec'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:136:in `run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/execution.rb:35:in `perform_now'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/execution.rb:24:in `block in execute'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/railtie.rb:28:in `block (4 levels) in <class:Railtie>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/execution_wrapper.rb:87:in `wrap'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/reloader.rb:73:in `block in wrap'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/execution_wrapper.rb:87:in `wrap'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/reloader.rb:72:in `wrap'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/railtie.rb:27:in `block (3 levels) in <class:Railtie>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `instance_exec'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:136:in `run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/execution.rb:22:in `execute'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/queue_adapters/async_adapter.rb:70:in `perform'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-09-06 09:55:57 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"The Royal Wedding", "description"=>"Prince Harry and Meghan Markle", "cover"=>#<ActionDispatch::Http::UploadedFile:0x00000000080cebf0 @tempfile=#<Tempfile:C:/Users/JESSIE~1/AppData/Local/Temp/RackMultipart20180906-10888-cqe9tz.jpg>, @original_filename="Prince-Harry-Meghan-Markle.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"event[cover]\"; filename=\"Prince-Harry-Meghan-Markle.jpg\"\r\nContent-Type: image/jpeg\r\n">}}
+Unpermitted parameter: :cover
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:18
+  [1m[36mEvent Create (1.5ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "The Royal Wedding"], ["description", "Prince Harry and Meghan Markle"], ["created_at", "2018-09-06 13:55:57.573918"], ["updated_at", "2018-09-06 13:55:57.573918"]]
+  ↳ app/controllers/api/v1/events_controller.rb:18
+  [1m[35m (7.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:18
+  [1m[36mActiveStorage::Attachment Load (1.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 9], ["record_type", "Event"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:19
+[36m  Disk Storage (7.0ms) [0m[32mUploaded file to key: LjkBN4roZgyV2bFPYXjJ9Evp (checksum: RuEmM5Zn1ZtjMFtU4PGIUQ==)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[36mActiveStorage::Blob Create (5.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["key", "LjkBN4roZgyV2bFPYXjJ9Evp"], ["filename", "Prince-Harry-Meghan-Markle.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 79445], ["checksum", "RuEmM5Zn1ZtjMFtU4PGIUQ=="], ["created_at", "2018-09-06 13:55:57.656760"]]
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[36mActiveStorage::Attachment Create (1.4ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "cover"], ["record_type", "Event"], ["record_id", 9], ["blob_id", 9], ["created_at", "2018-09-06 13:55:57.684067"]]
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[36mEvent Update (0.3ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = ? WHERE "events"."id" = ?[0m  [["updated_at", "2018-09-06 13:55:57.689056"], ["id", 9]]
+  ↳ app/controllers/api/v1/events_controller.rb:19
+  [1m[35m (7.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:19
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 96a64b1a-e135-41cf-91e8-f21e137ff095) to Async(default) with arguments: #<GlobalID:0x000000000bec58f0 @uri=#<URI::GID gid://eventure-photos/ActiveStorage::Blob/9>>
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:21
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Completed 200 OK in 181ms (Views: 5.0ms | ActiveRecord: 32.2ms)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [96a64b1a-e135-41cf-91e8-f21e137ff095] Performing ActiveStorage::AnalyzeJob (Job ID: 96a64b1a-e135-41cf-91e8-f21e137ff095) from Async(default) with arguments: #<GlobalID:0x000000000804ce70 @uri=#<URI::GID gid://eventure-photos/ActiveStorage::Blob/9>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [96a64b1a-e135-41cf-91e8-f21e137ff095] [36m  Disk Storage (6.1ms) [0m[34mDownloaded file from key: LjkBN4roZgyV2bFPYXjJ9Evp[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [96a64b1a-e135-41cf-91e8-f21e137ff095] Error performing ActiveStorage::AnalyzeJob (Job ID: 96a64b1a-e135-41cf-91e8-f21e137ff095) from Async(default) in 60.98ms: MiniMagick::Error (ImageMagick/GraphicsMagick is not installed):
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/configuration.rb:127:in `cli'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick.rb:38:in `graphicsmagick?'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/tool.rb:126:in `executable'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/tool.rb:110:in `command'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/tool.rb:92:in `call'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/tool.rb:40:in `new'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/image/info.rb:170:in `identify'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/image/info.rb:114:in `raw'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/image/info.rb:35:in `[]'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/mini_magick-4.8.0/lib/mini_magick/image.rb:300:in `[]'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:42:in `rotated_image?'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:22:in `block in metadata'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:37:in `block in read_image'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/downloading.rb:12:in `block in download_blob_to_tempfile'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/downloading.rb:20:in `open_tempfile_for_blob'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/downloading.rb:10:in `download_blob_to_tempfile'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:35:in `read_image'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/lib/active_storage/analyzer/image_analyzer.rb:21:in `metadata'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/app/models/active_storage/blob/analyzable.rb:47:in `extract_metadata_via_analyzer'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/app/models/active_storage/blob/analyzable.rb:29:in `analyze'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.1/app/jobs/active_storage/analyze_job.rb:6:in `perform'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/execution.rb:39:in `block in perform_now'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/i18n-1.1.0/lib/i18n.rb:284:in `with_locale'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `instance_exec'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:26:in `block (4 levels) in <module:Logging>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/notifications.rb:168:in `block in instrument'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/notifications.rb:168:in `instrument'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:25:in `block (3 levels) in <module:Logging>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:46:in `block in tag_logger'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/tagged_logging.rb:71:in `block in tagged'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/tagged_logging.rb:28:in `tagged'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/tagged_logging.rb:71:in `tagged'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:46:in `tag_logger'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/logging.rb:22:in `block (2 levels) in <module:Logging>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `instance_exec'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:136:in `run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/execution.rb:35:in `perform_now'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/execution.rb:24:in `block in execute'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/railtie.rb:28:in `block (4 levels) in <class:Railtie>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/execution_wrapper.rb:87:in `wrap'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/reloader.rb:73:in `block in wrap'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/execution_wrapper.rb:87:in `wrap'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/reloader.rb:72:in `wrap'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/railtie.rb:27:in `block (3 levels) in <class:Railtie>'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `instance_exec'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:136:in `run_callbacks'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/execution.rb:22:in `execute'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activejob-5.2.1/lib/active_job/queue_adapters/async_adapter.rb:70:in `perform'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.0.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
