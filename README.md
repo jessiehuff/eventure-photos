@@ -1,3 +1,5 @@
+Eventure Photos has a Rails API back-end with a React-Redux front-end that allows users at an event to share their photos in real time.
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
