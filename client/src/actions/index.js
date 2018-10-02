@@ -20,6 +20,7 @@ export function addEvent(values) {
     eventData.append("event[name]", values.name)
     eventData.append("event[description]", values.description)
     eventData.append("event[cover]", values.cover)
+    eventData.append("event[id]", values.id)
 
     return fetch(`http://localhost:3000/api/v1/events`, {
       method: 'post', 

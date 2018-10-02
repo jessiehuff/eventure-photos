@@ -1,7 +1,7 @@
 class EventSerializer < ActiveModel::Serializer
   include Rails.application.routes.url_helpers
  
-  attributes :name, :description, :cover_url 
+  attributes :id, :name, :description, :cover_url 
 
   def cover_url 
    variant = object.cover.variant(resize: "100x100") 
