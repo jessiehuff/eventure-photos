@@ -1,10 +1,9 @@
 class Api::V1::EventsController < ApplicationController
   before_action :set_event, only: [:show, :update, :destroy]
-  include Rails.application.routes.url_helpers
 
   # GET /events
   def index
-    @events = Event.all
+    @events = Event.all 
 
     render json: @events
   end
@@ -16,11 +15,10 @@ class Api::V1::EventsController < ApplicationController
 
   # POST /events
   def create
-    @event = Event.create! params.require(:event).permit(:name, :description)
-    @event.cover.attach(params[:event][:cover])
+    @event = Event.new(event_params)
 
     if @event.save
-      render json: @event, :include => rails_blob_path(@event.cover)
+      render json: @event 
     else
       render json: @event.errors, status: :unprocessable_entity
     end

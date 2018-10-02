@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_01_151707) do
+ActiveRecord::Schema.define(version: 2018_08_20_035908) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -33,20 +33,10 @@ ActiveRecord::Schema.define(version: 2018_09_01_151707) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "covers", force: :cascade do |t|
-    t.integer "lastModified"
-    t.string "lastModifiedDate"
-    t.string "date"
-    t.string "name"
-    t.integer "size"
-    t.string "type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "events", force: :cascade do |t|
     t.string "name"
     t.string "description"
+    t.string "cover"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

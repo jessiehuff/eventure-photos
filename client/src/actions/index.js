@@ -1,5 +1,4 @@
 import {v4} from 'node-uuid'; 
-import { EventEmitter } from 'events';
 
 export function fetchEvents() {
   return (dispatch) => {
