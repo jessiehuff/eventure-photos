@@ -13,12 +13,13 @@ class EventsShow extends Component {
   }
 
   render() {
+    //debugger 
     return(
       <React.Fragment>
         <EventDisplay 
           name={this.props.event.name}
           description={this.props.event.description}
-          cover={this.props.event.cover}
+          cover_url={this.props.event.cover_url}
         /> 
 
       <PhotosNew event={this.props.event} />

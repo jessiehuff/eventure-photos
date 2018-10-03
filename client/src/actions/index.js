@@ -38,13 +38,6 @@ export function addEvent(values) {
             id: v4()
           })
         }) 
-        // .then(cover => {
-        //   dispatch({
-        //     type: 'ADD_COVER', 
-        //     payload: cover, 
-        //     id: v4() 
-        //   })
-        // })
     }
 }
 
