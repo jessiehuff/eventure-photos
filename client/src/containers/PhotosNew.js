@@ -6,10 +6,8 @@ class PhotosNew extends Component {
   constructor(props) {
     super(props); 
     this.state = {
-      filename: '', 
-      content_type: '', 
-      file_size: '', 
-      created_at: '', 
+      filename: null, 
+      id: '',
       event: this.props.event
     };
   }
@@ -20,9 +18,9 @@ class PhotosNew extends Component {
     //this.props.history.push(`/events/{this.props.event.id}`);
   }
 
-  handleOnChange = event => {
+  handleFile = event => {
     this.setState({
-      [event.target.name]: event.target.value 
+      filename: event.target.files[0]
     });
   }
 
@@ -36,7 +34,7 @@ class PhotosNew extends Component {
             type="file"
             placeholder="New Photo"
             name="filename"
-            onChange={this.handleOnChange} /> 
+            onChange={this.handleFile} /> 
             <br></br><br></br> 
           <input 
             type="submit"
