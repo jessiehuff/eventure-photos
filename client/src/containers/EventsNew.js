@@ -8,7 +8,8 @@ class EventsNew extends Component {
     this.state = {
       name: '', 
       description: '', 
-      cover: null
+      cover: null, 
+      id: ''
     };
   }
 

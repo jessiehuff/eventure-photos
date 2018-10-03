@@ -13,12 +13,13 @@ class EventsShow extends Component {
   }
 
   render() {
+    //debugger 
     return(
       <React.Fragment>
         <EventDisplay 
           name={this.props.event.name}
           description={this.props.event.description}
-          cover={this.props.event.cover}
+          cover_url={this.props.event.cover_url}
         /> 
 
       <PhotosNew event={this.props.event} />
@@ -38,7 +39,6 @@ class EventsShow extends Component {
 
 
 const mapStateToProps = (state, ownProps) => {
-  debugger 
   const allEvents = state.events.events
   const eventShow = Object.keys(allEvents).map(i => state.events.events[i])
   const event = eventShow.find(event => event.id === parseInt(ownProps.match.params.eventId, 10))

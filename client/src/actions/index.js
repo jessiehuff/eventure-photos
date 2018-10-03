@@ -19,32 +19,25 @@ export function addEvent(values) {
     const eventData = new FormData() 
     eventData.append("event[name]", values.name)
     eventData.append("event[description]", values.description)
-    debugger
     eventData.append("event[cover]", values.cover)
+    eventData.append("event[id]", values.id)
 
     return fetch(`http://localhost:3000/api/v1/events`, {
       method: 'post', 
       body: eventData, 
-      contentType: false   
+      contentType: false  
     })
-    .then(res => { 
-      debugger 
+    .then(res => {  
       return res.json()
       })
         .then(event => {
+          debugger
           dispatch({
             type: 'ADD_EVENT', 
             payload: event,
             id: v4()
           })
         }) 
-        // .then(cover => {
-        //   dispatch({
-        //     type: 'ADD_COVER', 
-        //     payload: cover, 
-        //     id: v4() 
-        //   })
-        // })
     }
 }
 
