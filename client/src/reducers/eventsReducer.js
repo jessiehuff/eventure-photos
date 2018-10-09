@@ -13,15 +13,15 @@ export default (state ={
         ...state, 
         events: [
           ...state.events.concat(action.payload),
-        ], 
-       }
-    // case 'ADD_PHOTO':  
-    //   return [
-    //     ...state, 
-    //     photos: {
-    //       ...state.photos
-    //     }
-    //   ]  
+        ] 
+       };
+    case 'ADD_PHOTO':  
+      return {
+        ...state, 
+        photos: [
+          ...state.photos.concat(action.payload),
+      ]
+    }  
     // case 'UPDATE_EVENT':
     //   const index = state.findIndex(event => event.id === action.event.id)
     //     return [

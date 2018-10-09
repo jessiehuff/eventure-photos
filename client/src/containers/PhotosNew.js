@@ -19,6 +19,7 @@ class PhotosNew extends Component {
   }
 
   handleFile = event => {
+    debugger 
     this.setState({
       filename: event.target.files[0]
     });
@@ -29,9 +30,10 @@ class PhotosNew extends Component {
     return (
       <div> 
         <h4>Add a New Photo</h4> 
-        <form onSubmit={this.handleOnSubmit} > 
+        <form className="photoForm" onSubmit={this.handleOnSubmit} > 
           <input
             type="file"
+            id="file"
             placeholder="New Photo"
             name="filename"
             onChange={this.handleFile} /> 

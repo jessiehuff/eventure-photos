@@ -46,6 +46,6 @@ class Api::V1::PhotosController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def photo_params
-      params.require(:photo).permit(:filename)
+      params.require(:photo).permit(filenames: [])
     end
 end

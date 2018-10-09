@@ -52,7 +52,6 @@ class EventsNew extends Component {
           <input
             type="file" 
             id="file"
-            // src={this.props.cover?}
             placeholder="Cover Image"
             name="cover"
             onChange={this.handleFile} />

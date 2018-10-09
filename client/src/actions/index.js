@@ -31,7 +31,6 @@ export function addEvent(values) {
       return res.json()
       })
         .then(event => {
-          debugger
           dispatch({
             type: 'ADD_EVENT', 
             payload: event,
@@ -61,14 +60,17 @@ export function deleteEvent(event) {
 export function addPhoto(values){
   return (dispatch) => {
     
+    debugger 
     const photoData = new FormData() 
     photoData.append("photo[filename]", values.filename)
+    photoData.append("photo[id]", values.id)
     
-    let eventId = values.event.id
+    let eventId = values.event.id 
 
     return fetch(`http://localhost:3000/api/v1/events/${eventId}/photos`, {
       method: 'post', 
-      body: photoData 
+      body: photoData, 
+      contentType: false 
     })
     .then(res => { 
       return res.json()
