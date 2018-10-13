@@ -19,7 +19,6 @@ class PhotosNew extends Component {
   }
 
   handleFile = event => {
-    debugger 
     this.setState({
       filename: event.target.files[0]
     });

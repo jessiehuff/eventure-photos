@@ -8,8 +8,4 @@ class EventSerializer < ActiveModel::Serializer
     return rails_representation_url(variant, only_path: true)
   end 
 
-  #url_for(object.cover) if object.cover.attachment 
-
-  #has_many :users 
-  #has_many :photos 
 end 

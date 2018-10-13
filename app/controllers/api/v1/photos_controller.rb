@@ -15,10 +15,11 @@ class Api::V1::PhotosController < ApplicationController
 
   # POST /photos
   def create
-    @photo = Photo.new(photo_params)
+    @photo = Photo.new(photo_params) 
 
     if @photo.save
-      render json: @photo, status: :created, location: @photo
+      render json: @photo
+      byebug
     else
       render json: @photo.errors, status: :unprocessable_entity
     end

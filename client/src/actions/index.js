@@ -15,7 +15,6 @@ export function fetchEvents() {
 
 export function addEvent(values) {
   return (dispatch) => {
-  
     const eventData = new FormData() 
     eventData.append("event[name]", values.name)
     eventData.append("event[description]", values.description)
@@ -41,7 +40,6 @@ export function addEvent(values) {
 }
 
 export function deleteEvent(event) {
-  debugger 
   return (dispatch) => {
     let id = event.id
     return fetch(`http://localhost:3000/api/v1/events/${event.id}`, {
@@ -64,6 +62,7 @@ export function addPhoto(values){
     const photoData = new FormData() 
     photoData.append("photo[filename]", values.filename)
     photoData.append("photo[id]", values.id)
+    photoData.append("photo[event]", values.event)
     
     let eventId = values.event.id 
 

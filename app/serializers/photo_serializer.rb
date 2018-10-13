@@ -1,12 +1,12 @@
 class PhotoSerializer < ActiveModel::Serializer 
   include Rails.application.routes.url_helpers 
 
-  attributes :id, :photo_url
+  attributes :id, :filenames
 
-  def photo_url 
-    variant = object.photo.variant(resize: "300x300")
-    return rails_representation_url(variant, only_path: true) 
-  end 
-  
-  belongs_to :event 
+  #def photo_url 
+   # return object.filenames.url 
+    #variant = object.filenames.variant(resize: "300x300")
+    #return rails_representation_url(variant, only_path: true) 
+  #end 
+
 end 

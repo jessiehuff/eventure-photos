@@ -18,7 +18,8 @@ class EventsPage extends Component {
 
 const mapStateToProps = state => {
   return {
-   events: state.events.events
+   events: state.events.events, 
+   photos: state.events.photos
   }
 }
 

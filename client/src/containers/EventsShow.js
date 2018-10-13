@@ -20,7 +20,7 @@ class EventsShow extends Component {
           name={this.props.event.name}
           description={this.props.event.description}
           cover_url={this.props.event.cover_url}
-          //photo_url={this.props.event.photos.photo_url}
+          photo_url={this.props.photos.photo_url}
         /> 
 
       <PhotosNew event={this.props.event} />
@@ -46,13 +46,15 @@ const mapStateToProps = (state, ownProps) => {
   const eventShow = Object.keys(allEvents).map(i => state.events.events[i])
   const event = eventShow.find(event => event.id === parseInt(ownProps.match.params.eventId, 10))
 
-  const photoShow = Object.keys(allPhotos).map(i => state.events.photos[i])
+  const photos = allPhotos.filter(photo => photo.event === ownProps.event)
 
-  if (event) { 
-    return { event }
+  if (event && photos) { 
+    return {
+      event, photos
+    }
   }
-    if (photoShow) {
-      return { photoShow }
+  else if (event) {
+      return { event }
     }
   else {
     return { events: [] }
