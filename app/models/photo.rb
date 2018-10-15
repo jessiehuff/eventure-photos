@@ -1,6 +1,6 @@
 class Photo < ActiveRecord::Base
   belongs_to :event, optional: true
-  has_many_attached :filenames 
+  has_one_attached :filename
 
   #validates :filename, presence: true 
   

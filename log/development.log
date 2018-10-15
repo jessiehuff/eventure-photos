@@ -21167,3 +21167,918 @@ Unpermitted parameters: :filename, :id, :event
   ↳ C:/Ruby25-x64/bin/rake:23
   [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (18.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+Migrating to CreateEvents (20180615163129)
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "events" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "cover" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180615163129_create_events.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180615163129"]]
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (7.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+Migrating to CreatePhotos (20180615163410)
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "photos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "filenames" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180615163410_create_photos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180615163410"]]
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (14.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+Migrating to DeviseCreateUsers (20180615163555)
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180615163555_devise_create_users.rb:5
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/migrate/20180615163555_devise_create_users.rb:39
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/migrate/20180615163555_devise_create_users.rb:40
+  [1m[36mActiveRecord::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180615163555"]]
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (7.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+Migrating to CreateActiveStorageTables (20180820035908)
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "byte_size" bigint NOT NULL, "checksum" varchar NOT NULL, "created_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180820035908_create_active_storage_tables.active_storage.rb:4
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  ↳ db/migrate/20180820035908_create_active_storage_tables.active_storage.rb:4
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" integer NOT NULL, "blob_id" integer NOT NULL, "created_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180820035908_create_active_storage_tables.active_storage.rb:16
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE  INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  ↳ db/migrate/20180820035908_create_active_storage_tables.active_storage.rb:16
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  ↳ db/migrate/20180820035908_create_active_storage_tables.active_storage.rb:16
+  [1m[36mActiveRecord::SchemaMigration Create (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180820035908"]]
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (8.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (9.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-10-13 20:58:20.925805"], ["updated_at", "2018-10-13 20:58:20.925805"]]
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (7.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--843e4782e42ee92c53d589e84ffc6cd92a4588ba/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTVRBd2VERXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--e7c789ca69ba6870c243f7ca2736d0729f195006/Prince-Harry-Meghan-Markle.jpg" for 127.0.0.1 at 2018-10-13 17:02:24 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by ActiveStorage::RepresentationsController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--843e4782e42ee92c53d589e84ffc6cd92a4588ba", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTVRBd2VERXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--e7c789ca69ba6870c243f7ca2736d0729f195006", "filename"=>"Prince-Harry-Meghan-Markle"}
+  [1m[36mActiveStorage::Blob Load (1.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Completed 404 Not Found in 221ms (ActiveRecord: 7.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find ActiveStorage::Blob with 'id'=3):
+  
+activerecord (5.2.1) lib/active_record/core.rb:177:in `find'
+activestorage (5.2.1) app/models/active_storage/blob.rb:43:in `find_signed'
+activestorage (5.2.1) app/controllers/concerns/active_storage/set_blob.rb:12:in `set_blob'
+activesupport (5.2.1) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.1) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.1) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.1) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-10-13 17:03:04 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"The Royal Wedding", "description"=>"Prince Harry and Meghan Markle", "cover"=>#<ActionDispatch::Http::UploadedFile:0x0000000003849740 @tempfile=#<Tempfile:C:/Users/JESSIE~1/AppData/Local/Temp/RackMultipart20181013-5536-1m8xy5h.jpg>, @original_filename="Prince-Harry-Meghan-Markle.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"event[cover]\"; filename=\"Prince-Harry-Meghan-Markle.jpg\"\r\nContent-Type: image/jpeg\r\n">, "id"=>""}}
+Unpermitted parameter: :id
+[36m  Disk Storage (8.6ms) [0m[32mUploaded file to key: MXprQD4oDXzNzRQP4ycLxgJD (checksum: RuEmM5Zn1ZtjMFtU4PGIUQ==)[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:18
+  [1m[36mActiveStorage::Blob Create (14.0ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["key", "MXprQD4oDXzNzRQP4ycLxgJD"], ["filename", "Prince-Harry-Meghan-Markle.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 79445], ["checksum", "RuEmM5Zn1ZtjMFtU4PGIUQ=="], ["created_at", "2018-10-13 21:03:05.266314"]]
+  ↳ app/controllers/api/v1/events_controller.rb:18
+  [1m[35m (8.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:18
+  [1m[35m (1.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:18
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:18
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:20
+  [1m[36mEvent Create (11.4ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "The Royal Wedding"], ["description", "Prince Harry and Meghan Markle"], ["created_at", "2018-10-13 21:03:05.587936"], ["updated_at", "2018-10-13 21:03:05.587936"]]
+  ↳ app/controllers/api/v1/events_controller.rb:20
+  [1m[36mActiveStorage::Attachment Create (1.9ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "cover"], ["record_type", "Event"], ["record_id", 1], ["blob_id", 1], ["created_at", "2018-10-13 21:03:05.697873"]]
+  ↳ app/controllers/api/v1/events_controller.rb:20
+  [1m[36mEvent Update (1.2ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = ? WHERE "events"."id" = ?[0m  [["updated_at", "2018-10-13 21:03:05.774497"], ["id", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:20
+  [1m[35m (15.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:20
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 76bcf8fd-5179-4d7a-ac26-2a318138f53a) to Async(default) with arguments: #<GlobalID:0x0000000007bf1218 @uri=#<URI::GID gid://eventure-photos/ActiveStorage::Blob/1>>
+  [1m[36mActiveStorage::Blob Load (2.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [76bcf8fd-5179-4d7a-ac26-2a318138f53a] Performing ActiveStorage::AnalyzeJob (Job ID: 76bcf8fd-5179-4d7a-ac26-2a318138f53a) from Async(default) with arguments: #<GlobalID:0x00000000088ed610 @uri=#<URI::GID gid://eventure-photos/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [76bcf8fd-5179-4d7a-ac26-2a318138f53a] [36m  Disk Storage (10.8ms) [0m[34mDownloaded file from key: MXprQD4oDXzNzRQP4ycLxgJD[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [76bcf8fd-5179-4d7a-ac26-2a318138f53a]   [1m[35m (0.9ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [76bcf8fd-5179-4d7a-ac26-2a318138f53a]   ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [76bcf8fd-5179-4d7a-ac26-2a318138f53a]   [1m[36mActiveStorage::Blob Update (2.7ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"width\":992,\"height\":744,\"analyzed\":true}"], ["id", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [76bcf8fd-5179-4d7a-ac26-2a318138f53a]   ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [76bcf8fd-5179-4d7a-ac26-2a318138f53a]   [1m[35m (9.4ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [76bcf8fd-5179-4d7a-ac26-2a318138f53a]   ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [76bcf8fd-5179-4d7a-ac26-2a318138f53a] Performed ActiveStorage::AnalyzeJob (Job ID: 76bcf8fd-5179-4d7a-ac26-2a318138f53a) from Async(default) in 1381.08ms
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (43.95ms)
+Completed 200 OK in 3034ms (Views: 1607.9ms | ActiveRecord: 72.5ms)
+
+
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1ed9b3ade76bc42c753df4a35698a298c0a232d0/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTVRBd2VERXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--e7c789ca69ba6870c243f7ca2736d0729f195006/Prince-Harry-Meghan-Markle.jpg" for 127.0.0.1 at 2018-10-13 17:03:10 -0400
+Processing by ActiveStorage::RepresentationsController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1ed9b3ade76bc42c753df4a35698a298c0a232d0", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTVRBd2VERXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--e7c789ca69ba6870c243f7ca2736d0729f195006", "filename"=>"Prince-Harry-Meghan-Markle"}
+  [1m[36mActiveStorage::Blob Load (4.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (1.6ms) [0m[34mChecked if file exists at key: variants/MXprQD4oDXzNzRQP4ycLxgJD/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d (no)[0m
+[36m  Disk Storage (34.8ms) [0m[34mDownloaded file from key: MXprQD4oDXzNzRQP4ycLxgJD[0m
+[36m  Disk Storage (2.7ms) [0m[32mUploaded file to key: variants/MXprQD4oDXzNzRQP4ycLxgJD/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d[0m
+[36m  Disk Storage (31.4ms) [0m[34mGenerated URL for file at key: variants/MXprQD4oDXzNzRQP4ycLxgJD/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlOV0hCeVVVUTBiMFJZZWs1NlVsRlFOSGxqVEhoblNrUXZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTNUMjE6MDg6MTEuMzY2WiIsInB1ciI6ImJsb2Jfa2V5In19--f3f81abab043e4a950a037c57ffd629d4ca3ed70/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlOV0hCeVVVUTBiMFJZZWs1NlVsRlFOSGxqVEhoblNrUXZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTNUMjE6MDg6MTEuMzY2WiIsInB1ciI6ImJsb2Jfa2V5In19--f3f81abab043e4a950a037c57ffd629d4ca3ed70/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg
+Completed 302 Found in 901ms (ActiveRecord: 4.8ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlOV0hCeVVVUTBiMFJZZWs1NlVsRlFOSGxqVEhoblNrUXZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTNUMjE6MDg6MTEuMzY2WiIsInB1ciI6ImJsb2Jfa2V5In19--f3f81abab043e4a950a037c57ffd629d4ca3ed70/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg" for 127.0.0.1 at 2018-10-13 17:03:11 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"Prince-Harry-Meghan-Markle.jpg\"; filename*=UTF-8''Prince-Harry-Meghan-Markle.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlOV0hCeVVVUTBiMFJZZWs1NlVsRlFOSGxqVEhoblNrUXZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTNUMjE6MDg6MTEuMzY2WiIsInB1ciI6ImJsb2Jfa2V5In19--f3f81abab043e4a950a037c57ffd629d4ca3ed70", "filename"=>"Prince-Harry-Meghan-Markle"}
+[36m  Disk Storage (30.5ms) [0m[34mDownloaded file from key: variants/MXprQD4oDXzNzRQP4ycLxgJD/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d[0m
+Completed 200 OK in 60ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/events/1/photos" for 127.0.0.1 at 2018-10-13 17:03:26 -0400
+Processing by Api::V1::PhotosController#create as */*
+  Parameters: {"photo"=>{"filename"=>#<ActionDispatch::Http::UploadedFile:0x0000000007a1f188 @tempfile=#<Tempfile:C:/Users/JESSIE~1/AppData/Local/Temp/RackMultipart20181013-5536-19xd614.jpg>, @original_filename="rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[filename]\"; filename=\"rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg\"\r\nContent-Type: image/jpeg\r\n">, "id"=>"", "event"=>"[object Object]"}, "event_id"=>"1"}
+Unpermitted parameters: :filename, :id, :event
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[36mPhoto Create (3.7ms)[0m  [1m[32mINSERT INTO "photos" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2018-10-13 21:03:27.182711"], ["updated_at", "2018-10-13 21:03:27.182711"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[35m (9.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+[active_model_serializers] Rendered PhotoSerializer with ActiveModelSerializers::Adapter::Attributes (2130.75ms)
+Completed 500 Internal Server Error in 2814ms (ActiveRecord: 41.5ms)
+
+
+  
+SystemStackError (stack level too deep):
+  
+
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (19.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+Migrating to CreateEvents (20180615163129)
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE "events" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "cover" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180615163129_create_events.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180615163129"]]
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (11.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+Migrating to CreatePhotos (20180615163410)
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "photos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "filename" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180615163410_create_photos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180615163410"]]
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (11.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+Migrating to DeviseCreateUsers (20180615163555)
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180615163555_devise_create_users.rb:5
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/migrate/20180615163555_devise_create_users.rb:39
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/migrate/20180615163555_devise_create_users.rb:40
+  [1m[36mActiveRecord::SchemaMigration Create (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180615163555"]]
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (9.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+Migrating to CreateActiveStorageTables (20180820035908)
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "byte_size" bigint NOT NULL, "checksum" varchar NOT NULL, "created_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180820035908_create_active_storage_tables.active_storage.rb:4
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  ↳ db/migrate/20180820035908_create_active_storage_tables.active_storage.rb:4
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" integer NOT NULL, "blob_id" integer NOT NULL, "created_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180820035908_create_active_storage_tables.active_storage.rb:16
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  ↳ db/migrate/20180820035908_create_active_storage_tables.active_storage.rb:16
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  ↳ db/migrate/20180820035908_create_active_storage_tables.active_storage.rb:16
+  [1m[36mActiveRecord::SchemaMigration Create (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180820035908"]]
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (9.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (9.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-10-13 21:31:09.078758"], ["updated_at", "2018-10-13 21:31:09.078758"]]
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (9.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-10-13 17:32:08 -0400
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"The Royal Wedding", "description"=>"Prince Harry and Meghan Markle", "cover"=>#<ActionDispatch::Http::UploadedFile:0x0000000007a4ca98 @tempfile=#<Tempfile:C:/Users/JESSIE~1/AppData/Local/Temp/RackMultipart20181013-2800-1gryj7y.jpg>, @original_filename="Prince-Harry-Meghan-Markle.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"event[cover]\"; filename=\"Prince-Harry-Meghan-Markle.jpg\"\r\nContent-Type: image/jpeg\r\n">, "id"=>""}}
+Unpermitted parameter: :id
+[36m  Disk Storage (8.9ms) [0m[32mUploaded file to key: uS13LpzfVxYhMjR8SE4gW2R7 (checksum: RuEmM5Zn1ZtjMFtU4PGIUQ==)[0m
+  [1m[35m (0.9ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:18
+  [1m[36mActiveStorage::Blob Create (3.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["key", "uS13LpzfVxYhMjR8SE4gW2R7"], ["filename", "Prince-Harry-Meghan-Markle.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 79445], ["checksum", "RuEmM5Zn1ZtjMFtU4PGIUQ=="], ["created_at", "2018-10-13 21:32:09.824053"]]
+  ↳ app/controllers/api/v1/events_controller.rb:18
+  [1m[35m (10.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:18
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:18
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:18
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:20
+  [1m[36mEvent Create (10.6ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "The Royal Wedding"], ["description", "Prince Harry and Meghan Markle"], ["created_at", "2018-10-13 21:32:10.079669"], ["updated_at", "2018-10-13 21:32:10.079669"]]
+  ↳ app/controllers/api/v1/events_controller.rb:20
+  [1m[36mActiveStorage::Attachment Create (1.5ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "cover"], ["record_type", "Event"], ["record_id", 1], ["blob_id", 1], ["created_at", "2018-10-13 21:32:10.181743"]]
+  ↳ app/controllers/api/v1/events_controller.rb:20
+  [1m[36mEvent Update (1.8ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = ? WHERE "events"."id" = ?[0m  [["updated_at", "2018-10-13 21:32:10.264834"], ["id", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:20
+  [1m[35m (7.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:20
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 0f59664d-2341-4215-ade7-6b01b84058cd) to Async(default) with arguments: #<GlobalID:0x000000000696d510 @uri=#<URI::GID gid://eventure-photos/ActiveStorage::Blob/1>>
+  [1m[36mActiveStorage::Blob Load (1.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0f59664d-2341-4215-ade7-6b01b84058cd] Performing ActiveStorage::AnalyzeJob (Job ID: 0f59664d-2341-4215-ade7-6b01b84058cd) from Async(default) with arguments: #<GlobalID:0x0000000007a558c8 @uri=#<URI::GID gid://eventure-photos/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0f59664d-2341-4215-ade7-6b01b84058cd] [36m  Disk Storage (10.1ms) [0m[34mDownloaded file from key: uS13LpzfVxYhMjR8SE4gW2R7[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0f59664d-2341-4215-ade7-6b01b84058cd]   [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0f59664d-2341-4215-ade7-6b01b84058cd]   ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0f59664d-2341-4215-ade7-6b01b84058cd]   [1m[36mActiveStorage::Blob Update (35.0ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"width\":992,\"height\":744,\"analyzed\":true}"], ["id", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0f59664d-2341-4215-ade7-6b01b84058cd]   ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0f59664d-2341-4215-ade7-6b01b84058cd]   [1m[35m (8.9ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0f59664d-2341-4215-ade7-6b01b84058cd]   ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0f59664d-2341-4215-ade7-6b01b84058cd] Performed ActiveStorage::AnalyzeJob (Job ID: 0f59664d-2341-4215-ade7-6b01b84058cd) from Async(default) in 819.4ms
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (47.94ms)
+Completed 200 OK in 2455ms (Views: 996.4ms | ActiveRecord: 58.9ms)
+
+
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1ed9b3ade76bc42c753df4a35698a298c0a232d0/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTVRBd2VERXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--e7c789ca69ba6870c243f7ca2736d0729f195006/Prince-Harry-Meghan-Markle.jpg" for 127.0.0.1 at 2018-10-13 17:32:14 -0400
+Processing by ActiveStorage::RepresentationsController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1ed9b3ade76bc42c753df4a35698a298c0a232d0", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTVRBd2VERXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--e7c789ca69ba6870c243f7ca2736d0729f195006", "filename"=>"Prince-Harry-Meghan-Markle"}
+  [1m[36mActiveStorage::Blob Load (1.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.5ms) [0m[34mChecked if file exists at key: variants/uS13LpzfVxYhMjR8SE4gW2R7/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d (no)[0m
+[36m  Disk Storage (10.8ms) [0m[34mDownloaded file from key: uS13LpzfVxYhMjR8SE4gW2R7[0m
+[36m  Disk Storage (2.3ms) [0m[32mUploaded file to key: variants/uS13LpzfVxYhMjR8SE4gW2R7/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d[0m
+[36m  Disk Storage (30.6ms) [0m[34mGenerated URL for file at key: variants/uS13LpzfVxYhMjR8SE4gW2R7/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTNUMjE6Mzc6MTUuMzQ5WiIsInB1ciI6ImJsb2Jfa2V5In19--204aa1a91256c509dfd7002b33550dc1fd1d558f/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTNUMjE6Mzc6MTUuMzQ5WiIsInB1ciI6ImJsb2Jfa2V5In19--204aa1a91256c509dfd7002b33550dc1fd1d558f/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg
+Completed 302 Found in 385ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTNUMjE6Mzc6MTUuMzQ5WiIsInB1ciI6ImJsb2Jfa2V5In19--204aa1a91256c509dfd7002b33550dc1fd1d558f/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg" for 127.0.0.1 at 2018-10-13 17:32:15 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"Prince-Harry-Meghan-Markle.jpg\"; filename*=UTF-8''Prince-Harry-Meghan-Markle.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTNUMjE6Mzc6MTUuMzQ5WiIsInB1ciI6ImJsb2Jfa2V5In19--204aa1a91256c509dfd7002b33550dc1fd1d558f", "filename"=>"Prince-Harry-Meghan-Markle"}
+[36m  Disk Storage (32.4ms) [0m[34mDownloaded file from key: variants/uS13LpzfVxYhMjR8SE4gW2R7/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d[0m
+Completed 200 OK in 61ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/events/1/photos" for 127.0.0.1 at 2018-10-13 17:32:29 -0400
+Processing by Api::V1::PhotosController#create as */*
+  Parameters: {"photo"=>{"filename"=>#<ActionDispatch::Http::UploadedFile:0x0000000007c7e2f8 @tempfile=#<Tempfile:C:/Users/JESSIE~1/AppData/Local/Temp/RackMultipart20181013-2800-gytn90.jpg>, @original_filename="rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[filename]\"; filename=\"rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg\"\r\nContent-Type: image/jpeg\r\n">, "id"=>"", "event"=>"[object Object]"}, "event_id"=>"1"}
+Unpermitted parameters: :filename, :id, :event
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[36mPhoto Create (8.9ms)[0m  [1m[32mINSERT INTO "photos" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2018-10-13 21:32:29.598123"], ["updated_at", "2018-10-13 21:32:29.598123"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[35m (12.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+[active_model_serializers] Rendered PhotoSerializer with ActiveModelSerializers::Adapter::Attributes (50.08ms)
+  [1m[36mActiveStorage::Attachment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Photo"], ["name", "filenames"], ["LIMIT", 1]]
+  ↳ (byebug):1
+Completed 500 Internal Server Error in 216403ms (Views: 77.3ms | ActiveRecord: 26.7ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/api/v1/photos_controller.rb:26:in `create'
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTNUMjE6Mzc6MTUuMzQ5WiIsInB1ciI6ImJsb2Jfa2V5In19--204aa1a91256c509dfd7002b33550dc1fd1d558f/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg" for 127.0.0.1 at 2018-10-13 17:36:27 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"Prince-Harry-Meghan-Markle.jpg\"; filename*=UTF-8''Prince-Harry-Meghan-Markle.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTNUMjE6Mzc6MTUuMzQ5WiIsInB1ciI6ImJsb2Jfa2V5In19--204aa1a91256c509dfd7002b33550dc1fd1d558f", "filename"=>"Prince-Harry-Meghan-Markle"}
+[36m  Disk Storage (50.1ms) [0m[34mDownloaded file from key: variants/uS13LpzfVxYhMjR8SE4gW2R7/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d[0m
+Completed 200 OK in 253ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/events/1/photos" for 127.0.0.1 at 2018-10-13 17:36:39 -0400
+Processing by Api::V1::PhotosController#create as */*
+  Parameters: {"photo"=>{"filename"=>#<ActionDispatch::Http::UploadedFile:0x0000000007a2ce00 @tempfile=#<Tempfile:C:/Users/JESSIE~1/AppData/Local/Temp/RackMultipart20181013-2800-1yrukls.jpg>, @original_filename="rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[filename]\"; filename=\"rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg\"\r\nContent-Type: image/jpeg\r\n">, "id"=>"", "event"=>"[object Object]"}, "event_id"=>"1"}
+Unpermitted parameters: :filename, :id, :event
+  [1m[35m (1.9ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[36mPhoto Create (11.4ms)[0m  [1m[32mINSERT INTO "photos" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2018-10-13 21:36:39.988175"], ["updated_at", "2018-10-13 21:36:39.988175"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[35m (14.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+[active_model_serializers] Rendered PhotoSerializer with ActiveModelSerializers::Adapter::Attributes (194.47ms)
+Completed 200 OK in 992ms (Views: 264.7ms | ActiveRecord: 59.1ms)
+
+
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1ed9b3ade76bc42c753df4a35698a298c0a232d0/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTVRBd2VERXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--e7c789ca69ba6870c243f7ca2736d0729f195006/Prince-Harry-Meghan-Markle.jpg" for 127.0.0.1 at 2018-10-13 17:50:10 -0400
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by ActiveStorage::RepresentationsController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1ed9b3ade76bc42c753df4a35698a298c0a232d0", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTVRBd2VERXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--e7c789ca69ba6870c243f7ca2736d0729f195006", "filename"=>"Prince-Harry-Meghan-Markle"}
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (1.8ms) [0m[34mChecked if file exists at key: variants/uS13LpzfVxYhMjR8SE4gW2R7/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d (yes)[0m
+[36m  Disk Storage (268.1ms) [0m[34mGenerated URL for file at key: variants/uS13LpzfVxYhMjR8SE4gW2R7/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTNUMjE6NTU6MTEuNzMzWiIsInB1ciI6ImJsb2Jfa2V5In19--55eff089d6d9f864446f7addcb1c479b02070640/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTNUMjE6NTU6MTEuNzMzWiIsInB1ciI6ImJsb2Jfa2V5In19--55eff089d6d9f864446f7addcb1c479b02070640/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg
+Completed 302 Found in 667ms (ActiveRecord: 5.4ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTNUMjE6NTU6MTEuNzMzWiIsInB1ciI6ImJsb2Jfa2V5In19--55eff089d6d9f864446f7addcb1c479b02070640/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg" for 127.0.0.1 at 2018-10-13 17:50:12 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"Prince-Harry-Meghan-Markle.jpg\"; filename*=UTF-8''Prince-Harry-Meghan-Markle.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTNUMjE6NTU6MTEuNzMzWiIsInB1ciI6ImJsb2Jfa2V5In19--55eff089d6d9f864446f7addcb1c479b02070640", "filename"=>"Prince-Harry-Meghan-Markle"}
+[36m  Disk Storage (43.7ms) [0m[34mDownloaded file from key: variants/uS13LpzfVxYhMjR8SE4gW2R7/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d[0m
+Completed 200 OK in 81ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/events/1/photos" for 127.0.0.1 at 2018-10-13 17:50:18 -0400
+Processing by Api::V1::PhotosController#create as */*
+  Parameters: {"photo"=>{"filename"=>#<ActionDispatch::Http::UploadedFile:0x0000000007ac60f0 @tempfile=#<Tempfile:C:/Users/JESSIE~1/AppData/Local/Temp/RackMultipart20181013-3272-5jzs5u.jpg>, @original_filename="rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[filename]\"; filename=\"rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg\"\r\nContent-Type: image/jpeg\r\n">, "id"=>"", "event"=>"[object Object]"}, "event_id"=>"1"}
+Unpermitted parameters: :filename, :id, :event
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1ed9b3ade76bc42c753df4a35698a298c0a232d0/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTVRBd2VERXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--e7c789ca69ba6870c243f7ca2736d0729f195006/Prince-Harry-Meghan-Markle.jpg" for 127.0.0.1 at 2018-10-13 17:59:57 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by ActiveStorage::RepresentationsController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1ed9b3ade76bc42c753df4a35698a298c0a232d0", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTVRBd2VERXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--e7c789ca69ba6870c243f7ca2736d0729f195006", "filename"=>"Prince-Harry-Meghan-Markle"}
+  [1m[36mActiveStorage::Blob Load (1.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.5ms) [0m[34mChecked if file exists at key: variants/uS13LpzfVxYhMjR8SE4gW2R7/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d (yes)[0m
+[36m  Disk Storage (261.6ms) [0m[34mGenerated URL for file at key: variants/uS13LpzfVxYhMjR8SE4gW2R7/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTNUMjI6MDQ6NTguMjI5WiIsInB1ciI6ImJsb2Jfa2V5In19--2c0284bf05d326033fe059170500540cf9d906bc/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTNUMjI6MDQ6NTguMjI5WiIsInB1ciI6ImJsb2Jfa2V5In19--2c0284bf05d326033fe059170500540cf9d906bc/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg
+Completed 302 Found in 564ms (ActiveRecord: 6.9ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTNUMjI6MDQ6NTguMjI5WiIsInB1ciI6ImJsb2Jfa2V5In19--2c0284bf05d326033fe059170500540cf9d906bc/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg" for 127.0.0.1 at 2018-10-13 17:59:58 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"Prince-Harry-Meghan-Markle.jpg\"; filename*=UTF-8''Prince-Harry-Meghan-Markle.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTNUMjI6MDQ6NTguMjI5WiIsInB1ciI6ImJsb2Jfa2V5In19--2c0284bf05d326033fe059170500540cf9d906bc", "filename"=>"Prince-Harry-Meghan-Markle"}
+[36m  Disk Storage (22.2ms) [0m[34mDownloaded file from key: variants/uS13LpzfVxYhMjR8SE4gW2R7/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d[0m
+Completed 200 OK in 50ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/events/1/photos" for 127.0.0.1 at 2018-10-13 18:00:10 -0400
+Processing by Api::V1::PhotosController#create as */*
+  Parameters: {"photo"=>{"filename"=>#<ActionDispatch::Http::UploadedFile:0x0000000007c9ea08 @tempfile=#<Tempfile:C:/Users/JESSIE~1/AppData/Local/Temp/RackMultipart20181013-15600-127ac1k.jpg>, @original_filename="rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[filename]\"; filename=\"rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg\"\r\nContent-Type: image/jpeg\r\n">, "id"=>"", "event"=>"[object Object]"}, "event_id"=>"1"}
+Unpermitted parameters: :filename, :id, :event
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[36mPhoto Create (10.5ms)[0m  [1m[32mINSERT INTO "photos" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2018-10-13 22:00:11.051324"], ["updated_at", "2018-10-13 22:00:11.051324"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[35m (7.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[36mActiveStorage::Attachment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Photo"], ["name", "filenames"], ["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Photo"], ["name", "filenames"], ["LIMIT", 11]]
+  ↳ app/controllers/api/v1/photos_controller.rb:22
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/api/v1/photos_controller.rb:22
+  [1m[36mEvent Load (1.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/api/v1/photos_controller.rb:22
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" ORDER BY "photos"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Event"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" ORDER BY "photos"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mCACHE ActiveStorage::Attachment Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Photo"], ["name", "filenames"], ["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" ORDER BY "photos"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Event"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" ORDER BY "photos"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mCACHE ActiveStorage::Attachment Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Photo"], ["name", "filenames"], ["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mCACHE Photo Load (0.3ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" ORDER BY "photos"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mCACHE Photo Load (0.1ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" ORDER BY "photos"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" ORDER BY "photos"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mCACHE Photo Load (0.1ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" ORDER BY "photos"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mCACHE ActiveStorage::Attachment Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Photo"], ["name", "filenames"], ["LIMIT", 1]]
+  ↳ (byebug):1
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1ed9b3ade76bc42c753df4a35698a298c0a232d0/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTVRBd2VERXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--e7c789ca69ba6870c243f7ca2736d0729f195006/Prince-Harry-Meghan-Markle.jpg" for 127.0.0.1 at 2018-10-15 13:16:28 -0400
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by ActiveStorage::RepresentationsController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1ed9b3ade76bc42c753df4a35698a298c0a232d0", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTVRBd2VERXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--e7c789ca69ba6870c243f7ca2736d0729f195006", "filename"=>"Prince-Harry-Meghan-Markle"}
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (4.6ms) [0m[34mChecked if file exists at key: variants/uS13LpzfVxYhMjR8SE4gW2R7/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d (yes)[0m
+[36m  Disk Storage (747.1ms) [0m[34mGenerated URL for file at key: variants/uS13LpzfVxYhMjR8SE4gW2R7/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTVUMTc6MjE6MjkuMDcyWiIsInB1ciI6ImJsb2Jfa2V5In19--c2252b99b564cd3dc475ed6c35ed8b1f4c1fc83e/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTVUMTc6MjE6MjkuMDcyWiIsInB1ciI6ImJsb2Jfa2V5In19--c2252b99b564cd3dc475ed6c35ed8b1f4c1fc83e/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg
+Completed 302 Found in 1112ms (ActiveRecord: 5.9ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTVUMTc6MjE6MjkuMDcyWiIsInB1ciI6ImJsb2Jfa2V5In19--c2252b99b564cd3dc475ed6c35ed8b1f4c1fc83e/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg" for 127.0.0.1 at 2018-10-15 13:16:29 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"Prince-Harry-Meghan-Markle.jpg\"; filename*=UTF-8''Prince-Harry-Meghan-Markle.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTVUMTc6MjE6MjkuMDcyWiIsInB1ciI6ImJsb2Jfa2V5In19--c2252b99b564cd3dc475ed6c35ed8b1f4c1fc83e", "filename"=>"Prince-Harry-Meghan-Markle"}
+[36m  Disk Storage (29.7ms) [0m[34mDownloaded file from key: variants/uS13LpzfVxYhMjR8SE4gW2R7/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d[0m
+Completed 200 OK in 56ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/events/1/photos" for 127.0.0.1 at 2018-10-15 13:16:38 -0400
+Processing by Api::V1::PhotosController#create as */*
+  Parameters: {"photo"=>{"filename"=>#<ActionDispatch::Http::UploadedFile:0x0000000006dd07d8 @tempfile=#<Tempfile:C:/Users/JESSIE~1/AppData/Local/Temp/RackMultipart20181015-13304-1l75z4h.jpg>, @original_filename="rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[filename]\"; filename=\"rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg\"\r\nContent-Type: image/jpeg\r\n">, "id"=>"", "event"=>"[object Object]"}, "event_id"=>"1"}
+Unpermitted parameters: :filename, :id, :event
+  [1m[35m (0.9ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[36mPhoto Create (11.1ms)[0m  [1m[32mINSERT INTO "photos" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2018-10-15 17:16:38.434380"], ["updated_at", "2018-10-15 17:16:38.434380"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[35m (9.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTVUMTc6MjE6MjkuMDcyWiIsInB1ciI6ImJsb2Jfa2V5In19--c2252b99b564cd3dc475ed6c35ed8b1f4c1fc83e/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg" for 127.0.0.1 at 2018-10-15 13:17:46 -0400
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"Prince-Harry-Meghan-Markle.jpg\"; filename*=UTF-8''Prince-Harry-Meghan-Markle.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTVUMTc6MjE6MjkuMDcyWiIsInB1ciI6ImJsb2Jfa2V5In19--c2252b99b564cd3dc475ed6c35ed8b1f4c1fc83e", "filename"=>"Prince-Harry-Meghan-Markle"}
+[36m  Disk Storage (23.0ms) [0m[34mDownloaded file from key: variants/uS13LpzfVxYhMjR8SE4gW2R7/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d[0m
+Completed 200 OK in 163ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/events/1/photos" for 127.0.0.1 at 2018-10-15 13:17:55 -0400
+Processing by Api::V1::PhotosController#create as */*
+  Parameters: {"photo"=>{"filename"=>#<ActionDispatch::Http::UploadedFile:0x0000000007a49af0 @tempfile=#<Tempfile:C:/Users/JESSIE~1/AppData/Local/Temp/RackMultipart20181015-19832-1ob3zat.jpg>, @original_filename="rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[filename]\"; filename=\"rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg\"\r\nContent-Type: image/jpeg\r\n">, "id"=>"", "event"=>"[object Object]"}, "event_id"=>"1"}
+Unpermitted parameters: :filename, :id, :event
+  [1m[35m (1.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[36mPhoto Create (14.5ms)[0m  [1m[32mINSERT INTO "photos" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2018-10-15 17:17:56.367375"], ["updated_at", "2018-10-15 17:17:56.367375"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[35m (7.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+[active_model_serializers] Rendered PhotoSerializer with ActiveModelSerializers::Adapter::Attributes (127.47ms)
+Completed 200 OK in 524ms (Views: 224.2ms | ActiveRecord: 35.7ms)
+
+
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1ed9b3ade76bc42c753df4a35698a298c0a232d0/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTVRBd2VERXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--e7c789ca69ba6870c243f7ca2736d0729f195006/Prince-Harry-Meghan-Markle.jpg" for 127.0.0.1 at 2018-10-15 13:23:39 -0400
+Processing by ActiveStorage::RepresentationsController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1ed9b3ade76bc42c753df4a35698a298c0a232d0", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTVRBd2VERXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--e7c789ca69ba6870c243f7ca2736d0729f195006", "filename"=>"Prince-Harry-Meghan-Markle"}
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.5ms) [0m[34mChecked if file exists at key: variants/uS13LpzfVxYhMjR8SE4gW2R7/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d (yes)[0m
+[36m  Disk Storage (207.7ms) [0m[34mGenerated URL for file at key: variants/uS13LpzfVxYhMjR8SE4gW2R7/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTVUMTc6Mjg6MzkuODM1WiIsInB1ciI6ImJsb2Jfa2V5In19--acefb5ec0742347f8f095a45423886b901f26e71/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTVUMTc6Mjg6MzkuODM1WiIsInB1ciI6ImJsb2Jfa2V5In19--acefb5ec0742347f8f095a45423886b901f26e71/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg
+Completed 302 Found in 401ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTVUMTc6Mjg6MzkuODM1WiIsInB1ciI6ImJsb2Jfa2V5In19--acefb5ec0742347f8f095a45423886b901f26e71/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg" for 127.0.0.1 at 2018-10-15 13:23:40 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"Prince-Harry-Meghan-Markle.jpg\"; filename*=UTF-8''Prince-Harry-Meghan-Markle.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTVUMTc6Mjg6MzkuODM1WiIsInB1ciI6ImJsb2Jfa2V5In19--acefb5ec0742347f8f095a45423886b901f26e71", "filename"=>"Prince-Harry-Meghan-Markle"}
+[36m  Disk Storage (42.1ms) [0m[34mDownloaded file from key: variants/uS13LpzfVxYhMjR8SE4gW2R7/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d[0m
+Completed 200 OK in 94ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTVUMTc6Mjg6MzkuODM1WiIsInB1ciI6ImJsb2Jfa2V5In19--acefb5ec0742347f8f095a45423886b901f26e71/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg" for 127.0.0.1 at 2018-10-15 13:23:40 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"Prince-Harry-Meghan-Markle.jpg\"; filename*=UTF-8''Prince-Harry-Meghan-Markle.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTVUMTc6Mjg6MzkuODM1WiIsInB1ciI6ImJsb2Jfa2V5In19--acefb5ec0742347f8f095a45423886b901f26e71", "filename"=>"Prince-Harry-Meghan-Markle"}
+[36m  Disk Storage (31.1ms) [0m[34mDownloaded file from key: variants/uS13LpzfVxYhMjR8SE4gW2R7/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d[0m
+Completed 200 OK in 65ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/events/1/photos" for 127.0.0.1 at 2018-10-15 13:24:25 -0400
+Processing by Api::V1::PhotosController#create as */*
+  Parameters: {"photo"=>{"filename"=>#<ActionDispatch::Http::UploadedFile:0x0000000007d77ee8 @tempfile=#<Tempfile:C:/Users/JESSIE~1/AppData/Local/Temp/RackMultipart20181015-19832-1dq7meb.jpg>, @original_filename="rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[filename]\"; filename=\"rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg\"\r\nContent-Type: image/jpeg\r\n">, "id"=>"", "event"=>"[object Object]"}, "event_id"=>"1"}
+Unpermitted parameters: :filename, :id, :event
+  [1m[35m (1.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[36mPhoto Create (8.0ms)[0m  [1m[32mINSERT INTO "photos" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2018-10-15 17:24:26.222894"], ["updated_at", "2018-10-15 17:24:26.222894"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+[active_model_serializers] Rendered PhotoSerializer with ActiveModelSerializers::Adapter::Attributes (28.32ms)
+Completed 200 OK in 357ms (Views: 54.6ms | ActiveRecord: 15.1ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTVUMTc6Mjg6MzkuODM1WiIsInB1ciI6ImJsb2Jfa2V5In19--acefb5ec0742347f8f095a45423886b901f26e71/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg" for 127.0.0.1 at 2018-10-15 13:24:28 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"Prince-Harry-Meghan-Markle.jpg\"; filename*=UTF-8''Prince-Harry-Meghan-Markle.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTVUMTc6Mjg6MzkuODM1WiIsInB1ciI6ImJsb2Jfa2V5In19--acefb5ec0742347f8f095a45423886b901f26e71", "filename"=>"Prince-Harry-Meghan-Markle"}
+[36m  Disk Storage (33.8ms) [0m[34mDownloaded file from key: variants/uS13LpzfVxYhMjR8SE4gW2R7/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d[0m
+Completed 200 OK in 66ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/events/1/photos" for 127.0.0.1 at 2018-10-15 13:24:35 -0400
+Processing by Api::V1::PhotosController#create as */*
+  Parameters: {"photo"=>{"filename"=>#<ActionDispatch::Http::UploadedFile:0x00000000065a23e0 @tempfile=#<Tempfile:C:/Users/JESSIE~1/AppData/Local/Temp/RackMultipart20181015-19832-a878e0.jpg>, @original_filename="rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[filename]\"; filename=\"rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg\"\r\nContent-Type: image/jpeg\r\n">, "id"=>"", "event"=>"[object Object]"}, "event_id"=>"1"}
+Unpermitted parameters: :filename, :id, :event
+  [1m[35m (2.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[36mPhoto Create (18.5ms)[0m  [1m[32mINSERT INTO "photos" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2018-10-15 17:24:36.081866"], ["updated_at", "2018-10-15 17:24:36.081866"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[35m (33.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+[active_model_serializers] Rendered PhotoSerializer with ActiveModelSerializers::Adapter::Attributes (54.41ms)
+Completed 200 OK in 583ms (Views: 76.2ms | ActiveRecord: 54.7ms)
+
+
+Started POST "/api/v1/events/1/photos" for 127.0.0.1 at 2018-10-15 13:25:01 -0400
+Processing by Api::V1::PhotosController#create as */*
+  Parameters: {"photo"=>{"filename"=>#<ActionDispatch::Http::UploadedFile:0x0000000006563708 @tempfile=#<Tempfile:C:/Users/JESSIE~1/AppData/Local/Temp/RackMultipart20181015-19832-1xdbm9y.jpg>, @original_filename="rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[filename]\"; filename=\"rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg\"\r\nContent-Type: image/jpeg\r\n">, "id"=>"", "event"=>"[object Object]"}, "event_id"=>"1"}
+Unpermitted parameters: :filename, :id, :event
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[36mPhoto Create (12.8ms)[0m  [1m[32mINSERT INTO "photos" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2018-10-15 17:25:01.542942"], ["updated_at", "2018-10-15 17:25:01.542942"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+[active_model_serializers] Rendered PhotoSerializer with ActiveModelSerializers::Adapter::Attributes (52.68ms)
+Completed 200 OK in 372ms (Views: 70.3ms | ActiveRecord: 20.1ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTVUMTc6Mjg6MzkuODM1WiIsInB1ciI6ImJsb2Jfa2V5In19--acefb5ec0742347f8f095a45423886b901f26e71/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg" for 127.0.0.1 at 2018-10-15 13:25:03 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"Prince-Harry-Meghan-Markle.jpg\"; filename*=UTF-8''Prince-Harry-Meghan-Markle.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTVUMTc6Mjg6MzkuODM1WiIsInB1ciI6ImJsb2Jfa2V5In19--acefb5ec0742347f8f095a45423886b901f26e71", "filename"=>"Prince-Harry-Meghan-Markle"}
+[36m  Disk Storage (46.3ms) [0m[34mDownloaded file from key: variants/uS13LpzfVxYhMjR8SE4gW2R7/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d[0m
+Completed 200 OK in 75ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/events/1/photos" for 127.0.0.1 at 2018-10-15 13:25:11 -0400
+Processing by Api::V1::PhotosController#create as */*
+  Parameters: {"photo"=>{"filename"=>#<ActionDispatch::Http::UploadedFile:0x0000000007865950 @tempfile=#<Tempfile:C:/Users/JESSIE~1/AppData/Local/Temp/RackMultipart20181015-19832-f0squx.jpg>, @original_filename="rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[filename]\"; filename=\"rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg\"\r\nContent-Type: image/jpeg\r\n">, "id"=>"", "event"=>"[object Object]"}, "event_id"=>"1"}
+Unpermitted parameters: :filename, :id, :event
+  [1m[35m (1.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[36mPhoto Create (15.2ms)[0m  [1m[32mINSERT INTO "photos" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2018-10-15 17:25:11.563976"], ["updated_at", "2018-10-15 17:25:11.563976"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[35m (10.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+[active_model_serializers] Rendered PhotoSerializer with ActiveModelSerializers::Adapter::Attributes (68.56ms)
+Completed 200 OK in 344ms (Views: 94.8ms | ActiveRecord: 26.9ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTVUMTc6Mjg6MzkuODM1WiIsInB1ciI6ImJsb2Jfa2V5In19--acefb5ec0742347f8f095a45423886b901f26e71/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg" for 127.0.0.1 at 2018-10-15 13:25:20 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"Prince-Harry-Meghan-Markle.jpg\"; filename*=UTF-8''Prince-Harry-Meghan-Markle.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTVUMTc6Mjg6MzkuODM1WiIsInB1ciI6ImJsb2Jfa2V5In19--acefb5ec0742347f8f095a45423886b901f26e71", "filename"=>"Prince-Harry-Meghan-Markle"}
+[36m  Disk Storage (32.8ms) [0m[34mDownloaded file from key: variants/uS13LpzfVxYhMjR8SE4gW2R7/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d[0m
+Completed 200 OK in 54ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/events/1/photos" for 127.0.0.1 at 2018-10-15 13:36:05 -0400
+Processing by Api::V1::PhotosController#create as */*
+  Parameters: {"photo"=>{"filename"=>#<ActionDispatch::Http::UploadedFile:0x00000000068b5960 @tempfile=#<Tempfile:C:/Users/JESSIE~1/AppData/Local/Temp/RackMultipart20181015-19832-1iyvd2c.jpg>, @original_filename="rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[filename]\"; filename=\"rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg\"\r\nContent-Type: image/jpeg\r\n">, "id"=>"", "event"=>"[object Object]"}, "event_id"=>"1"}
+Unpermitted parameters: :filename, :id, :event
+  [1m[35m (7.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[36mPhoto Create (2.8ms)[0m  [1m[32mINSERT INTO "photos" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2018-10-15 17:36:05.858859"], ["updated_at", "2018-10-15 17:36:05.858859"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+[active_model_serializers] Rendered PhotoSerializer with ActiveModelSerializers::Adapter::Attributes (44.87ms)
+Completed 200 OK in 394ms (Views: 70.7ms | ActiveRecord: 16.6ms)
+
+
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1ed9b3ade76bc42c753df4a35698a298c0a232d0/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTVRBd2VERXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--e7c789ca69ba6870c243f7ca2736d0729f195006/Prince-Harry-Meghan-Markle.jpg" for 127.0.0.1 at 2018-10-15 13:36:53 -0400
+Processing by ActiveStorage::RepresentationsController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1ed9b3ade76bc42c753df4a35698a298c0a232d0", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTVRBd2VERXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--e7c789ca69ba6870c243f7ca2736d0729f195006", "filename"=>"Prince-Harry-Meghan-Markle"}
+  [1m[36mActiveStorage::Blob Load (1.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.8ms) [0m[34mChecked if file exists at key: variants/uS13LpzfVxYhMjR8SE4gW2R7/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d (yes)[0m
+[36m  Disk Storage (9.3ms) [0m[34mGenerated URL for file at key: variants/uS13LpzfVxYhMjR8SE4gW2R7/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTVUMTc6NDE6NTQuMDQ0WiIsInB1ciI6ImJsb2Jfa2V5In19--3e9ea10dc9b5f5525dfb955518f61db6f0ab232d/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTVUMTc6NDE6NTQuMDQ0WiIsInB1ciI6ImJsb2Jfa2V5In19--3e9ea10dc9b5f5525dfb955518f61db6f0ab232d/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg
+Completed 302 Found in 112ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTVUMTc6NDE6NTQuMDQ0WiIsInB1ciI6ImJsb2Jfa2V5In19--3e9ea10dc9b5f5525dfb955518f61db6f0ab232d/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg" for 127.0.0.1 at 2018-10-15 13:36:54 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"Prince-Harry-Meghan-Markle.jpg\"; filename*=UTF-8''Prince-Harry-Meghan-Markle.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTVUMTc6NDE6NTQuMDQ0WiIsInB1ciI6ImJsb2Jfa2V5In19--3e9ea10dc9b5f5525dfb955518f61db6f0ab232d", "filename"=>"Prince-Harry-Meghan-Markle"}
+[36m  Disk Storage (39.2ms) [0m[34mDownloaded file from key: variants/uS13LpzfVxYhMjR8SE4gW2R7/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d[0m
+Completed 200 OK in 85ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTVUMTc6NDE6NTQuMDQ0WiIsInB1ciI6ImJsb2Jfa2V5In19--3e9ea10dc9b5f5525dfb955518f61db6f0ab232d/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg" for 127.0.0.1 at 2018-10-15 13:36:55 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"Prince-Harry-Meghan-Markle.jpg\"; filename*=UTF-8''Prince-Harry-Meghan-Markle.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTVUMTc6NDE6NTQuMDQ0WiIsInB1ciI6ImJsb2Jfa2V5In19--3e9ea10dc9b5f5525dfb955518f61db6f0ab232d", "filename"=>"Prince-Harry-Meghan-Markle"}
+[36m  Disk Storage (29.6ms) [0m[34mDownloaded file from key: variants/uS13LpzfVxYhMjR8SE4gW2R7/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d[0m
+Completed 200 OK in 59ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/events/1/photos" for 127.0.0.1 at 2018-10-15 13:37:55 -0400
+Processing by Api::V1::PhotosController#create as */*
+  Parameters: {"photo"=>{"filename"=>#<ActionDispatch::Http::UploadedFile:0x00000000077be588 @tempfile=#<Tempfile:C:/Users/JESSIE~1/AppData/Local/Temp/RackMultipart20181015-19832-57uyqn.jpg>, @original_filename="rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[filename]\"; filename=\"rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg\"\r\nContent-Type: image/jpeg\r\n">, "id"=>"", "event"=>"[object Object]"}, "event_id"=>"1"}
+Unpermitted parameters: :filename, :id, :event
+  [1m[35m (4.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[36mPhoto Create (28.0ms)[0m  [1m[32mINSERT INTO "photos" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2018-10-15 17:37:55.723863"], ["updated_at", "2018-10-15 17:37:55.723863"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[35m (29.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+[active_model_serializers] Rendered PhotoSerializer with ActiveModelSerializers::Adapter::Attributes (59.02ms)
+Completed 200 OK in 616ms (Views: 96.2ms | ActiveRecord: 62.2ms)
+
+
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1ed9b3ade76bc42c753df4a35698a298c0a232d0/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTVRBd2VERXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--e7c789ca69ba6870c243f7ca2736d0729f195006/Prince-Harry-Meghan-Markle.jpg" for 127.0.0.1 at 2018-10-15 13:50:11 -0400
+Processing by ActiveStorage::RepresentationsController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1ed9b3ade76bc42c753df4a35698a298c0a232d0", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTVRBd2VERXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--e7c789ca69ba6870c243f7ca2736d0729f195006", "filename"=>"Prince-Harry-Meghan-Markle"}
+  [1m[36mActiveStorage::Blob Load (1.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.7ms) [0m[34mChecked if file exists at key: variants/uS13LpzfVxYhMjR8SE4gW2R7/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d (yes)[0m
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1ed9b3ade76bc42c753df4a35698a298c0a232d0/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTVRBd2VERXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--e7c789ca69ba6870c243f7ca2736d0729f195006/Prince-Harry-Meghan-Markle.jpg" for 127.0.0.1 at 2018-10-15 13:50:14 -0400
+[36m  Disk Storage (254.0ms) [0m[34mGenerated URL for file at key: variants/uS13LpzfVxYhMjR8SE4gW2R7/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTVUMTc6NTU6MTQuMzY5WiIsInB1ciI6ImJsb2Jfa2V5In19--4f6bd5d98b68654f495353cbc82f4c4a5ccc56a2/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTVUMTc6NTU6MTQuMzY5WiIsInB1ciI6ImJsb2Jfa2V5In19--4f6bd5d98b68654f495353cbc82f4c4a5ccc56a2/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg
+Completed 302 Found in 806ms (ActiveRecord: 24.8ms)
+
+
+Processing by ActiveStorage::RepresentationsController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1ed9b3ade76bc42c753df4a35698a298c0a232d0", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTVRBd2VERXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--e7c789ca69ba6870c243f7ca2736d0729f195006", "filename"=>"Prince-Harry-Meghan-Markle"}
+  [1m[36mActiveStorage::Blob Load (2.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (1.3ms) [0m[34mChecked if file exists at key: variants/uS13LpzfVxYhMjR8SE4gW2R7/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d (yes)[0m
+[36m  Disk Storage (20.1ms) [0m[34mGenerated URL for file at key: variants/uS13LpzfVxYhMjR8SE4gW2R7/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTVUMTc6NTU6MTcuNDE1WiIsInB1ciI6ImJsb2Jfa2V5In19--8ff5d84b46701977778201fd51d295af3dfe3969/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTVUMTc6NTU6MTcuNDE1WiIsInB1ciI6ImJsb2Jfa2V5In19--8ff5d84b46701977778201fd51d295af3dfe3969/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg
+Completed 302 Found in 372ms (ActiveRecord: 10.5ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTVUMTc6NTU6MTcuNDE1WiIsInB1ciI6ImJsb2Jfa2V5In19--8ff5d84b46701977778201fd51d295af3dfe3969/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg" for 127.0.0.1 at 2018-10-15 13:50:17 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"Prince-Harry-Meghan-Markle.jpg\"; filename*=UTF-8''Prince-Harry-Meghan-Markle.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTVUMTc6NTU6MTcuNDE1WiIsInB1ciI6ImJsb2Jfa2V5In19--8ff5d84b46701977778201fd51d295af3dfe3969", "filename"=>"Prince-Harry-Meghan-Markle"}
+[36m  Disk Storage (103.3ms) [0m[34mDownloaded file from key: variants/uS13LpzfVxYhMjR8SE4gW2R7/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d[0m
+Completed 200 OK in 185ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/events/1/photos" for 127.0.0.1 at 2018-10-15 13:50:26 -0400
+Processing by Api::V1::PhotosController#create as */*
+  Parameters: {"photo"=>{"filename"=>#<ActionDispatch::Http::UploadedFile:0x000000000612cb08 @tempfile=#<Tempfile:C:/Users/JESSIE~1/AppData/Local/Temp/RackMultipart20181015-19832-y95k8s.jpg>, @original_filename="rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[filename]\"; filename=\"rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg\"\r\nContent-Type: image/jpeg\r\n">, "id"=>"", "event"=>"[object Object]"}, "event_id"=>"1"}
+Unpermitted parameters: :id, :event
+[36m  Disk Storage (9.3ms) [0m[32mUploaded file to key: 23624sZ3mZuGFz3j4Gy9BWYm (checksum: C6iPGbM1qSumyylyYOsZnQ==)[0m
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:18
+  [1m[36mActiveStorage::Blob Create (12.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["key", "23624sZ3mZuGFz3j4Gy9BWYm"], ["filename", "rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 60366], ["checksum", "C6iPGbM1qSumyylyYOsZnQ=="], ["created_at", "2018-10-15 17:50:26.757887"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:18
+  [1m[35m (6.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:18
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:18
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:18
+  [1m[35m (0.9ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[36mPhoto Create (3.9ms)[0m  [1m[32mINSERT INTO "photos" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2018-10-15 17:50:27.006377"], ["updated_at", "2018-10-15 17:50:27.006377"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[36mActiveStorage::Attachment Create (1.6ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "filename"], ["record_type", "Photo"], ["record_id", 12], ["blob_id", 2], ["created_at", "2018-10-15 17:50:27.104432"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[36mPhoto Update (9.7ms)[0m  [1m[33mUPDATE "photos" SET "updated_at" = ? WHERE "photos"."id" = ?[0m  [["updated_at", "2018-10-15 17:50:27.165905"], ["id", 12]]
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: e4c975a6-3865-4f2e-8342-91b823398f62) to Async(default) with arguments: #<GlobalID:0x00000000061bb0d8 @uri=#<URI::GID gid://eventure-photos/ActiveStorage::Blob/2>>
+  [1m[36mActiveStorage::Blob Load (2.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e4c975a6-3865-4f2e-8342-91b823398f62] Performing ActiveStorage::AnalyzeJob (Job ID: e4c975a6-3865-4f2e-8342-91b823398f62) from Async(default) with arguments: #<GlobalID:0x000000000666f520 @uri=#<URI::GID gid://eventure-photos/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e4c975a6-3865-4f2e-8342-91b823398f62] [36m  Disk Storage (10.5ms) [0m[34mDownloaded file from key: 23624sZ3mZuGFz3j4Gy9BWYm[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e4c975a6-3865-4f2e-8342-91b823398f62]   [1m[35m (2.2ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e4c975a6-3865-4f2e-8342-91b823398f62]   ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e4c975a6-3865-4f2e-8342-91b823398f62]   [1m[36mActiveStorage::Blob Update (19.8ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"width\":1024,\"height\":759,\"analyzed\":true}"], ["id", 2]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e4c975a6-3865-4f2e-8342-91b823398f62]   ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e4c975a6-3865-4f2e-8342-91b823398f62]   [1m[35m (16.8ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e4c975a6-3865-4f2e-8342-91b823398f62]   ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e4c975a6-3865-4f2e-8342-91b823398f62] Performed ActiveStorage::AnalyzeJob (Job ID: e4c975a6-3865-4f2e-8342-91b823398f62) from Async(default) in 1308.75ms
+[active_model_serializers] Rendered PhotoSerializer with ActiveModelSerializers::Adapter::Attributes (746.46ms)
+Completed 500 Internal Server Error in 3046ms (ActiveRecord: 55.5ms)
+
+
+  
+NoMethodError (undefined method `filenames' for #<Photo:0x0000000006a48458>
+Did you mean?  filename
+               filename=
+               filename?
+               filename_was):
+  
+app/controllers/api/v1/photos_controller.rb:22:in `create'
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTVUMTc6NTU6MTcuNDE1WiIsInB1ciI6ImJsb2Jfa2V5In19--8ff5d84b46701977778201fd51d295af3dfe3969/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg" for 127.0.0.1 at 2018-10-15 13:51:09 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"Prince-Harry-Meghan-Markle.jpg\"; filename*=UTF-8''Prince-Harry-Meghan-Markle.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTVUMTc6NTU6MTcuNDE1WiIsInB1ciI6ImJsb2Jfa2V5In19--8ff5d84b46701977778201fd51d295af3dfe3969", "filename"=>"Prince-Harry-Meghan-Markle"}
+[36m  Disk Storage (25.5ms) [0m[34mDownloaded file from key: variants/uS13LpzfVxYhMjR8SE4gW2R7/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d[0m
+Completed 200 OK in 122ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/events/1/photos" for 127.0.0.1 at 2018-10-15 13:51:28 -0400
+Processing by Api::V1::PhotosController#create as */*
+  Parameters: {"photo"=>{"filename"=>#<ActionDispatch::Http::UploadedFile:0x0000000007b39848 @tempfile=#<Tempfile:C:/Users/JESSIE~1/AppData/Local/Temp/RackMultipart20181015-19832-181iycr.jpg>, @original_filename="rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[filename]\"; filename=\"rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg\"\r\nContent-Type: image/jpeg\r\n">, "id"=>"", "event"=>"[object Object]"}, "event_id"=>"1"}
+Unpermitted parameters: :id, :event
+[36m  Disk Storage (11.0ms) [0m[32mUploaded file to key: Tey8o3EgHV3c9wk9kM2wHqSH (checksum: C6iPGbM1qSumyylyYOsZnQ==)[0m
+  [1m[35m (2.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:18
+  [1m[36mActiveStorage::Blob Create (7.9ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["key", "Tey8o3EgHV3c9wk9kM2wHqSH"], ["filename", "rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 60366], ["checksum", "C6iPGbM1qSumyylyYOsZnQ=="], ["created_at", "2018-10-15 17:51:29.126148"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:18
+  [1m[35m (10.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:18
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:18
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:18
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[36mPhoto Create (17.4ms)[0m  [1m[32mINSERT INTO "photos" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2018-10-15 17:51:29.373163"], ["updated_at", "2018-10-15 17:51:29.373163"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[36mActiveStorage::Attachment Create (2.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "filename"], ["record_type", "Photo"], ["record_id", 13], ["blob_id", 3], ["created_at", "2018-10-15 17:51:29.524710"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[36mPhoto Update (1.3ms)[0m  [1m[33mUPDATE "photos" SET "updated_at" = ? WHERE "photos"."id" = ?[0m  [["updated_at", "2018-10-15 17:51:29.601721"], ["id", 13]]
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[35m (7.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 66c5ce71-373b-4186-af93-6674044f14dd) to Async(default) with arguments: #<GlobalID:0x00000000078a7a08 @uri=#<URI::GID gid://eventure-photos/ActiveStorage::Blob/3>>
+  [1m[36mActiveStorage::Blob Load (2.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [66c5ce71-373b-4186-af93-6674044f14dd] Performing ActiveStorage::AnalyzeJob (Job ID: 66c5ce71-373b-4186-af93-6674044f14dd) from Async(default) with arguments: #<GlobalID:0x000000000697a968 @uri=#<URI::GID gid://eventure-photos/ActiveStorage::Blob/3>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [66c5ce71-373b-4186-af93-6674044f14dd] [36m  Disk Storage (10.1ms) [0m[34mDownloaded file from key: Tey8o3EgHV3c9wk9kM2wHqSH[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [66c5ce71-373b-4186-af93-6674044f14dd]   [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [66c5ce71-373b-4186-af93-6674044f14dd]   ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [66c5ce71-373b-4186-af93-6674044f14dd]   [1m[36mActiveStorage::Blob Update (23.1ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"width\":1024,\"height\":759,\"analyzed\":true}"], ["id", 3]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [66c5ce71-373b-4186-af93-6674044f14dd]   ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [66c5ce71-373b-4186-af93-6674044f14dd]   [1m[35m (21.8ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [66c5ce71-373b-4186-af93-6674044f14dd]   ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [66c5ce71-373b-4186-af93-6674044f14dd] Performed ActiveStorage::AnalyzeJob (Job ID: 66c5ce71-373b-4186-af93-6674044f14dd) from Async(default) in 508.03ms
+[active_model_serializers] Rendered PhotoSerializer with ActiveModelSerializers::Adapter::Attributes (1827.16ms)
+Completed 500 Internal Server Error in 3271ms (ActiveRecord: 75.2ms)
+
+
+  
+SystemStackError (stack level too deep):
+  
+
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1ed9b3ade76bc42c753df4a35698a298c0a232d0/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTVRBd2VERXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--e7c789ca69ba6870c243f7ca2736d0729f195006/Prince-Harry-Meghan-Markle.jpg" for 127.0.0.1 at 2018-10-15 14:08:12 -0400
+Processing by ActiveStorage::RepresentationsController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1ed9b3ade76bc42c753df4a35698a298c0a232d0", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTVRBd2VERXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--e7c789ca69ba6870c243f7ca2736d0729f195006", "filename"=>"Prince-Harry-Meghan-Markle"}
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.6ms) [0m[34mChecked if file exists at key: variants/uS13LpzfVxYhMjR8SE4gW2R7/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d (yes)[0m
+[36m  Disk Storage (16.7ms) [0m[34mGenerated URL for file at key: variants/uS13LpzfVxYhMjR8SE4gW2R7/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTVUMTg6MTM6MTQuNzMwWiIsInB1ciI6ImJsb2Jfa2V5In19--6e342b131a761f1008c6aad6605c61007a738888/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTVUMTg6MTM6MTQuNzMwWiIsInB1ciI6ImJsb2Jfa2V5In19--6e342b131a761f1008c6aad6605c61007a738888/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg
+Completed 302 Found in 227ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTVUMTg6MTM6MTQuNzMwWiIsInB1ciI6ImJsb2Jfa2V5In19--6e342b131a761f1008c6aad6605c61007a738888/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg" for 127.0.0.1 at 2018-10-15 14:08:14 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"Prince-Harry-Meghan-Markle.jpg\"; filename*=UTF-8''Prince-Harry-Meghan-Markle.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxVXpFelRIQjZabFo0V1doTmFsSTRVMFUwWjFjeVVqY3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTVUMTg6MTM6MTQuNzMwWiIsInB1ciI6ImJsb2Jfa2V5In19--6e342b131a761f1008c6aad6605c61007a738888", "filename"=>"Prince-Harry-Meghan-Markle"}
+[36m  Disk Storage (30.5ms) [0m[34mDownloaded file from key: variants/uS13LpzfVxYhMjR8SE4gW2R7/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d[0m
+Completed 200 OK in 58ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/events/1/photos" for 127.0.0.1 at 2018-10-15 14:10:07 -0400
+Processing by Api::V1::PhotosController#create as */*
+  Parameters: {"photo"=>{"filename"=>#<ActionDispatch::Http::UploadedFile:0x000000000d098dc0 @tempfile=#<Tempfile:C:/Users/JESSIE~1/AppData/Local/Temp/RackMultipart20181015-19832-17owzpd.jpg>, @original_filename="rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[filename]\"; filename=\"rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg\"\r\nContent-Type: image/jpeg\r\n">, "id"=>"", "event"=>"[object Object]"}, "event_id"=>"1"}
+Unpermitted parameters: :id, :event
+[36m  Disk Storage (10.0ms) [0m[32mUploaded file to key: hiWuyHwKoQjTQgE3YfZTtQQG (checksum: C6iPGbM1qSumyylyYOsZnQ==)[0m
+  [1m[35m (0.9ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:18
+  [1m[36mActiveStorage::Blob Create (8.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["key", "hiWuyHwKoQjTQgE3YfZTtQQG"], ["filename", "rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 60366], ["checksum", "C6iPGbM1qSumyylyYOsZnQ=="], ["created_at", "2018-10-15 18:10:08.029883"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:18
+  [1m[35m (9.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:18
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:18
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:18
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[36mPhoto Create (7.2ms)[0m  [1m[32mINSERT INTO "photos" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2018-10-15 18:10:08.284081"], ["updated_at", "2018-10-15 18:10:08.284081"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[36mActiveStorage::Attachment Create (1.6ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "filename"], ["record_type", "Photo"], ["record_id", 14], ["blob_id", 4], ["created_at", "2018-10-15 18:10:08.398861"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[36mPhoto Update (1.9ms)[0m  [1m[33mUPDATE "photos" SET "updated_at" = ? WHERE "photos"."id" = ?[0m  [["updated_at", "2018-10-15 18:10:08.475989"], ["id", 14]]
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[35m (8.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 22a0f517-7601-4338-90c6-1bd28fff502c) to Async(default) with arguments: #<GlobalID:0x000000000d0b16e0 @uri=#<URI::GID gid://eventure-photos/ActiveStorage::Blob/4>>
+  [1m[36mActiveStorage::Blob Load (1.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [22a0f517-7601-4338-90c6-1bd28fff502c] Performing ActiveStorage::AnalyzeJob (Job ID: 22a0f517-7601-4338-90c6-1bd28fff502c) from Async(default) with arguments: #<GlobalID:0x000000000ca7df58 @uri=#<URI::GID gid://eventure-photos/ActiveStorage::Blob/4>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [22a0f517-7601-4338-90c6-1bd28fff502c] [36m  Disk Storage (12.5ms) [0m[34mDownloaded file from key: hiWuyHwKoQjTQgE3YfZTtQQG[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [22a0f517-7601-4338-90c6-1bd28fff502c]   [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [22a0f517-7601-4338-90c6-1bd28fff502c]   ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [22a0f517-7601-4338-90c6-1bd28fff502c]   [1m[36mActiveStorage::Blob Update (23.0ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"width\":1024,\"height\":759,\"analyzed\":true}"], ["id", 4]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [22a0f517-7601-4338-90c6-1bd28fff502c]   ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[active_model_serializers] Rendered PhotoSerializer with ActiveModelSerializers::Adapter::Attributes (55.41ms)
+Completed 200 OK in 1365ms (Views: 551.6ms | ActiveRecord: 55.7ms)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [22a0f517-7601-4338-90c6-1bd28fff502c]   [1m[35m (12.0ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [22a0f517-7601-4338-90c6-1bd28fff502c]   ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [22a0f517-7601-4338-90c6-1bd28fff502c] Performed ActiveStorage::AnalyzeJob (Job ID: 22a0f517-7601-4338-90c6-1bd28fff502c) from Async(default) in 582.47ms
+  [1m[36mPhoto Load (1.6ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" ORDER BY "photos"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (1.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 14], ["record_type", "Photo"], ["name", "filename"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (1.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ C:/Ruby25-x64/bin/rake:23

@@ -15,11 +15,11 @@ class Api::V1::PhotosController < ApplicationController
 
   # POST /photos
   def create
-    @photo = Photo.new(photo_params) 
+    @photo = Photo.new(photo_params)  
 
     if @photo.save
+      #byebug
       render json: @photo
-      byebug
     else
       render json: @photo.errors, status: :unprocessable_entity
     end
@@ -47,6 +47,6 @@ class Api::V1::PhotosController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def photo_params
-      params.require(:photo).permit(filenames: [])
+      params.require(:photo).permit(:filename)
     end
 end

@@ -69,10 +69,10 @@ export function addPhoto(values){
     return fetch(`http://localhost:3000/api/v1/events/${eventId}/photos`, {
       method: 'post', 
       body: photoData, 
-      contentType: false 
+      contentType: false
     })
     .then(res => { 
-      return res.json()
+      return res.json() 
       })
         .then(photo => {
           dispatch({
