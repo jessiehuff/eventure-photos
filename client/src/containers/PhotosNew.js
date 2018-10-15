@@ -15,7 +15,6 @@ class PhotosNew extends Component {
   handleOnSubmit = event => { 
     event.preventDefault(); 
     this.props.addPhoto(this.state);
-    //this.props.history.push(`/events/{this.props.event.id}`);
   }
 
   handleFile = event => {
