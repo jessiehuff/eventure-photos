@@ -1,6 +1,7 @@
 import React, {Component} from 'react' 
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'; 
 import Homepage from '../components/Homepage';
+import About from '../components/About';
 import EventsPage from '../containers/EventsPage'; 
 import EventsNew from '../containers/EventsNew'; 
 import EventsShow from '../containers/EventsShow'; 
@@ -31,6 +32,9 @@ class App extends Component {
             <a className="nav-link" href="/">Home</a>
           </li>
           <li className="nav-item">
+            <a className="nav-link" href="/about">About</a>
+          </li>
+          <li className="nav-item">
             <a className="nav-link" href="/events">All Events</a>
           </li>
           <li className="nav-item">
@@ -41,6 +45,7 @@ class App extends Component {
         </div> 
       <Switch>
         <Route exact path="/" component={Homepage} /> 
+        <Route exact path="/about" component={About} />
         <Route exact path="/events" component={EventsPage} /> 
         <Route exact path="/events/new" component={EventsNew} /> 
         <Route exact path="/events/:eventId" component={EventsShow} /> 
