@@ -1,6 +1,7 @@
 import React, {Component} from 'react'; 
 import { connect } from 'react-redux'; 
 import EventDisplay from '../components/EventDisplay';
+import PhotoDisplay from '../components/PhotoDisplay';
 import { deleteEvent } from '../actions';  
 import PhotosNew from '../containers/PhotosNew';
 
@@ -20,11 +21,11 @@ class EventsShow extends Component {
           name={this.props.event.name}
           description={this.props.event.description}
           cover_url={this.props.event.cover_url}
-          photo_url={this.props.photos.photo_url}
         /> 
 
-      <PhotosNew event={this.props.event} />
+        <PhotoDisplay photos={this.props.photos} />
 
+        <PhotosNew event={this.props.event} />
 
         <br></br><br></br>
         <br></br><br></br>
