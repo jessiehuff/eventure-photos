@@ -4,7 +4,7 @@ export const PhotoDisplay = props => {
     debugger 
     const photoListing = props.photos
     const renderPhotos = photoListing.map((photo, index) => 
-        <img src={photo.photo_url} alt="photo uploads"></img>
+        <span key={index}> <img src={photo.photo_url} alt="photo uploads"></img></span>
     );
 
     return (

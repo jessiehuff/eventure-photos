@@ -57,8 +57,7 @@ export function deleteEvent(event) {
 
 export function addPhoto(values){
   return (dispatch) => {
-    
-    debugger 
+     
     const photoData = new FormData() 
     photoData.append("photo[filename]", values.filename)
     photoData.append("photo[id]", values.id)

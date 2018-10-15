@@ -14,7 +14,6 @@ class EventsShow extends Component {
   }
 
   render() {
-    debugger
     return(
       <React.Fragment>
         <EventDisplay 
@@ -24,6 +23,8 @@ class EventsShow extends Component {
         /> 
 
         <PhotoDisplay photos={this.props.photos} />
+
+        <br></br><br></br>
 
         <PhotosNew event={this.props.event} />
 
