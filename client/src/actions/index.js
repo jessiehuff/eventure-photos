@@ -61,7 +61,7 @@ export function addPhoto(values){
     const photoData = new FormData() 
     photoData.append("photo[filename]", values.filename)
     photoData.append("photo[id]", values.id)
-    photoData.append("photo[event]", values.event)
+    photoData.append("photo[event_id]", values.event.id)
     
     let eventId = values.event.id 
 

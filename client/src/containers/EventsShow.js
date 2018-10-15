@@ -22,7 +22,7 @@ class EventsShow extends Component {
           cover_url={this.props.event.cover_url}
         /> 
 
-        <PhotoDisplay photos={this.props.photos} />
+        <PhotoDisplay photos={this.props.photos} event_id={this.props.event.id} />
 
         <br></br><br></br>
 
