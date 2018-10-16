@@ -22,7 +22,15 @@ export default (state ={
           ...state.photos.concat(action.payload),
       ]
     }  
-    // case 'UPDATE_EVENT':
+    case 'DELETE_PHOTO': 
+      const newPhotos = state.photos.filter(photo => photo.id !== action.payload)
+      return {
+        ...state, 
+        photos: [
+          ...newPhotos
+        ]
+      }
+      // case 'UPDATE_EVENT':
     //   const index = state.findIndex(event => event.id === action.event.id)
     //     return [
     //       ...state.slice(0, index), 

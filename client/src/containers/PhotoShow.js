@@ -1,14 +1,16 @@
 import React, {Component} from 'react'; 
 import { connect } from 'react-redux'; 
-//import { deletePhoto } from '../actions'; 
+import { deletePhoto } from '../actions'; 
 
 class PhotoShow extends Component {
 
-    // handleDelete = (photo) => {
-    //     event.preventDefault(photo); 
-    //     this.props.deletePhoto(this.props.photo)
-    //     this.props.history.push('/events/${event_id}')
-    // }
+    handleDelete = (event) => {
+        event.preventDefault(event); 
+        const id = this.props.photo.event_id
+        this.props.deletePhoto(this.props.photo)
+        debugger 
+        this.props.history.push('/events')
+    }
 
     render() {
         debugger 
@@ -16,6 +18,14 @@ class PhotoShow extends Component {
             <React.Fragment>
                 <br></br><br></br> 
                 <img src={this.props.photo.photo_url} alt="from gallery"></img> 
+                <br></br><br></br> 
+                <br></br><br></br> 
+
+                <button 
+                    onClick={this.handleDelete}>
+                    Delete Photo 
+                </button> 
+            
             </React.Fragment>
         )
     }
@@ -35,4 +45,4 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 
-export default connect(mapStateToProps)(PhotoShow); 
+export default connect(mapStateToProps, {deletePhoto})(PhotoShow); 

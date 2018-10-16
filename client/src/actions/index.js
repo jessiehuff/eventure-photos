@@ -83,3 +83,19 @@ export function addPhoto(values){
   }
 }
 
+export function deletePhoto(photo) {
+  return (dispatch) => {
+    let id = photo.id
+    let event_id = photo.event_id
+    return fetch(`http://localhost:3000/api/v1/events/${event_id}/photos/${id}`, {
+      method: 'delete'
+    }) 
+    .then(event => {
+      dispatch({
+        type: 'DELETE_PHOTO',
+        payload: id
+      })
+      localStorage.removeItem(photo);
+    })
+  }
+}
