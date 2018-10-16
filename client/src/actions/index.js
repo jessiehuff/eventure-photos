@@ -50,7 +50,7 @@ export function deleteEvent(event) {
         type: 'DELETE_EVENT',
         payload: id
       })
-      localStorage.clear(); 
+      localStorage.removeItem(event);
     })
   }
 }

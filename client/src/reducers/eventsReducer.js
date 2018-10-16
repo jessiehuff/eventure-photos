@@ -31,7 +31,12 @@ export default (state ={
     //     ]
     case 'DELETE_EVENT': 
       const newEvents = state.events.filter(event => event.id !== action.payload)
-      return newEvents 
+      return {
+        ...state,
+        events: [
+          ...newEvents
+        ]
+      } 
     default: 
       return state; 
   }
