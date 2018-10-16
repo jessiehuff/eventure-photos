@@ -1,4 +1,5 @@
 import React from 'react'; 
+import { Link } from 'react-router-dom'; 
 
 export const PhotoDisplay = props => {
     debugger 
@@ -7,7 +8,9 @@ export const PhotoDisplay = props => {
         return photo.event_id === props.event_id; 
     }); 
     const renderPhotos = filteredPhotos.map((photo, index) => 
-        <span key={index}> <img src={photo.photo_url} alt="photo uploads"></img></span>
+        <span key={index}>
+        <Link to={`/events/${props.event_id}/photos/${photo.id}`}> 
+        <img src={photo.photo_url} alt="photo uploads"></img></Link></span>
     );
 
     return (

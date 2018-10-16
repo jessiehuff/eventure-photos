@@ -5,6 +5,7 @@ import About from '../components/About';
 import EventsPage from '../containers/EventsPage'; 
 import EventsNew from '../containers/EventsNew'; 
 import EventsShow from '../containers/EventsShow'; 
+import PhotoShow from '../containers/PhotoShow'; 
 import Signup from '../containers/Signup';
 import Login from '../containers/Login'; 
 import "react-bootstrap"
@@ -49,6 +50,7 @@ class App extends Component {
         <Route exact path="/events" component={EventsPage} /> 
         <Route exact path="/events/new" component={EventsNew} /> 
         <Route exact path="/events/:eventId" component={EventsShow} /> 
+        <Route exact path="/events/:eventId/photos/:photoId" component={PhotoShow} />
         <Route exact path="/signup" component={Signup} /> 
         <Route exact path="/login" component={Login} />
       </Switch> 

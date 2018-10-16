@@ -24529,3 +24529,580 @@ Completed 204 No Content in 482ms (ActiveRecord: 80.5ms)
 [ActiveJob] [ActiveStorage::PurgeJob] [217c06cb-d464-4a52-ba57-b0e816cb0ddb]   [1m[36mActiveStorage::Attachment Load (1.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
 [ActiveJob] [ActiveStorage::PurgeJob] [217c06cb-d464-4a52-ba57-b0e816cb0ddb]   ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
 [ActiveJob] [ActiveStorage::PurgeJob] [217c06cb-d464-4a52-ba57-b0e816cb0ddb] Performed ActiveStorage::PurgeJob (Job ID: 217c06cb-d464-4a52-ba57-b0e816cb0ddb) from Async(default) in 282.53ms
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-10-16 14:20:49 -0400
+  [1m[35m (5.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"The Royal Wedding", "description"=>"Prince Harry and Meghan Markle", "cover"=>#<ActionDispatch::Http::UploadedFile:0x0000000007795e08 @tempfile=#<Tempfile:C:/Users/JESSIE~1/AppData/Local/Temp/RackMultipart20181016-4564-2g6uqe.jpg>, @original_filename="Prince-Harry-Meghan-Markle.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"event[cover]\"; filename=\"Prince-Harry-Meghan-Markle.jpg\"\r\nContent-Type: image/jpeg\r\n">, "id"=>""}}
+Unpermitted parameter: :id
+[36m  Disk Storage (6.6ms) [0m[32mUploaded file to key: cJB7J6eTVt1t8xFaqB7goJDY (checksum: RuEmM5Zn1ZtjMFtU4PGIUQ==)[0m
+  [1m[35m (1.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:18
+  [1m[36mActiveStorage::Blob Create (3.4ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["key", "cJB7J6eTVt1t8xFaqB7goJDY"], ["filename", "Prince-Harry-Meghan-Markle.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 79445], ["checksum", "RuEmM5Zn1ZtjMFtU4PGIUQ=="], ["created_at", "2018-10-16 18:20:50.905649"]]
+  ↳ app/controllers/api/v1/events_controller.rb:18
+  [1m[35m (9.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:18
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:18
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:18
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:20
+  [1m[36mEvent Create (10.9ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "The Royal Wedding"], ["description", "Prince Harry and Meghan Markle"], ["created_at", "2018-10-16 18:20:51.161232"], ["updated_at", "2018-10-16 18:20:51.161232"]]
+  ↳ app/controllers/api/v1/events_controller.rb:20
+  [1m[36mActiveStorage::Attachment Create (1.5ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "cover"], ["record_type", "Event"], ["record_id", 3], ["blob_id", 3], ["created_at", "2018-10-16 18:20:51.259828"]]
+  ↳ app/controllers/api/v1/events_controller.rb:20
+  [1m[36mEvent Update (1.3ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = ? WHERE "events"."id" = ?[0m  [["updated_at", "2018-10-16 18:20:51.334893"], ["id", 3]]
+  ↳ app/controllers/api/v1/events_controller.rb:20
+  [1m[35m (9.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/events_controller.rb:20
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 9ddd5cc7-de7c-45f2-bbcd-26c56f766af6) to Async(default) with arguments: #<GlobalID:0x0000000007e972d8 @uri=#<URI::GID gid://eventure-photos/ActiveStorage::Blob/3>>
+  [1m[36mActiveStorage::Blob Load (2.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9ddd5cc7-de7c-45f2-bbcd-26c56f766af6] Performing ActiveStorage::AnalyzeJob (Job ID: 9ddd5cc7-de7c-45f2-bbcd-26c56f766af6) from Async(default) with arguments: #<GlobalID:0x00000000066741d8 @uri=#<URI::GID gid://eventure-photos/ActiveStorage::Blob/3>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9ddd5cc7-de7c-45f2-bbcd-26c56f766af6] [36m  Disk Storage (13.1ms) [0m[34mDownloaded file from key: cJB7J6eTVt1t8xFaqB7goJDY[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9ddd5cc7-de7c-45f2-bbcd-26c56f766af6]   [1m[35m (1.2ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9ddd5cc7-de7c-45f2-bbcd-26c56f766af6]   ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9ddd5cc7-de7c-45f2-bbcd-26c56f766af6]   [1m[36mActiveStorage::Blob Update (35.0ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"width\":992,\"height\":744,\"analyzed\":true}"], ["id", 3]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9ddd5cc7-de7c-45f2-bbcd-26c56f766af6]   ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9ddd5cc7-de7c-45f2-bbcd-26c56f766af6]   [1m[35m (16.4ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9ddd5cc7-de7c-45f2-bbcd-26c56f766af6]   ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9ddd5cc7-de7c-45f2-bbcd-26c56f766af6] Performed ActiveStorage::AnalyzeJob (Job ID: 9ddd5cc7-de7c-45f2-bbcd-26c56f766af6) from Async(default) in 794.78ms
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (43.39ms)
+Completed 200 OK in 2565ms (Views: 1002.3ms | ActiveRecord: 65.8ms)
+
+
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--843e4782e42ee92c53d589e84ffc6cd92a4588ba/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTVRBd2VERXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--e7c789ca69ba6870c243f7ca2736d0729f195006/Prince-Harry-Meghan-Markle.jpg" for 127.0.0.1 at 2018-10-16 14:20:56 -0400
+Processing by ActiveStorage::RepresentationsController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--843e4782e42ee92c53d589e84ffc6cd92a4588ba", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTVRBd2VERXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--e7c789ca69ba6870c243f7ca2736d0729f195006", "filename"=>"Prince-Harry-Meghan-Markle"}
+  [1m[36mActiveStorage::Blob Load (2.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.5ms) [0m[34mChecked if file exists at key: variants/cJB7J6eTVt1t8xFaqB7goJDY/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d (no)[0m
+[36m  Disk Storage (9.3ms) [0m[34mDownloaded file from key: cJB7J6eTVt1t8xFaqB7goJDY[0m
+[36m  Disk Storage (6.4ms) [0m[32mUploaded file to key: variants/cJB7J6eTVt1t8xFaqB7goJDY/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d[0m
+[36m  Disk Storage (27.9ms) [0m[34mGenerated URL for file at key: variants/cJB7J6eTVt1t8xFaqB7goJDY/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlqU2tJM1NqWmxWRlowTVhRNGVFWmhjVUkzWjI5S1JGa3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTZUMTg6MjU6NTcuMjQ1WiIsInB1ciI6ImJsb2Jfa2V5In19--7d9c63119d90f9c4cc97d8e0d95345aad01264c6/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlqU2tJM1NqWmxWRlowTVhRNGVFWmhjVUkzWjI5S1JGa3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTZUMTg6MjU6NTcuMjQ1WiIsInB1ciI6ImJsb2Jfa2V5In19--7d9c63119d90f9c4cc97d8e0d95345aad01264c6/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg
+Completed 302 Found in 367ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlqU2tJM1NqWmxWRlowTVhRNGVFWmhjVUkzWjI5S1JGa3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTZUMTg6MjU6NTcuMjQ1WiIsInB1ciI6ImJsb2Jfa2V5In19--7d9c63119d90f9c4cc97d8e0d95345aad01264c6/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg" for 127.0.0.1 at 2018-10-16 14:20:57 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"Prince-Harry-Meghan-Markle.jpg\"; filename*=UTF-8''Prince-Harry-Meghan-Markle.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlqU2tJM1NqWmxWRlowTVhRNGVFWmhjVUkzWjI5S1JGa3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTZUMTg6MjU6NTcuMjQ1WiIsInB1ciI6ImJsb2Jfa2V5In19--7d9c63119d90f9c4cc97d8e0d95345aad01264c6", "filename"=>"Prince-Harry-Meghan-Markle"}
+[36m  Disk Storage (27.8ms) [0m[34mDownloaded file from key: variants/cJB7J6eTVt1t8xFaqB7goJDY/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d[0m
+Completed 200 OK in 55ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/events/3/photos" for 127.0.0.1 at 2018-10-16 14:21:08 -0400
+Processing by Api::V1::PhotosController#create as */*
+  Parameters: {"photo"=>{"filename"=>#<ActionDispatch::Http::UploadedFile:0x0000000006714458 @tempfile=#<Tempfile:C:/Users/JESSIE~1/AppData/Local/Temp/RackMultipart20181016-4564-5q4ce.jpg>, @original_filename="merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[filename]\"; filename=\"merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg\"\r\nContent-Type: image/jpeg\r\n">, "id"=>"", "event_id"=>"3"}, "event_id"=>"3"}
+Unpermitted parameter: :id
+[36m  Disk Storage (17.0ms) [0m[32mUploaded file to key: xoCvshgb8R4EFHXrqTmt65bj (checksum: 2bgz531H4M8kgFv37LJswg==)[0m
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:18
+  [1m[36mActiveStorage::Blob Create (3.9ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["key", "xoCvshgb8R4EFHXrqTmt65bj"], ["filename", "merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 59025], ["checksum", "2bgz531H4M8kgFv37LJswg=="], ["created_at", "2018-10-16 18:21:08.888816"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:18
+  [1m[35m (9.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:18
+  [1m[35m (0.9ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:18
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:18
+  [1m[35m (1.6ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[36mEvent Load (2.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[36mPhoto Create (16.3ms)[0m  [1m[32mINSERT INTO "photos" ("event_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["event_id", 3], ["created_at", "2018-10-16 18:21:09.089723"], ["updated_at", "2018-10-16 18:21:09.089723"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[36mActiveStorage::Attachment Create (1.4ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "filename"], ["record_type", "Photo"], ["record_id", 1], ["blob_id", 4], ["created_at", "2018-10-16 18:21:09.188670"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[36mPhoto Update (1.2ms)[0m  [1m[33mUPDATE "photos" SET "updated_at" = ? WHERE "photos"."id" = ?[0m  [["updated_at", "2018-10-16 18:21:09.255194"], ["id", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[35m (11.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 157603fb-ffc8-4f5b-b2d7-c0c281d39f10) to Async(default) with arguments: #<GlobalID:0x000000000782d550 @uri=#<URI::GID gid://eventure-photos/ActiveStorage::Blob/4>>
+  [1m[36mActiveStorage::Blob Load (14.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [157603fb-ffc8-4f5b-b2d7-c0c281d39f10] Performing ActiveStorage::AnalyzeJob (Job ID: 157603fb-ffc8-4f5b-b2d7-c0c281d39f10) from Async(default) with arguments: #<GlobalID:0x0000000007824360 @uri=#<URI::GID gid://eventure-photos/ActiveStorage::Blob/4>>
+[active_model_serializers] Rendered PhotoSerializer with ActiveModelSerializers::Adapter::Attributes (39.76ms)
+Completed 200 OK in 874ms (Views: 96.9ms | ActiveRecord: 56.1ms)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [157603fb-ffc8-4f5b-b2d7-c0c281d39f10] [36m  Disk Storage (19.8ms) [0m[34mDownloaded file from key: xoCvshgb8R4EFHXrqTmt65bj[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [157603fb-ffc8-4f5b-b2d7-c0c281d39f10]   [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [157603fb-ffc8-4f5b-b2d7-c0c281d39f10]   ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [157603fb-ffc8-4f5b-b2d7-c0c281d39f10]   [1m[36mActiveStorage::Blob Update (13.7ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"width\":600,\"height\":438,\"analyzed\":true}"], ["id", 4]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [157603fb-ffc8-4f5b-b2d7-c0c281d39f10]   ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [157603fb-ffc8-4f5b-b2d7-c0c281d39f10]   [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [157603fb-ffc8-4f5b-b2d7-c0c281d39f10]   ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [157603fb-ffc8-4f5b-b2d7-c0c281d39f10] Performed ActiveStorage::AnalyzeJob (Job ID: 157603fb-ffc8-4f5b-b2d7-c0c281d39f10) from Async(default) in 353.77ms
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--508af204d7066ae311ecab758385ae3ac42884c3/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTWpBd2VESXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--90e4e31cac22b3e8d42039669a3d5ea970c9f45c/merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg" for 127.0.0.1 at 2018-10-16 14:21:14 -0400
+Processing by ActiveStorage::RepresentationsController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--508af204d7066ae311ecab758385ae3ac42884c3", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTWpBd2VESXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--90e4e31cac22b3e8d42039669a3d5ea970c9f45c", "filename"=>"merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge"}
+  [1m[36mActiveStorage::Blob Load (1.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.5ms) [0m[34mChecked if file exists at key: variants/xoCvshgb8R4EFHXrqTmt65bj/a326e797af8ee664287b1bd47a1e605a55ef2ccb26e1a2131aefe5fddec78ac2 (no)[0m
+[36m  Disk Storage (10.4ms) [0m[34mDownloaded file from key: xoCvshgb8R4EFHXrqTmt65bj[0m
+[36m  Disk Storage (3.5ms) [0m[32mUploaded file to key: variants/xoCvshgb8R4EFHXrqTmt65bj/a326e797af8ee664287b1bd47a1e605a55ef2ccb26e1a2131aefe5fddec78ac2[0m
+[36m  Disk Storage (10.5ms) [0m[34mGenerated URL for file at key: variants/xoCvshgb8R4EFHXrqTmt65bj/a326e797af8ee664287b1bd47a1e605a55ef2ccb26e1a2131aefe5fddec78ac2 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTk0YjBOMmMyaG5ZamhTTkVWR1NGaHljVlJ0ZERZMVltb3ZZVE15Tm1VM09UZGhaamhsWlRZMk5ESTROMkl4WW1RME4yRXhaVFl3TldFMU5XVm1NbU5qWWpJMlpURmhNakV6TVdGbFptVTFabVJrWldNM09HRmpNZ1k2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTZUMTg6MjY6MTQuNzk1WiIsInB1ciI6ImJsb2Jfa2V5In19--a8feccc71c46d5c8b3c80b6d3501009c5b8b256f/merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg%22%3B+filename%2A%3DUTF-8%27%27merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTk0YjBOMmMyaG5ZamhTTkVWR1NGaHljVlJ0ZERZMVltb3ZZVE15Tm1VM09UZGhaamhsWlRZMk5ESTROMkl4WW1RME4yRXhaVFl3TldFMU5XVm1NbU5qWWpJMlpURmhNakV6TVdGbFptVTFabVJrWldNM09HRmpNZ1k2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTZUMTg6MjY6MTQuNzk1WiIsInB1ciI6ImJsb2Jfa2V5In19--a8feccc71c46d5c8b3c80b6d3501009c5b8b256f/merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg%22%3B+filename%2A%3DUTF-8%27%27merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg
+Completed 302 Found in 282ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTk0YjBOMmMyaG5ZamhTTkVWR1NGaHljVlJ0ZERZMVltb3ZZVE15Tm1VM09UZGhaamhsWlRZMk5ESTROMkl4WW1RME4yRXhaVFl3TldFMU5XVm1NbU5qWWpJMlpURmhNakV6TVdGbFptVTFabVJrWldNM09HRmpNZ1k2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTZUMTg6MjY6MTQuNzk1WiIsInB1ciI6ImJsb2Jfa2V5In19--a8feccc71c46d5c8b3c80b6d3501009c5b8b256f/merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg%22%3B+filename%2A%3DUTF-8%27%27merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg" for 127.0.0.1 at 2018-10-16 14:21:15 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg\"; filename*=UTF-8''merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTk0YjBOMmMyaG5ZamhTTkVWR1NGaHljVlJ0ZERZMVltb3ZZVE15Tm1VM09UZGhaamhsWlRZMk5ESTROMkl4WW1RME4yRXhaVFl3TldFMU5XVm1NbU5qWWpJMlpURmhNakV6TVdGbFptVTFabVJrWldNM09HRmpNZ1k2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTZUMTg6MjY6MTQuNzk1WiIsInB1ciI6ImJsb2Jfa2V5In19--a8feccc71c46d5c8b3c80b6d3501009c5b8b256f", "filename"=>"merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge"}
+[36m  Disk Storage (73.7ms) [0m[34mDownloaded file from key: variants/xoCvshgb8R4EFHXrqTmt65bj/a326e797af8ee664287b1bd47a1e605a55ef2ccb26e1a2131aefe5fddec78ac2[0m
+Completed 200 OK in 131ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--843e4782e42ee92c53d589e84ffc6cd92a4588ba/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTVRBd2VERXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--e7c789ca69ba6870c243f7ca2736d0729f195006/Prince-Harry-Meghan-Markle.jpg" for 127.0.0.1 at 2018-10-16 14:26:12 -0400
+Processing by ActiveStorage::RepresentationsController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--843e4782e42ee92c53d589e84ffc6cd92a4588ba", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTVRBd2VERXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--e7c789ca69ba6870c243f7ca2736d0729f195006", "filename"=>"Prince-Harry-Meghan-Markle"}
+  [1m[36mActiveStorage::Blob Load (1.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.7ms) [0m[34mChecked if file exists at key: variants/cJB7J6eTVt1t8xFaqB7goJDY/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d (yes)[0m
+[36m  Disk Storage (11.8ms) [0m[34mGenerated URL for file at key: variants/cJB7J6eTVt1t8xFaqB7goJDY/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlqU2tJM1NqWmxWRlowTVhRNGVFWmhjVUkzWjI5S1JGa3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTZUMTg6MzE6MTIuMjIyWiIsInB1ciI6ImJsb2Jfa2V5In19--e152912b738ea6934cce690badb6943be2f7bf80/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlqU2tJM1NqWmxWRlowTVhRNGVFWmhjVUkzWjI5S1JGa3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTZUMTg6MzE6MTIuMjIyWiIsInB1ciI6ImJsb2Jfa2V5In19--e152912b738ea6934cce690badb6943be2f7bf80/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg
+Completed 302 Found in 85ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--508af204d7066ae311ecab758385ae3ac42884c3/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTWpBd2VESXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--90e4e31cac22b3e8d42039669a3d5ea970c9f45c/merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg" for 127.0.0.1 at 2018-10-16 14:26:14 -0400
+Processing by ActiveStorage::RepresentationsController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--508af204d7066ae311ecab758385ae3ac42884c3", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTWpBd2VESXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--90e4e31cac22b3e8d42039669a3d5ea970c9f45c", "filename"=>"merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge"}
+  [1m[36mActiveStorage::Blob Load (1.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (1.0ms) [0m[34mChecked if file exists at key: variants/xoCvshgb8R4EFHXrqTmt65bj/a326e797af8ee664287b1bd47a1e605a55ef2ccb26e1a2131aefe5fddec78ac2 (yes)[0m
+[36m  Disk Storage (9.3ms) [0m[34mGenerated URL for file at key: variants/xoCvshgb8R4EFHXrqTmt65bj/a326e797af8ee664287b1bd47a1e605a55ef2ccb26e1a2131aefe5fddec78ac2 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTk0YjBOMmMyaG5ZamhTTkVWR1NGaHljVlJ0ZERZMVltb3ZZVE15Tm1VM09UZGhaamhsWlRZMk5ESTROMkl4WW1RME4yRXhaVFl3TldFMU5XVm1NbU5qWWpJMlpURmhNakV6TVdGbFptVTFabVJrWldNM09HRmpNZ1k2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTZUMTg6MzE6MTQuNjYyWiIsInB1ciI6ImJsb2Jfa2V5In19--3564a84a44e525db038e2d512c0328434ca453b4/merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg%22%3B+filename%2A%3DUTF-8%27%27merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTk0YjBOMmMyaG5ZamhTTkVWR1NGaHljVlJ0ZERZMVltb3ZZVE15Tm1VM09UZGhaamhsWlRZMk5ESTROMkl4WW1RME4yRXhaVFl3TldFMU5XVm1NbU5qWWpJMlpURmhNakV6TVdGbFptVTFabVJrWldNM09HRmpNZ1k2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTZUMTg6MzE6MTQuNjYyWiIsInB1ciI6ImJsb2Jfa2V5In19--3564a84a44e525db038e2d512c0328434ca453b4/merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg%22%3B+filename%2A%3DUTF-8%27%27merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg
+Completed 302 Found in 124ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlqU2tJM1NqWmxWRlowTVhRNGVFWmhjVUkzWjI5S1JGa3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTZUMTg6MzE6MTIuMjIyWiIsInB1ciI6ImJsb2Jfa2V5In19--e152912b738ea6934cce690badb6943be2f7bf80/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg" for 127.0.0.1 at 2018-10-16 14:26:14 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"Prince-Harry-Meghan-Markle.jpg\"; filename*=UTF-8''Prince-Harry-Meghan-Markle.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlqU2tJM1NqWmxWRlowTVhRNGVFWmhjVUkzWjI5S1JGa3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTZUMTg6MzE6MTIuMjIyWiIsInB1ciI6ImJsb2Jfa2V5In19--e152912b738ea6934cce690badb6943be2f7bf80", "filename"=>"Prince-Harry-Meghan-Markle"}
+[36m  Disk Storage (22.9ms) [0m[34mDownloaded file from key: variants/cJB7J6eTVt1t8xFaqB7goJDY/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d[0m
+Completed 200 OK in 45ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTk0YjBOMmMyaG5ZamhTTkVWR1NGaHljVlJ0ZERZMVltb3ZZVE15Tm1VM09UZGhaamhsWlRZMk5ESTROMkl4WW1RME4yRXhaVFl3TldFMU5XVm1NbU5qWWpJMlpURmhNakV6TVdGbFptVTFabVJrWldNM09HRmpNZ1k2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTZUMTg6MzE6MTQuNjYyWiIsInB1ciI6ImJsb2Jfa2V5In19--3564a84a44e525db038e2d512c0328434ca453b4/merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg%22%3B+filename%2A%3DUTF-8%27%27merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg" for 127.0.0.1 at 2018-10-16 14:26:15 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg\"; filename*=UTF-8''merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTk0YjBOMmMyaG5ZamhTTkVWR1NGaHljVlJ0ZERZMVltb3ZZVE15Tm1VM09UZGhaamhsWlRZMk5ESTROMkl4WW1RME4yRXhaVFl3TldFMU5XVm1NbU5qWWpJMlpURmhNakV6TVdGbFptVTFabVJrWldNM09HRmpNZ1k2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTZUMTg6MzE6MTQuNjYyWiIsInB1ciI6ImJsb2Jfa2V5In19--3564a84a44e525db038e2d512c0328434ca453b4", "filename"=>"merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge"}
+[36m  Disk Storage (38.4ms) [0m[34mDownloaded file from key: variants/xoCvshgb8R4EFHXrqTmt65bj/a326e797af8ee664287b1bd47a1e605a55ef2ccb26e1a2131aefe5fddec78ac2[0m
+Completed 200 OK in 71ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events/3/photos/[object%20Object]" for 127.0.0.1 at 2018-10-16 14:26:17 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/events/3/photos/[object%20Object]"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/events/3/photos/[object%20Object]" for 127.0.0.1 at 2018-10-16 14:27:06 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/events/3/photos/[object%20Object]"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/events/3/photos/[object%20Object]" for 127.0.0.1 at 2018-10-16 14:28:07 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/events/3/photos/[object%20Object]"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/events/3/photos/[object%20Object]" for 127.0.0.1 at 2018-10-16 14:29:55 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/events/3/photos/[object%20Object]"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/events/3/photos/[object%20Object]" for 127.0.0.1 at 2018-10-16 14:41:46 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/events/3/photos/[object%20Object]"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/events/3/photos/[object%20Object]" for 127.0.0.1 at 2018-10-16 14:45:02 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/events/3/photos/[object%20Object]"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/events/3/photos/[object%20Object]" for 127.0.0.1 at 2018-10-16 14:45:17 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/events/3/photos/[object%20Object]"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/events/3/photos/[object%20Object]" for 127.0.0.1 at 2018-10-16 14:47:20 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/events/3/photos/[object%20Object]"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/events/3/photos/[object%20Object]" for 127.0.0.1 at 2018-10-16 14:47:36 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/events/3/photos/[object%20Object]"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/events/3/photos/[object%20Object]" for 127.0.0.1 at 2018-10-16 14:52:21 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/events/3/photos/[object%20Object]"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/events/3/photos/[object%20Object]" for 127.0.0.1 at 2018-10-16 14:53:18 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/events/3/photos/[object%20Object]"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/events/3/photos/[object%20Object]" for 127.0.0.1 at 2018-10-16 14:55:26 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/events/3/photos/[object%20Object]"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/events/3/photos/[object%20Object]" for 127.0.0.1 at 2018-10-16 15:00:43 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/events/3/photos/[object%20Object]"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/events/3/photos/[object%20Object]" for 127.0.0.1 at 2018-10-16 15:01:28 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/events/3/photos/[object%20Object]"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/events/3/photos/[object%20Object]" for 127.0.0.1 at 2018-10-16 15:01:57 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/events/3/photos/[object%20Object]"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--508af204d7066ae311ecab758385ae3ac42884c3/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTWpBd2VESXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--90e4e31cac22b3e8d42039669a3d5ea970c9f45c/merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg" for 127.0.0.1 at 2018-10-16 15:02:25 -0400
+Processing by ActiveStorage::RepresentationsController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--508af204d7066ae311ecab758385ae3ac42884c3", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTWpBd2VESXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--90e4e31cac22b3e8d42039669a3d5ea970c9f45c", "filename"=>"merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge"}
+  [1m[36mActiveStorage::Blob Load (1.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.7ms) [0m[34mChecked if file exists at key: variants/xoCvshgb8R4EFHXrqTmt65bj/a326e797af8ee664287b1bd47a1e605a55ef2ccb26e1a2131aefe5fddec78ac2 (yes)[0m
+[36m  Disk Storage (10.6ms) [0m[34mGenerated URL for file at key: variants/xoCvshgb8R4EFHXrqTmt65bj/a326e797af8ee664287b1bd47a1e605a55ef2ccb26e1a2131aefe5fddec78ac2 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTk0YjBOMmMyaG5ZamhTTkVWR1NGaHljVlJ0ZERZMVltb3ZZVE15Tm1VM09UZGhaamhsWlRZMk5ESTROMkl4WW1RME4yRXhaVFl3TldFMU5XVm1NbU5qWWpJMlpURmhNakV6TVdGbFptVTFabVJrWldNM09HRmpNZ1k2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTZUMTk6MDc6MjYuMDQzWiIsInB1ciI6ImJsb2Jfa2V5In19--d499bbc888b3e1c0fcb90768befe8605e21844d5/merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg%22%3B+filename%2A%3DUTF-8%27%27merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTk0YjBOMmMyaG5ZamhTTkVWR1NGaHljVlJ0ZERZMVltb3ZZVE15Tm1VM09UZGhaamhsWlRZMk5ESTROMkl4WW1RME4yRXhaVFl3TldFMU5XVm1NbU5qWWpJMlpURmhNakV6TVdGbFptVTFabVJrWldNM09HRmpNZ1k2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTZUMTk6MDc6MjYuMDQzWiIsInB1ciI6ImJsb2Jfa2V5In19--d499bbc888b3e1c0fcb90768befe8605e21844d5/merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg%22%3B+filename%2A%3DUTF-8%27%27merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg
+Completed 302 Found in 76ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTk0YjBOMmMyaG5ZamhTTkVWR1NGaHljVlJ0ZERZMVltb3ZZVE15Tm1VM09UZGhaamhsWlRZMk5ESTROMkl4WW1RME4yRXhaVFl3TldFMU5XVm1NbU5qWWpJMlpURmhNakV6TVdGbFptVTFabVJrWldNM09HRmpNZ1k2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTZUMTk6MDc6MjYuMDQzWiIsInB1ciI6ImJsb2Jfa2V5In19--d499bbc888b3e1c0fcb90768befe8605e21844d5/merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg%22%3B+filename%2A%3DUTF-8%27%27merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg" for 127.0.0.1 at 2018-10-16 15:02:26 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg\"; filename*=UTF-8''merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTk0YjBOMmMyaG5ZamhTTkVWR1NGaHljVlJ0ZERZMVltb3ZZVE15Tm1VM09UZGhaamhsWlRZMk5ESTROMkl4WW1RME4yRXhaVFl3TldFMU5XVm1NbU5qWWpJMlpURmhNakV6TVdGbFptVTFabVJrWldNM09HRmpNZ1k2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTZUMTk6MDc6MjYuMDQzWiIsInB1ciI6ImJsb2Jfa2V5In19--d499bbc888b3e1c0fcb90768befe8605e21844d5", "filename"=>"merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge"}
+[36m  Disk Storage (51.0ms) [0m[34mDownloaded file from key: variants/xoCvshgb8R4EFHXrqTmt65bj/a326e797af8ee664287b1bd47a1e605a55ef2ccb26e1a2131aefe5fddec78ac2[0m
+Completed 200 OK in 69ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTk0YjBOMmMyaG5ZamhTTkVWR1NGaHljVlJ0ZERZMVltb3ZZVE15Tm1VM09UZGhaamhsWlRZMk5ESTROMkl4WW1RME4yRXhaVFl3TldFMU5XVm1NbU5qWWpJMlpURmhNakV6TVdGbFptVTFabVJrWldNM09HRmpNZ1k2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTZUMTk6MDc6MjYuMDQzWiIsInB1ciI6ImJsb2Jfa2V5In19--d499bbc888b3e1c0fcb90768befe8605e21844d5/merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg%22%3B+filename%2A%3DUTF-8%27%27merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg" for 127.0.0.1 at 2018-10-16 15:02:53 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg\"; filename*=UTF-8''merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTk0YjBOMmMyaG5ZamhTTkVWR1NGaHljVlJ0ZERZMVltb3ZZVE15Tm1VM09UZGhaamhsWlRZMk5ESTROMkl4WW1RME4yRXhaVFl3TldFMU5XVm1NbU5qWWpJMlpURmhNakV6TVdGbFptVTFabVJrWldNM09HRmpNZ1k2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTZUMTk6MDc6MjYuMDQzWiIsInB1ciI6ImJsb2Jfa2V5In19--d499bbc888b3e1c0fcb90768befe8605e21844d5", "filename"=>"merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge"}
+[36m  Disk Storage (22.3ms) [0m[34mDownloaded file from key: variants/xoCvshgb8R4EFHXrqTmt65bj/a326e797af8ee664287b1bd47a1e605a55ef2ccb26e1a2131aefe5fddec78ac2[0m
+Completed 200 OK in 42ms (ActiveRecord: 0.0ms)
+
+
