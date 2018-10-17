@@ -6,14 +6,12 @@ class PhotoShow extends Component {
 
     handleDelete = (event) => {
         event.preventDefault(event); 
-        const id = this.props.photo.event_id
+        //const id = this.props.photo.event_id
         this.props.deletePhoto(this.props.photo)
-        debugger 
         this.props.history.push('/events')
     }
 
     render() {
-        debugger 
         return(
             <React.Fragment>
                 <br></br><br></br> 

@@ -39,6 +39,10 @@ export function addEvent(values) {
     }
 }
 
+export function updateEvent(event) {
+  
+}
+
 export function deleteEvent(event) {
   return (dispatch) => {
     let id = event.id

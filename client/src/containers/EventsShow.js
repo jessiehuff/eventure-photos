@@ -1,4 +1,5 @@
 import React, {Component} from 'react'; 
+import { Link } from 'react-router-dom'; 
 import { connect } from 'react-redux'; 
 import EventDisplay from '../components/EventDisplay';
 import PhotoDisplay from '../components/PhotoDisplay';
@@ -16,6 +17,7 @@ class EventsShow extends Component {
   render() {
     return(
       <React.Fragment>
+
         <EventDisplay 
           name={this.props.event.name}
           description={this.props.event.description}
@@ -29,6 +31,14 @@ class EventsShow extends Component {
         <PhotosNew event={this.props.event} />
 
         <br></br><br></br>
+        <br></br><br></br>
+
+        <button> 
+          <Link to={`/events/${this.props.event.id}/edit`}> 
+          Update Event 
+          </Link> 
+        </button> 
+        
         <br></br><br></br>
 
         <button 

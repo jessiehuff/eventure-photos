@@ -17,7 +17,6 @@ class EventsPage extends Component {
 }; 
 
 const mapStateToProps = state => {
-  debugger 
   return {
    events: state.events.events, 
    photos: state.events.photos

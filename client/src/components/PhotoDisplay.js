@@ -1,8 +1,7 @@
 import React from 'react'; 
 import { Link } from 'react-router-dom'; 
 
-export const PhotoDisplay = props => {
-    debugger 
+export const PhotoDisplay = props => {  
     const photoListing = props.photos
     const filteredPhotos = photoListing.filter(photo => {
         return photo.event_id === props.event_id; 
