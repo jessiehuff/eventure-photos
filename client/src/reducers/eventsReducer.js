@@ -30,13 +30,14 @@ export default (state ={
           ...newPhotos
         ]
       }
-      // case 'UPDATE_EVENT':
-    //   const index = state.findIndex(event => event.id === action.event.id)
-    //     return [
-    //       ...state.slice(0, index), 
-    //       action.event, 
-    //       ...state.slice(index + 1)
-    //     ]
+      case 'UPDATE_EVENT':
+      debugger 
+      const index = state.findIndex(event => event.id === action.event.id)
+        return [
+          ...state.slice(0, index), 
+          action.event, 
+          ...state.slice(index + 1)
+        ]
     case 'DELETE_EVENT': 
       const newEvents = state.events.filter(event => event.id !== action.payload)
       return {

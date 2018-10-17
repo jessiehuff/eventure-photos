@@ -39,8 +39,32 @@ export function addEvent(values) {
     }
 }
 
-export function updateEvent(event) {
-  
+export function updateEvent(values) {
+  debugger 
+  return (dispatch) => {
+    const eventData = new FormData() 
+    eventData.append("event[name]", values.name)
+    eventData.append("event[description]", values.description)
+    eventData.append("event[cover]", values.cover)
+    eventData.append("event[id]", values.id)
+    debugger 
+
+    return fetch(`http://localhost:3000/api/v1/events/${values.id}`, {
+      method: 'put', 
+      body: eventData, 
+      contentType: false 
+    })
+    .then(res => {
+      return res.json() 
+    })
+    .then(event => {
+      dispatch({
+        type: 'UPDATE_EVENT', 
+        payload: event, 
+        id: v4()
+      })
+    })
+  }
 }
 
 export function deleteEvent(event) {

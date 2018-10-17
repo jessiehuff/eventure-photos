@@ -2,16 +2,26 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'; 
 import {updateEvent} from '../actions'; 
 
-class EventEdit extends Component {
+class EventEdit extends Component{
+    constructor(props) {
+        super(props); 
+        this.state = {
+            name: this.props.event.name, 
+            description: this.props.event.description, 
+            cover: this.props.event.cover_url, 
+            id: this.props.event.id 
+        }
+    }
  
   handleEdit = event => {
     event.preventDefault(); 
-    this.props.updateEvent(this.props.event)
+    this.props.updateEvent(this.state)
+    this.props.history.push(`/events/${this.props.event.id}`)
   }
 
   handleOnChange = event => {
-    this.setState({
-      [event.target.name]: event.target.value  
+      this.setState({
+        [event.target.name]: event.target.value
     }); 
   }
 
@@ -44,6 +54,7 @@ class EventEdit extends Component {
           <input
             type="file" 
             id="file"
+            defaultValue={this.props.event.cover}
             placeholder="Cover Image"
             name="cover"
             onChange={this.handleFile} />
