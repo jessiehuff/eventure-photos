@@ -25,9 +25,12 @@ class Api::V1::EventsController < ApplicationController
   end
 
   # PATCH/PUT /events/1
-  def update
-    if @event.update(event_params)
-      render json: @event
+  def update 
+    if @event.update!(event_params)
+      # @event.cover.purge
+      # @event.cover.attach(params[:cover])
+     # name: params[:name], description: params[:description], cover: params[:cover], id: params[:id]
+      render json: @event, serializer: EventSerializer 
     else
       render json: @event.errors, status: :unprocessable_entity
     end

@@ -16,7 +16,7 @@ class EventEdit extends Component{
   handleEdit = event => {
     event.preventDefault(); 
     this.props.updateEvent(this.state)
-    this.props.history.push(`/events/${this.props.event.id}`)
+    this.props.history.push(`/events/${this.state.id}`)
   }
 
   handleOnChange = event => {
@@ -51,14 +51,14 @@ class EventEdit extends Component{
             name="description" 
             onChange={this.handleOnChange} /> 
           <br></br> <br></br> 
-          <input
+          {/* <input
             type="file" 
             id="file"
             defaultValue={this.props.event.cover}
             placeholder="Cover Image"
             name="cover"
             onChange={this.handleFile} />
-            <br></br><br></br>             
+            <br></br><br></br>              */}
           <input 
             type="submit"
             value="Update Event" /> 
