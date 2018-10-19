@@ -6,9 +6,8 @@ class PhotoShow extends Component {
 
     handleDelete = (event) => {
         event.preventDefault(event); 
-        //const id = this.props.photo.event_id
         this.props.deletePhoto(this.props.photo)
-        this.props.history.push('/events')
+        this.props.history.push(`/events/${this.props.photo.event_id}`)
     }
 
     render() {

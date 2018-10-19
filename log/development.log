@@ -30216,3 +30216,185 @@ Processing by ActiveStorage::DiskController#show as JPEG
 Completed 200 OK in 65ms (ActiveRecord: 0.0ms)
 
 
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--843e4782e42ee92c53d589e84ffc6cd92a4588ba/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTWpBd2VESXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--90e4e31cac22b3e8d42039669a3d5ea970c9f45c/rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg" for 127.0.0.1 at 2018-10-19 14:47:32 -0400
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--508af204d7066ae311ecab758385ae3ac42884c3/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTWpBd2VESXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--90e4e31cac22b3e8d42039669a3d5ea970c9f45c/royal-wedding-shopping-trends-ebay.jpg" for 127.0.0.1 at 2018-10-19 14:47:32 -0400
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--cd1cf3b17bb4b42546b22792e72894c9f1ee37da/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTWpBd2VESXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--90e4e31cac22b3e8d42039669a3d5ea970c9f45c/merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg" for 127.0.0.1 at 2018-10-19 14:47:32 -0400
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1ed9b3ade76bc42c753df4a35698a298c0a232d0/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTVRBd2VERXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--e7c789ca69ba6870c243f7ca2736d0729f195006/Prince-Harry-Meghan-Markle.jpg" for 127.0.0.1 at 2018-10-19 14:47:32 -0400
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by ActiveStorage::RepresentationsController#show as JPEG
+Processing by ActiveStorage::RepresentationsController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1ed9b3ade76bc42c753df4a35698a298c0a232d0", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTVRBd2VERXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--e7c789ca69ba6870c243f7ca2736d0729f195006", "filename"=>"Prince-Harry-Meghan-Markle"}
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--508af204d7066ae311ecab758385ae3ac42884c3", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTWpBd2VESXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--90e4e31cac22b3e8d42039669a3d5ea970c9f45c", "filename"=>"royal-wedding-shopping-trends-ebay"}
+Processing by ActiveStorage::RepresentationsController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--cd1cf3b17bb4b42546b22792e72894c9f1ee37da", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTWpBd2VESXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--90e4e31cac22b3e8d42039669a3d5ea970c9f45c", "filename"=>"merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge"}
+Processing by ActiveStorage::RepresentationsController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--843e4782e42ee92c53d589e84ffc6cd92a4588ba", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTWpBd2VESXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--90e4e31cac22b3e8d42039669a3d5ea970c9f45c", "filename"=>"rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918"}
+  [1m[36mActiveStorage::Blob Load (1.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (2.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (1.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mActiveStorage::Blob Load (2.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (1.5ms) [0m[34mChecked if file exists at key: variants/xg5cvjKrPSvVMENoegPTYUiJ/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d (yes)[0m
+[36m  Disk Storage (3.6ms) [0m[34mChecked if file exists at key: variants/pEJHkcZ5MgwVwsCaZZKmeUcR/a326e797af8ee664287b1bd47a1e605a55ef2ccb26e1a2131aefe5fddec78ac2 (yes)[0m
+[36m  Disk Storage (6.6ms) [0m[34mChecked if file exists at key: variants/zXcZjgkegd1bxfk7ysHKTtwe/a326e797af8ee664287b1bd47a1e605a55ef2ccb26e1a2131aefe5fddec78ac2 (yes)[0m
+[36m  Disk Storage (1.1ms) [0m[34mChecked if file exists at key: variants/3kVrTvwB7XC9yCcgmH46CuRt/a326e797af8ee664287b1bd47a1e605a55ef2ccb26e1a2131aefe5fddec78ac2 (yes)[0m
+[36m  Disk Storage (1067.1ms) [0m[34mGenerated URL for file at key: variants/xg5cvjKrPSvVMENoegPTYUiJ/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTk0WnpWamRtcExjbEJUZGxaTlJVNXZaV2RRVkZsVmFVb3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTlUMTg6NTI6MzQuMzM0WiIsInB1ciI6ImJsb2Jfa2V5In19--ccd6876b39cf7e4d9b289a46cc10254a91bcf1a0/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTk0WnpWamRtcExjbEJUZGxaTlJVNXZaV2RRVkZsVmFVb3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTlUMTg6NTI6MzQuMzM0WiIsInB1ciI6ImJsb2Jfa2V5In19--ccd6876b39cf7e4d9b289a46cc10254a91bcf1a0/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg
+[36m  Disk Storage (1118.2ms) [0m[34mGenerated URL for file at key: variants/3kVrTvwB7XC9yCcgmH46CuRt/a326e797af8ee664287b1bd47a1e605a55ef2ccb26e1a2131aefe5fddec78ac2 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTh6YTFaeVZIWjNRamRZUXpsNVEyTm5iVWcwTmtOMVVuUXZZVE15Tm1VM09UZGhaamhsWlRZMk5ESTROMkl4WW1RME4yRXhaVFl3TldFMU5XVm1NbU5qWWpJMlpURmhNakV6TVdGbFptVTFabVJrWldNM09HRmpNZ1k2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTlUMTg6NTI6MzQuMzM2WiIsInB1ciI6ImJsb2Jfa2V5In19--dc24617206400ef8c346dbdaba5165c771a1712e/rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg%22%3B+filename%2A%3DUTF-8%27%27rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTh6YTFaeVZIWjNRamRZUXpsNVEyTm5iVWcwTmtOMVVuUXZZVE15Tm1VM09UZGhaamhsWlRZMk5ESTROMkl4WW1RME4yRXhaVFl3TldFMU5XVm1NbU5qWWpJMlpURmhNakV6TVdGbFptVTFabVJrWldNM09HRmpNZ1k2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTlUMTg6NTI6MzQuMzM2WiIsInB1ciI6ImJsb2Jfa2V5In19--dc24617206400ef8c346dbdaba5165c771a1712e/rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg%22%3B+filename%2A%3DUTF-8%27%27rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg
+[36m  Disk Storage (1147.5ms) [0m[34mGenerated URL for file at key: variants/zXcZjgkegd1bxfk7ysHKTtwe/a326e797af8ee664287b1bd47a1e605a55ef2ccb26e1a2131aefe5fddec78ac2 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTk2V0dOYWFtZHJaV2RrTVdKNFptczNlWE5JUzFSMGQyVXZZVE15Tm1VM09UZGhaamhsWlRZMk5ESTROMkl4WW1RME4yRXhaVFl3TldFMU5XVm1NbU5qWWpJMlpURmhNakV6TVdGbFptVTFabVJrWldNM09HRmpNZ1k2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTlUMTg6NTI6MzQuMzU0WiIsInB1ciI6ImJsb2Jfa2V5In19--8537f37339c2e7b889b1b8444c7445fa32f11b07/royal-wedding-shopping-trends-ebay.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22royal-wedding-shopping-trends-ebay.jpg%22%3B+filename%2A%3DUTF-8%27%27royal-wedding-shopping-trends-ebay.jpg)[0m
+Completed 302 Found in 1754ms (ActiveRecord: 8.1ms)
+
+
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTk2V0dOYWFtZHJaV2RrTVdKNFptczNlWE5JUzFSMGQyVXZZVE15Tm1VM09UZGhaamhsWlRZMk5ESTROMkl4WW1RME4yRXhaVFl3TldFMU5XVm1NbU5qWWpJMlpURmhNakV6TVdGbFptVTFabVJrWldNM09HRmpNZ1k2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTlUMTg6NTI6MzQuMzU0WiIsInB1ciI6ImJsb2Jfa2V5In19--8537f37339c2e7b889b1b8444c7445fa32f11b07/royal-wedding-shopping-trends-ebay.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22royal-wedding-shopping-trends-ebay.jpg%22%3B+filename%2A%3DUTF-8%27%27royal-wedding-shopping-trends-ebay.jpg
+Completed 302 Found in 1851ms (ActiveRecord: 13.3ms)
+
+
+Completed 302 Found in 1879ms (ActiveRecord: 15.6ms)
+
+
+[36m  Disk Storage (1332.3ms) [0m[34mGenerated URL for file at key: variants/pEJHkcZ5MgwVwsCaZZKmeUcR/a326e797af8ee664287b1bd47a1e605a55ef2ccb26e1a2131aefe5fddec78ac2 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTl3UlVwSWEyTmFOVTFuZDFaM2MwTmhXbHBMYldWVlkxSXZZVE15Tm1VM09UZGhaamhsWlRZMk5ESTROMkl4WW1RME4yRXhaVFl3TldFMU5XVm1NbU5qWWpJMlpURmhNakV6TVdGbFptVTFabVJrWldNM09HRmpNZ1k2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTlUMTg6NTI6MzQuMzU4WiIsInB1ciI6ImJsb2Jfa2V5In19--d5af38a08aca76487c4786e130a4a39cddd4ce17/merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg%22%3B+filename%2A%3DUTF-8%27%27merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTl3UlVwSWEyTmFOVTFuZDFaM2MwTmhXbHBMYldWVlkxSXZZVE15Tm1VM09UZGhaamhsWlRZMk5ESTROMkl4WW1RME4yRXhaVFl3TldFMU5XVm1NbU5qWWpJMlpURmhNakV6TVdGbFptVTFabVJrWldNM09HRmpNZ1k2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTlUMTg6NTI6MzQuMzU4WiIsInB1ciI6ImJsb2Jfa2V5In19--d5af38a08aca76487c4786e130a4a39cddd4ce17/merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg%22%3B+filename%2A%3DUTF-8%27%27merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg
+Completed 302 Found in 2009ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTk2V0dOYWFtZHJaV2RrTVdKNFptczNlWE5JUzFSMGQyVXZZVE15Tm1VM09UZGhaamhsWlRZMk5ESTROMkl4WW1RME4yRXhaVFl3TldFMU5XVm1NbU5qWWpJMlpURmhNakV6TVdGbFptVTFabVJrWldNM09HRmpNZ1k2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTlUMTg6NTI6MzQuMzU0WiIsInB1ciI6ImJsb2Jfa2V5In19--8537f37339c2e7b889b1b8444c7445fa32f11b07/royal-wedding-shopping-trends-ebay.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22royal-wedding-shopping-trends-ebay.jpg%22%3B+filename%2A%3DUTF-8%27%27royal-wedding-shopping-trends-ebay.jpg" for 127.0.0.1 at 2018-10-19 14:47:35 -0400
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTh6YTFaeVZIWjNRamRZUXpsNVEyTm5iVWcwTmtOMVVuUXZZVE15Tm1VM09UZGhaamhsWlRZMk5ESTROMkl4WW1RME4yRXhaVFl3TldFMU5XVm1NbU5qWWpJMlpURmhNakV6TVdGbFptVTFabVJrWldNM09HRmpNZ1k2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTlUMTg6NTI6MzQuMzM2WiIsInB1ciI6ImJsb2Jfa2V5In19--dc24617206400ef8c346dbdaba5165c771a1712e/rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg%22%3B+filename%2A%3DUTF-8%27%27rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg" for 127.0.0.1 at 2018-10-19 14:47:36 -0400
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTk0WnpWamRtcExjbEJUZGxaTlJVNXZaV2RRVkZsVmFVb3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTlUMTg6NTI6MzQuMzM0WiIsInB1ciI6ImJsb2Jfa2V5In19--ccd6876b39cf7e4d9b289a46cc10254a91bcf1a0/Prince-Harry-Meghan-Markle.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Prince-Harry-Meghan-Markle.jpg%22%3B+filename%2A%3DUTF-8%27%27Prince-Harry-Meghan-Markle.jpg" for 127.0.0.1 at 2018-10-19 14:47:36 -0400
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTl3UlVwSWEyTmFOVTFuZDFaM2MwTmhXbHBMYldWVlkxSXZZVE15Tm1VM09UZGhaamhsWlRZMk5ESTROMkl4WW1RME4yRXhaVFl3TldFMU5XVm1NbU5qWWpJMlpURmhNakV6TVdGbFptVTFabVJrWldNM09HRmpNZ1k2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTlUMTg6NTI6MzQuMzU4WiIsInB1ciI6ImJsb2Jfa2V5In19--d5af38a08aca76487c4786e130a4a39cddd4ce17/merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg%22%3B+filename%2A%3DUTF-8%27%27merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg" for 127.0.0.1 at 2018-10-19 14:47:36 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"royal-wedding-shopping-trends-ebay.jpg\"; filename*=UTF-8''royal-wedding-shopping-trends-ebay.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTk2V0dOYWFtZHJaV2RrTVdKNFptczNlWE5JUzFSMGQyVXZZVE15Tm1VM09UZGhaamhsWlRZMk5ESTROMkl4WW1RME4yRXhaVFl3TldFMU5XVm1NbU5qWWpJMlpURmhNakV6TVdGbFptVTFabVJrWldNM09HRmpNZ1k2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTlUMTg6NTI6MzQuMzU0WiIsInB1ciI6ImJsb2Jfa2V5In19--8537f37339c2e7b889b1b8444c7445fa32f11b07", "filename"=>"royal-wedding-shopping-trends-ebay"}
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg\"; filename*=UTF-8''rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTh6YTFaeVZIWjNRamRZUXpsNVEyTm5iVWcwTmtOMVVuUXZZVE15Tm1VM09UZGhaamhsWlRZMk5ESTROMkl4WW1RME4yRXhaVFl3TldFMU5XVm1NbU5qWWpJMlpURmhNakV6TVdGbFptVTFabVJrWldNM09HRmpNZ1k2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTlUMTg6NTI6MzQuMzM2WiIsInB1ciI6ImJsb2Jfa2V5In19--dc24617206400ef8c346dbdaba5165c771a1712e", "filename"=>"rs_1024x759-180519050231-1024-Prince-Harry-Meghan-Markle-Royal-Wedding-JR4-051918"}
+Processing by ActiveStorage::DiskController#show as JPEG
+Processing by ActiveStorage::DiskController#show as JPEG
+[36m  Disk Storage (105.9ms) [0m[34mDownloaded file from key: variants/zXcZjgkegd1bxfk7ysHKTtwe/a326e797af8ee664287b1bd47a1e605a55ef2ccb26e1a2131aefe5fddec78ac2[0m
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"Prince-Harry-Meghan-Markle.jpg\"; filename*=UTF-8''Prince-Harry-Meghan-Markle.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTk0WnpWamRtcExjbEJUZGxaTlJVNXZaV2RRVkZsVmFVb3ZPREEzTmpOa1pUTmhZVFJoTVRkbVpXVXlZMlEwWW1ReU16Z3lPVE13WldNMFkyTXlZbUUxWlRZNU0yRXpaalEyTkRjek1tRTVNamc1TlRRNVkyRTFaQVk2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTlUMTg6NTI6MzQuMzM0WiIsInB1ciI6ImJsb2Jfa2V5In19--ccd6876b39cf7e4d9b289a46cc10254a91bcf1a0", "filename"=>"Prince-Harry-Meghan-Markle"}
+Completed 200 OK in 222ms (ActiveRecord: 0.0ms)
+
+
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg\"; filename*=UTF-8''merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTl3UlVwSWEyTmFOVTFuZDFaM2MwTmhXbHBMYldWVlkxSXZZVE15Tm1VM09UZGhaamhsWlRZMk5ESTROMkl4WW1RME4yRXhaVFl3TldFMU5XVm1NbU5qWWpJMlpURmhNakV6TVdGbFptVTFabVJrWldNM09HRmpNZ1k2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTlUMTg6NTI6MzQuMzU4WiIsInB1ciI6ImJsb2Jfa2V5In19--d5af38a08aca76487c4786e130a4a39cddd4ce17", "filename"=>"merlin_138379881_58e7e10b-c543-4fda-95df-e12b1fd10d27-articleLarge"}
+[36m  Disk Storage (273.1ms) [0m[34mDownloaded file from key: variants/3kVrTvwB7XC9yCcgmH46CuRt/a326e797af8ee664287b1bd47a1e605a55ef2ccb26e1a2131aefe5fddec78ac2[0m
+Completed 200 OK in 335ms (ActiveRecord: 0.0ms)
+
+
+[36m  Disk Storage (102.6ms) [0m[34mDownloaded file from key: variants/pEJHkcZ5MgwVwsCaZZKmeUcR/a326e797af8ee664287b1bd47a1e605a55ef2ccb26e1a2131aefe5fddec78ac2[0m
+Completed 200 OK in 243ms (ActiveRecord: 0.0ms)
+
+
+[36m  Disk Storage (70.5ms) [0m[34mDownloaded file from key: variants/xg5cvjKrPSvVMENoegPTYUiJ/80763de3aa4a17fee2cd4bd2382930ec4cc2ba5e693a3f464732a9289549ca5d[0m
+Completed 200 OK in 416ms (ActiveRecord: 0.0ms)
+
+
+Started DELETE "/api/v1/events/1/photos/3" for 127.0.0.1 at 2018-10-19 14:47:40 -0400
+Processing by Api::V1::PhotosController#destroy as */*
+  Parameters: {"event_id"=>"1", "id"=>"3"}
+  [1m[36mPhoto Load (1.6ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:45
+  [1m[35m (2.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:39
+  [1m[36mPhoto Destroy (12.1ms)[0m  [1m[31mDELETE FROM "photos" WHERE "photos"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/api/v1/photos_controller.rb:39
+  [1m[35m (8.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:39
+  [1m[36mActiveStorage::Attachment Load (1.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Photo"], ["name", "filename"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:39
+  [1m[36mActiveStorage::Blob Load (1.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:39
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 87d75d84-6e20-4171-811f-4c0cd77cb771) to Async(default) with arguments: #<GlobalID:0x000000000388b488 @uri=#<URI::GID gid://eventure-photos/ActiveStorage::Blob/4>>
+  [1m[35m (2.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:39
+  [1m[36mActiveStorage::Attachment Destroy (9.0ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/api/v1/photos_controller.rb:39
+  [1m[36mActiveStorage::Blob Load (4.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (8.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  ↳ app/controllers/api/v1/photos_controller.rb:39
+[ActiveJob] [ActiveStorage::PurgeJob] [87d75d84-6e20-4171-811f-4c0cd77cb771] Performing ActiveStorage::PurgeJob (Job ID: 87d75d84-6e20-4171-811f-4c0cd77cb771) from Async(default) with arguments: #<GlobalID:0x0000000007ce5638 @uri=#<URI::GID gid://eventure-photos/ActiveStorage::Blob/4>>
+Completed 204 No Content in 918ms (ActiveRecord: 59.4ms)
+
+
+[ActiveJob] [ActiveStorage::PurgeJob] [87d75d84-6e20-4171-811f-4c0cd77cb771] [36m  Disk Storage (4.0ms) [0m[31mDeleted file from key: zXcZjgkegd1bxfk7ysHKTtwe[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [87d75d84-6e20-4171-811f-4c0cd77cb771] [36m  Disk Storage (12.8ms) [0m[31mDeleted files by key prefix: variants/zXcZjgkegd1bxfk7ysHKTtwe/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [87d75d84-6e20-4171-811f-4c0cd77cb771]   [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [87d75d84-6e20-4171-811f-4c0cd77cb771]   ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [87d75d84-6e20-4171-811f-4c0cd77cb771]   [1m[36mActiveStorage::Blob Destroy (15.0ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 4]]
+[ActiveJob] [ActiveStorage::PurgeJob] [87d75d84-6e20-4171-811f-4c0cd77cb771]   ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [87d75d84-6e20-4171-811f-4c0cd77cb771]   [1m[35m (8.2ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [87d75d84-6e20-4171-811f-4c0cd77cb771]   ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [87d75d84-6e20-4171-811f-4c0cd77cb771]   [1m[36mActiveStorage::Attachment Load (1.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [87d75d84-6e20-4171-811f-4c0cd77cb771]   ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [87d75d84-6e20-4171-811f-4c0cd77cb771] Performed ActiveStorage::PurgeJob (Job ID: 87d75d84-6e20-4171-811f-4c0cd77cb771) from Async(default) in 189.4ms
+Started POST "/api/v1/events/1/photos" for 127.0.0.1 at 2018-10-19 14:47:47 -0400
+Processing by Api::V1::PhotosController#create as */*
+  Parameters: {"photo"=>{"filename"=>#<ActionDispatch::Http::UploadedFile:0x0000000007839ee0 @tempfile=#<Tempfile:C:/Users/JESSIE~1/AppData/Local/Temp/RackMultipart20181019-17260-1gq3nej.jpg>, @original_filename="royal-wedding-shopping-trends-ebay.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[filename]\"; filename=\"royal-wedding-shopping-trends-ebay.jpg\"\r\nContent-Type: image/jpeg\r\n">, "id"=>"", "event_id"=>"1"}, "event_id"=>"1"}
+Unpermitted parameter: :id
+[36m  Disk Storage (11.6ms) [0m[32mUploaded file to key: uvSfvoipVLh6sNFonDyoeE4P (checksum: O2Tq5T+z1G2hVASiSWyybw==)[0m
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:18
+  [1m[36mActiveStorage::Blob Create (14.6ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["key", "uvSfvoipVLh6sNFonDyoeE4P"], ["filename", "royal-wedding-shopping-trends-ebay.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 324304], ["checksum", "O2Tq5T+z1G2hVASiSWyybw=="], ["created_at", "2018-10-19 18:47:47.726834"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:18
+  [1m[35m (9.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:18
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:18
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:18
+  [1m[35m (7.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[36mPhoto Create (14.1ms)[0m  [1m[32mINSERT INTO "photos" ("event_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["event_id", 1], ["created_at", "2018-10-19 18:47:48.056281"], ["updated_at", "2018-10-19 18:47:48.056281"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[36mActiveStorage::Attachment Create (1.7ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "filename"], ["record_type", "Photo"], ["record_id", 10], ["blob_id", 12], ["created_at", "2018-10-19 18:47:48.148025"]]
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[36mPhoto Update (2.8ms)[0m  [1m[33mUPDATE "photos" SET "updated_at" = ? WHERE "photos"."id" = ?[0m  [["updated_at", "2018-10-19 18:47:48.225232"], ["id", 10]]
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+  [1m[35m (32.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/photos_controller.rb:20
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: a73284e5-1d55-4cc2-9f88-a679a9b35b0b) to Async(default) with arguments: #<GlobalID:0x0000000007adf8e8 @uri=#<URI::GID gid://eventure-photos/ActiveStorage::Blob/12>>
+  [1m[36mActiveStorage::Blob Load (1.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a73284e5-1d55-4cc2-9f88-a679a9b35b0b] Performing ActiveStorage::AnalyzeJob (Job ID: a73284e5-1d55-4cc2-9f88-a679a9b35b0b) from Async(default) with arguments: #<GlobalID:0x000000000606ac88 @uri=#<URI::GID gid://eventure-photos/ActiveStorage::Blob/12>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a73284e5-1d55-4cc2-9f88-a679a9b35b0b] [36m  Disk Storage (10.7ms) [0m[34mDownloaded file from key: uvSfvoipVLh6sNFonDyoeE4P[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a73284e5-1d55-4cc2-9f88-a679a9b35b0b]   [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a73284e5-1d55-4cc2-9f88-a679a9b35b0b]   ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a73284e5-1d55-4cc2-9f88-a679a9b35b0b]   [1m[36mActiveStorage::Blob Update (7.2ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"width\":1200,\"height\":800,\"analyzed\":true}"], ["id", 12]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a73284e5-1d55-4cc2-9f88-a679a9b35b0b]   ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a73284e5-1d55-4cc2-9f88-a679a9b35b0b]   [1m[35m (13.9ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a73284e5-1d55-4cc2-9f88-a679a9b35b0b]   ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a73284e5-1d55-4cc2-9f88-a679a9b35b0b] Performed ActiveStorage::AnalyzeJob (Job ID: a73284e5-1d55-4cc2-9f88-a679a9b35b0b) from Async(default) in 371.86ms
+[active_model_serializers] Rendered PhotoSerializer with ActiveModelSerializers::Adapter::Attributes (24.93ms)
+Completed 200 OK in 1380ms (Views: 561.3ms | ActiveRecord: 90.3ms)
+
+
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e9f245811e9d1286f94f3a3b8c45f668037763a9/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTWpBd2VESXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--90e4e31cac22b3e8d42039669a3d5ea970c9f45c/royal-wedding-shopping-trends-ebay.jpg" for 127.0.0.1 at 2018-10-19 14:47:49 -0400
+Processing by ActiveStorage::RepresentationsController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e9f245811e9d1286f94f3a3b8c45f668037763a9", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTWpBd2VESXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--90e4e31cac22b3e8d42039669a3d5ea970c9f45c", "filename"=>"royal-wedding-shopping-trends-ebay"}
+  [1m[36mActiveStorage::Blob Load (6.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.9ms) [0m[34mChecked if file exists at key: variants/uvSfvoipVLh6sNFonDyoeE4P/a326e797af8ee664287b1bd47a1e605a55ef2ccb26e1a2131aefe5fddec78ac2 (no)[0m
+[36m  Disk Storage (10.0ms) [0m[34mDownloaded file from key: uvSfvoipVLh6sNFonDyoeE4P[0m
+[36m  Disk Storage (3.3ms) [0m[32mUploaded file to key: variants/uvSfvoipVLh6sNFonDyoeE4P/a326e797af8ee664287b1bd47a1e605a55ef2ccb26e1a2131aefe5fddec78ac2[0m
+[36m  Disk Storage (10.5ms) [0m[34mGenerated URL for file at key: variants/uvSfvoipVLh6sNFonDyoeE4P/a326e797af8ee664287b1bd47a1e605a55ef2ccb26e1a2131aefe5fddec78ac2 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxZGxObWRtOXBjRlpNYURaelRrWnZia1I1YjJWRk5GQXZZVE15Tm1VM09UZGhaamhsWlRZMk5ESTROMkl4WW1RME4yRXhaVFl3TldFMU5XVm1NbU5qWWpJMlpURmhNakV6TVdGbFptVTFabVJrWldNM09HRmpNZ1k2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTlUMTg6NTI6NDkuODk3WiIsInB1ciI6ImJsb2Jfa2V5In19--2211630162c9daced3ab2f8680073fe13e03b982/royal-wedding-shopping-trends-ebay.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22royal-wedding-shopping-trends-ebay.jpg%22%3B+filename%2A%3DUTF-8%27%27royal-wedding-shopping-trends-ebay.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxZGxObWRtOXBjRlpNYURaelRrWnZia1I1YjJWRk5GQXZZVE15Tm1VM09UZGhaamhsWlRZMk5ESTROMkl4WW1RME4yRXhaVFl3TldFMU5XVm1NbU5qWWpJMlpURmhNakV6TVdGbFptVTFabVJrWldNM09HRmpNZ1k2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTlUMTg6NTI6NDkuODk3WiIsInB1ciI6ImJsb2Jfa2V5In19--2211630162c9daced3ab2f8680073fe13e03b982/royal-wedding-shopping-trends-ebay.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22royal-wedding-shopping-trends-ebay.jpg%22%3B+filename%2A%3DUTF-8%27%27royal-wedding-shopping-trends-ebay.jpg
+Completed 302 Found in 460ms (ActiveRecord: 6.6ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxZGxObWRtOXBjRlpNYURaelRrWnZia1I1YjJWRk5GQXZZVE15Tm1VM09UZGhaamhsWlRZMk5ESTROMkl4WW1RME4yRXhaVFl3TldFMU5XVm1NbU5qWWpJMlpURmhNakV6TVdGbFptVTFabVJrWldNM09HRmpNZ1k2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTlUMTg6NTI6NDkuODk3WiIsInB1ciI6ImJsb2Jfa2V5In19--2211630162c9daced3ab2f8680073fe13e03b982/royal-wedding-shopping-trends-ebay.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22royal-wedding-shopping-trends-ebay.jpg%22%3B+filename%2A%3DUTF-8%27%27royal-wedding-shopping-trends-ebay.jpg" for 127.0.0.1 at 2018-10-19 14:47:49 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"royal-wedding-shopping-trends-ebay.jpg\"; filename*=UTF-8''royal-wedding-shopping-trends-ebay.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTkxZGxObWRtOXBjRlpNYURaelRrWnZia1I1YjJWRk5GQXZZVE15Tm1VM09UZGhaamhsWlRZMk5ESTROMkl4WW1RME4yRXhaVFl3TldFMU5XVm1NbU5qWWpJMlpURmhNakV6TVdGbFptVTFabVJrWldNM09HRmpNZ1k2QmtWVSIsImV4cCI6IjIwMTgtMTAtMTlUMTg6NTI6NDkuODk3WiIsInB1ciI6ImJsb2Jfa2V5In19--2211630162c9daced3ab2f8680073fe13e03b982", "filename"=>"royal-wedding-shopping-trends-ebay"}
+[36m  Disk Storage (32.0ms) [0m[34mDownloaded file from key: variants/uvSfvoipVLh6sNFonDyoeE4P/a326e797af8ee664287b1bd47a1e605a55ef2ccb26e1a2131aefe5fddec78ac2[0m
+Completed 200 OK in 56ms (ActiveRecord: 0.0ms)
+
+
