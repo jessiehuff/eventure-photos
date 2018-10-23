@@ -9,7 +9,7 @@ export const PhotoDisplay = props => {
     const renderPhotos = filteredPhotos.map((photo, index) => 
         <span key={index}>
         <Link to={`/events/${props.event_id}/photos/${photo.id}`}> 
-        <img src={photo.photo_url} alt="photo uploads"></img></Link>   </span>
+        <img src={photo.photo_url} alt="uploads"></img></Link>   </span>
     );
 
     return (

@@ -8,7 +8,7 @@ class EventsPage extends Component {
     return(
       <div> 
         <br></br>
-        <h1>Events:</h1>   
+        <h1>Events:</h1><br></br> 
         <EventsList events={this.props.events} /> 
         
       </div> 
