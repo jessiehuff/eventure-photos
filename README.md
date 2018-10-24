@@ -21,7 +21,7 @@ To install and use this project, fork and clone the repo. Then, cd eventure-phot
 Bug reports and pull requests are welcome on GitHub at https://github.com/jessiehuff/eventure-photos. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](https://www.contributor-covenant.org/) code of conduct. 
 
 ## License 
-The gem is available as open source under the terms of the [MIT License] (http://opensource.org/licenses/MIT). 
+The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT). 
 
 ## Table of Contents
 
