@@ -5,6 +5,7 @@ Eventure Photos allows everyone at your event to share their photos in real time
 Eventure Photos has a Rails API back-end with a React-Redux front-end that allows users at an event to share their photos in real time.
 
 Blog post on process / functionality: http://jessiehuff.com/eventure_photos 
+
 Video demo / Walkthrough of App: https://www.youtube.com/watch?v=ANLfikBeMaI
 
 
