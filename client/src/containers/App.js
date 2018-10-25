@@ -1,5 +1,5 @@
 import React, {Component} from 'react' 
-import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'; 
+import { BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'; 
 import Homepage from '../components/Homepage';
 import About from '../components/About';
 import EventsPage from '../containers/EventsPage'; 
@@ -18,7 +18,7 @@ import EventEdit from '../containers/EventEdit';
 class App extends Component {  
 
   componentDidMount() {
-    if (this.props.length === 0) { 
+    if (this.props.events.length === 0) { 
      this.props.fetchEvents(); 
     }
   }
@@ -31,16 +31,16 @@ class App extends Component {
         <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
           <ul className="navbar-nav">
           <li className="nav-item">
-            <a className="nav-link" href="/">Home</a>
+            <Link to="/" className="nav-link">Home</Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/about">About</a>
+            <Link to="/about" className="nav-link">About</Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/events">All Events</a>
+            <Link to="/events" className="nav-link">All Events</Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/events/new">Add an Event</a>
+            <Link to="/events/new" className="nav-link">Add an Event</Link>
           </li>
           </ul> 
           </nav>
