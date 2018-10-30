@@ -17,23 +17,33 @@ class EventForm extends Component {
   } 
 
   handleOnSubmit = event => {
-    event.preventDefault(); 
-    debugger 
+    event.preventDefault();  
     if (this.props.match.params.eventId === undefined) {
       this.props.addEvent(this.state);
       this.props.history.push('/events')
     } 
     else {
+      debugger 
       this.props.updateEvent(this.state)
       this.props.history.push(`/events/${this.state.id}`)
     }
   }
 
   handleOnChange = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value  
-    }); 
-    debugger 
+    if (this.props.location.pathname === "/events/new"){
+      this.setState({
+        [event.target.name]: event.target.value  
+      })
+    }
+    else {
+      this.setState({
+        name: this.props.event.name, 
+        description: this.props.event.description, 
+        id: this.props.event.id, 
+        cover: this.props.event.cover_url,
+        [event.target.name]: event.target.value  
+      }); 
+    }
   }
 
   handleFile = event => {
@@ -66,6 +76,7 @@ class EventForm extends Component {
             type="file" 
             id="file"
             placeholder="Cover Image"
+            disabled={this.props.match.params.eventId === undefined ? false : true}
             name="cover"
             onChange={this.handleFile} />
             <br></br><br></br>             
@@ -79,7 +90,6 @@ class EventForm extends Component {
 }; 
 
 const mapStateToProps = (state, ownProps) => {
-  debugger 
   const allEvents = state.events.events
 
   const eventShow = Object.keys(allEvents).map(i => state.events.events[i])

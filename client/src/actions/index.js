@@ -38,7 +38,8 @@ export function addEvent(values) {
     }
 }
 
-export function updateEvent(values) { 
+export function updateEvent(values) {
+  debugger  
   return (dispatch) => {
     const eventData = new FormData() 
     eventData.append("event[name]", values.name)
