@@ -51,12 +51,14 @@ class EventForm extends Component {
           <input 
             type="text"
             placeholder = {this.props.location.pathname === "/events/new" ? "Name" : this.props.event.name}  
+            defaultValue = {this.props.location.pathname === "/events/new" ? "" : this.props.event.name} 
             name="name" 
             onChange={this.handleOnChange } /> 
           <br></br><br></br>
           <input 
             type="text"
             placeholder = {this.props.location.pathname === "/events/new" ? "Description" : this.props.event.description}
+            defaultValue = {this.props.location.pathname === "/events/new" ? "" : this.props.event.description} 
             name="description" 
             onChange={this.handleOnChange} /> 
           <br></br> <br></br> 
