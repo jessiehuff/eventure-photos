@@ -62,12 +62,8 @@ class App extends Component {
 }
 
 const mapStateToProps = state => {
- // debugger 
   const allEvents = state.events.events
   const allPhotos = state.events.photos
-
-  const eventShow = Object.keys(allEvents).map(i => state.events.events[i])
-  //const event = eventShow.find(event => event.id === parseInt(location.pathname.slice(8,9), 10))
   
   return {
    events: allEvents,

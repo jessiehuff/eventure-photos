@@ -23,7 +23,6 @@ class EventForm extends Component {
       this.props.history.push('/events')
     } 
     else {
-      debugger 
       this.props.updateEvent(this.state)
       this.props.history.push(`/events/${this.state.id}`)
     }
