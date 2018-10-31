@@ -39,7 +39,6 @@ class EventForm extends Component {
         name: this.props.event.name, 
         description: this.props.event.description, 
         id: this.props.event.id, 
-        cover: this.props.event.cover_url,
         [event.target.name]: event.target.value  
       }); 
     }

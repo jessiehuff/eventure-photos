@@ -43,8 +43,6 @@ export function updateEvent(values) {
     const eventData = new FormData() 
     eventData.append("event[name]", values.name)
     eventData.append("event[description]", values.description)
-    //eventData.append("event[cover]", values.cover)
-    //eventData.append("event[id]", values.id) 
 
     return fetch(`http://localhost:3000/api/v1/events/${values.id}`, {
       method: 'put', 
@@ -104,8 +102,8 @@ export function addPhoto(values){
             payload: photo,
             id: v4()
           })
-    })
-  }
+        })
+    }
 }
 
 export function deletePhoto(photo) {

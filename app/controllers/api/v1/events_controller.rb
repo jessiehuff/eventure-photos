@@ -30,7 +30,7 @@ class Api::V1::EventsController < ApplicationController
       # @event.cover.purge
       # @event.cover.attach(params[:cover])
      # name: params[:name], description: params[:description], cover: params[:cover], id: params[:id]
-      render json: @event, each_serializer: EventSerializer 
+      render json: @event, serializer: EventSerializer 
     else
       render json: @event.errors, status: :unprocessable_entity
     end

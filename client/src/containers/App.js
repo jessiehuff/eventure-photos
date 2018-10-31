@@ -68,7 +68,6 @@ const mapStateToProps = state => {
   return {
    events: allEvents,
    photos: allPhotos
-
   }
 }
 
