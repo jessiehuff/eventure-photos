@@ -10,15 +10,18 @@ export function fetchEvents() {
     }) 
     .then(response => response.json()) 
     .then(events => dispatch({type: 'FETCH_EVENTS', events}))
+    .catch((error) => console.log(error))
   }
 }
 
 export function addEvent(values) {
+  console.log('C')
   return (dispatch) => { 
     const eventData = new FormData() 
     eventData.append("event[name]", values.name)
     eventData.append("event[description]", values.description)
     eventData.append("event[cover]", values.cover)
+    eventData.append("event[likes]", 0)
 
     return fetch(`http://localhost:3000/api/v1/events`, {
       method: 'post', 
@@ -29,13 +32,16 @@ export function addEvent(values) {
       return res.json()
       })
         .then(event => {
+          console.log('D')
           dispatch({
             type: 'ADD_EVENT', 
             payload: event,
             id: v4()
           })
-        }) 
+        })
+        .catch((error) => console.log(error)) 
     }
+    console.log('E')
 }
 
 export function updateEvent(values) {  
@@ -59,6 +65,7 @@ export function updateEvent(values) {
         id: v4()
       })
     })
+    .catch((error) => console.log(error))
   }
 }
 
@@ -103,6 +110,7 @@ export function addPhoto(values){
             id: v4()
           })
         })
+        .catch((error) => console.log(error))
     }
 }
 
@@ -118,6 +126,7 @@ export function deletePhoto(photo) {
         type: 'DELETE_PHOTO',
         payload: id
       })
+      .catch((error) => console.log(error))
       localStorage.removeItem(photo);
     })
   }

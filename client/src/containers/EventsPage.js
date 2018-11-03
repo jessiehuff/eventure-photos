@@ -3,15 +3,16 @@ import EventsList from '../components/EventsList';
 import {connect} from 'react-redux'; 
 
 class EventsPage extends Component { 
-  
+
   render() {
     return(
+      <React.Fragment> 
       <div> 
         <br></br>
         <h1>Events:</h1><br></br> 
         <EventsList events={this.props.events} /> 
-        
       </div> 
+      </React.Fragment> 
     )
   }
 }; 

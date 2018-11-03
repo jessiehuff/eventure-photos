@@ -12,14 +12,14 @@ class EventForm extends Component {
       cover: null, 
       id: ''
     };
-    this.handleOnChange = this.handleOnChange.bind(this); 
-    this.handleOnSubmit = this.handleOnSubmit.bind(this); 
   } 
 
   handleOnSubmit = event => {
     event.preventDefault();  
     if (this.props.match.params.eventId === undefined) {
-      this.props.addEvent(this.state);
+      console.log('A')
+        this.props.addEvent(this.state);
+      console.log('B')
       this.props.history.push('/events')
     } 
     else {
