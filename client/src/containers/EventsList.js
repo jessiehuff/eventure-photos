@@ -1,5 +1,5 @@
 import React, { Component } from 'react'; 
-import Event from '../components/Event'; 
+import Event from '../containers/Event'; 
  
 
 class EventsList extends Component {
@@ -22,7 +22,7 @@ if (this.state.isSorted === false) {
   return (
     <div> 
       <ul>
-      <button type="button" id="sort" onClick={this.sortEvents.bind(this)}>Sort Events </button> 
+      <button type="button" id="sort" onClick={this.sortEvents.bind(this)}>Sort Events by Likes </button> 
       <br></br><br></br>
       {renderEvents}
       </ul> 

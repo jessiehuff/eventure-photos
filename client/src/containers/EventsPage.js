@@ -1,5 +1,5 @@
 import React, { Component } from 'react'; 
-import EventsList from '../components/EventsList'; 
+import EventsList from '../containers/EventsList'; 
 import {connect} from 'react-redux'; 
 
 class EventsPage extends Component { 
