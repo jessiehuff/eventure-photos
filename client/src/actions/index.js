@@ -21,7 +21,7 @@ export function addEvent(values) {
     eventData.append("event[name]", values.name)
     eventData.append("event[description]", values.description)
     eventData.append("event[cover]", values.cover)
-    eventData.append("event[likes]", 0)
+    //eventData.append("event[likes]", 0)
 
     return fetch(`http://localhost:3000/api/v1/events`, {
       method: 'post', 
@@ -82,6 +82,7 @@ export function deleteEvent(event) {
       })
       localStorage.removeItem(event);
     })
+    
   }
 }
 
