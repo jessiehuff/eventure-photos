@@ -4,17 +4,20 @@ import { Link } from 'react-router-dom';
 const EventsList = props => {
   const eventListing = props.events
   const renderEvents = eventListing.map((event) => 
-     <h5 key={event.id}><li><Link to={`/events/${event.id}`}>
-     <img src={event.cover_url} alt="event cover" />
-     <br></br>
-     {event.name}</Link></li></h5>
+  <div class="card border-dark mb-3" styles="max-width: 18 rem;">
+    <div class="card-body"> 
+     <h5 key={event.id}><Link to={`/events/${event.id}`}>
+     <img class="card-img-top" src={event.cover_url} alt="event cover" />
+
+      {event.name} 
+      </Link></h5> 
+      </div> 
+    </div>
    );
  
   return (
-    <div> 
-      <ul>
-        {renderEvents}
-      </ul>
+    <div>
+      {renderEvents}
     </div> 
   ); 
 }; 
