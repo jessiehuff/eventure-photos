@@ -52,8 +52,8 @@ class EventForm extends Component {
 
   render() { 
     return (
-      <div> 
-        <br></br>
+      <div className="newEvent"> 
+        <br></br><br></br> 
         <h1>Add or Update Event</h1> <br></br>
         <form className="eventForm" onSubmit={this.handleOnSubmit} > 
           <input 
